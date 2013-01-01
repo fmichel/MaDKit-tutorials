@@ -35,8 +35,6 @@ import gui.ex03_customPanel.CustomPanel;
 /**
  * Shows how to build a totally independent GUI for a MaDKit 5 agent
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class IndependentGUIAgent extends Agent {

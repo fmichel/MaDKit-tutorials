@@ -29,8 +29,6 @@ import madkit.kernel.Madkit;
 /**
  * Shows how to override the default frame behavior with the default GUI mechanism of MaDKit 5
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class OverridingDefaultFrameBehaviorAgent extends Agent {

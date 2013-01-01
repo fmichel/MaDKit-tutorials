@@ -39,8 +39,6 @@ import madkit.kernel.Madkit;
  * Doing so, we still use the madkit.gui.OutputPanel component
  * to ease the work.
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class CustomPanel extends Agent {

@@ -57,9 +57,8 @@ import madkit.kernel.Madkit;
  * default mechanism and an independent GUI for developing/debugging purposes
  * like in the next example.
  * 
- * @version 0.9
- * @author Fabien Michel
  */
+
 @SuppressWarnings("serial")
 public class IndependentGUI extends Agent {
 

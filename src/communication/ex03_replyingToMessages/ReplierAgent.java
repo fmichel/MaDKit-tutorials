@@ -41,8 +41,6 @@ import communication.ex01.PingAgent;
  * thus easing the programming of protocols for instance.
  * (2) This greatly improves code legibility 
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class ReplierAgent extends PingAgent {//So I do the same activate

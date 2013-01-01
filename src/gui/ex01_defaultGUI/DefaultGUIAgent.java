@@ -30,8 +30,6 @@ import madkit.kernel.Madkit;
  * is to launch it with the GUI parameter set to true.
  * This could be done either in the MaDKit arguments or when launching an agent.
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class DefaultGUIAgent extends Agent {

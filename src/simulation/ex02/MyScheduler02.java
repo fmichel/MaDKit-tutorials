@@ -18,13 +18,16 @@
  */
 package simulation.ex02;
 
+import madkit.gui.ConsoleAgent;
 import madkit.kernel.AbstractAgent;
+import madkit.kernel.Madkit;
 import madkit.kernel.Scheduler;
 import madkit.simulation.activator.GenericBehaviorActivator;
 import simulation.ex01.SimulatedAgent;
 import simulation.ex01.SimulationModel;
 
 /**
+ * 		#jws simulation.ex02.MyScheduler02 jws#
  * 
  * Let us have more fun by adding another simulated agent class
  * with a different result for the doIt method
@@ -33,10 +36,6 @@ import simulation.ex01.SimulationModel;
  * We need nothing else and just have to launch this new type of agent: 
  * Activators do not care about the exact type of the activated agents.
  * Only the organizational position matters.
- * 
- * @author Fabien Michel
- *
- * @version 0.9
  * 
  */
 @SuppressWarnings("serial")
@@ -60,6 +59,7 @@ public class MyScheduler02 extends Scheduler {
 		activator1 = new GenericBehaviorActivator<AbstractAgent>(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ROLE, "doIt");
 		addActivator(activator1);
 		
+		setDelay(300);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class MyScheduler02 extends Scheduler {
 	 * @param 
 	 */
 	public static void main(String[] args) {
-		executeThisAgent(args);
+		new Madkit("--launchAgents", MyScheduler02.class.getName()+",true;"+ConsoleAgent.class.getName());
 	}
 
 }

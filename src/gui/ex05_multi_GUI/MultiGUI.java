@@ -38,9 +38,6 @@ import madkit.kernel.Madkit;
  * The idea is that it could be interesting to have several GUI for an agent:
  * A main and the default which could be used as a console for the agent.
  * 
- * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class MultiGUI extends Agent {

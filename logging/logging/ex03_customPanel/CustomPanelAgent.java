@@ -33,8 +33,6 @@ import madkit.kernel.Madkit;
 /**
  * Shows how to set a custom panel with the frame given by the default GUI mechanism of MaDKit 5
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class CustomPanelAgent extends Agent {

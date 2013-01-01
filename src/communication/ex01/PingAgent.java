@@ -40,8 +40,6 @@ import madkit.kernel.Message;
  * Doing so, agents get agent addresses which could be used to send them messages.
  * Here, two agents take a role and ping the other one.
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class PingAgent extends Agent {

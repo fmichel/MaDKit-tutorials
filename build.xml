@@ -14,7 +14,7 @@
 		 Please, specify the MaDKit version which should be used.
 		 e.g. 5.0.0.15
          ================================= -->
-	<property name="madkit.version" value="5.0.0.17" />
+	<property name="madkit.version" value="5.0.0.21" />
 
 
 	<!-- using specific properties -->
@@ -27,9 +27,7 @@
 
 	<!-- specific local user's properties -->
 	<property name="jdk.api.dir" value="/usr/share/doc/java-common/sun-jdk6/docs/api/" />
-	<property name="mdk.api.dir" value="/home/fab/Ubuntu One/dev/madkit/MaDKit-5.0.0.17/docs/api" />
-	<property name="mdk.artefact.dir" value="/home/fab/dev/git.repos/madkitkernel/release" />
-	<property name="madkit.jar.file" value="${mdk.artefact.dir}/madkit-${madkit.version}.jar" />
+	<property name="mdk.api.dir" value="/home/fab/Ubuntu One/dev/madkit/MaDKit-${madkit.version}/docs/api" />
 
 
 
@@ -80,22 +78,12 @@
 		</javaresource>
 	</import>
 
-
-	<!-- =================================
-		specific project targets 
-        ================================= -->
-	<!-- ================================= 
-          target: publish              
-			<zipfileset dir="${demo.dir}" prefix="${demo.dir}" filemode="755"/>
-		<delete file="${madkit.howto.dir}/${ant.project.name}.zip">
-		</delete>
-         ================================= -->
 	<!-- ================================= 
           target: release              
          ================================= -->
 	<target name="release" depends="clean,hello-world,gui,communication,simulation,copy-resources" description="description">
 		<zip destfile="${release.dir}/${ant.project.name}-project.zip" level="9">
-			<fileset dir="." excludes=".gitignore,bin/**,lib/j2h.jar,build.xml,${release.dir}/**,**/simu_template/**,**/logging/**,*tutorials.html,images/**,*gz,*jar,.git/**" />
+			<fileset dir="." excludes=".gitignore,bin/**,lib/j2h.jar,build.xml,${release.dir}/**,**/simu_template/**,**/logging/**,*tutorials.html,images/**,*gz,*jar,.git/**,jnlp/template.jnlp" />
 		</zip>
 		<copy tofile="${release.dir}/index.html" file="MaDKit-tutorials.html">
 			<filterchain>
@@ -181,7 +169,7 @@
 
 
 	<target name="html">
-		<property name="tuto.instruction" value="Examples are structured in packages explicitely named and ordered by incresing complexity" />
+		<property name="tuto.instruction" value="Examples are structured in packages explicitely named and ordered according to their complexity" />
 		<property name="html.break" value="\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;" />
 		<property name="tuto.download.html" value="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;a href='http://www.madkit.net/tutorials/MaDKit-tutorials-project.zip'&gt;&lt;img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/tutorials/html/download.png'&gt;&lt;/a&gt;" />
 
@@ -241,15 +229,26 @@
 
 	<!-- ================================= 
           target: test-jnlp              
-         ================================= -->
-    <target name="test-jnlp" description="test jnlps">
 		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
 			<arg value="helloworld.ex01.HelloWorldAgent.jnlp" />
 		</exec>
+		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
+			<arg value="simulation.ex01.MyScheduler.jnlp" />
+		</exec>
+		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
+			<arg value="simulation.ex02.MyScheduler02.jnlp" />
+		</exec>
+		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
+			<arg value="simulation.ex03.MyScheduler03.jnlp" />
+		</exec>
+		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
+			<arg value="simulation.ex04.MyScheduler04.jnlp" />
+		</exec>
+         ================================= -->
+    <target name="test-jnlp" description="test jnlps">
+	<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
+		<arg value="simulation.ex07.MySimulationModel07.jnlp" />
+	</exec>
     </target>
-
-	<target name="update-to-last-kernel">
-		<copy todir="${lib.dir}" file="${madkit.jar.file}" />
-	</target>
 
 </project>

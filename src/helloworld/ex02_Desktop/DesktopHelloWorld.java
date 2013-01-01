@@ -34,8 +34,6 @@ import madkit.kernel.Madkit;
  * The Desktop do not quit when there is no active agent,
  * contrarily to the first example.
  * 
- * @author Fabien Michel
- * 
  */
 public class DesktopHelloWorld {
 

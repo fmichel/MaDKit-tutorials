@@ -25,19 +25,12 @@ import madkit.kernel.Scheduler;
 import madkit.simulation.activator.GenericBehaviorActivator;
 
 /**
+ * 		#jws simulation.ex01.MyScheduler jws#
  * 
  * In this first example, the goal is only to manage the execution of some
  * agents. Two classes are needed : a madkit.kernel.Scheduler that manages
  * an madkit.kernel.Activator and a simulated agent
  * class: simulation.ex01.SimulatedAgent
- * 
- * 
- * 
- * 
- * 
- * @author Fabien Michel
- *
- * @version 0.9
  * 
  */
 @SuppressWarnings("serial")
@@ -62,21 +55,15 @@ public class MyScheduler extends Scheduler {
 
 		// 4 : we are done, because Scheduler already defines a live method
 		// calling the execution of the activator. We will override it later.
-		// here we just slow down the simulation to not overflow the console
+		// here we just slow down the simulation to not flood the console
 		setDelay(300);
 	}
 
 	/**
 	 * A simple way of launching this scheduler
-	 * 
-	 * @param
 	 */
 	public static void main(String[] args) {
-		String[] argss = { "--launchAgents", MyScheduler.class.getName()+",true;"+ConsoleAgent.class.getName()};
-		// + ",false" }; would not change anything as it is the default setting
-		Madkit.main(argss);
-//		String[] args2 = {Option.launchAgents.toString(),ConsoleAgent.class.getName()};
-//		executeThisAgent(args2);
+		new Madkit("--launchAgents", MyScheduler.class.getName()+",true;"+ConsoleAgent.class.getName());
 	}
 
 }

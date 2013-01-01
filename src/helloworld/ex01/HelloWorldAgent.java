@@ -51,8 +51,6 @@ import madkit.kernel.Madkit;
  * 	- Agent-0: The kernel agent
  * 	- Agent-1: The GUI manager
  * 
- * @author Fabien Michel
- * 
  */
 @SuppressWarnings("serial")
 public class HelloWorldAgent extends Agent {

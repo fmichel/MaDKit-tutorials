@@ -18,18 +18,17 @@
  */
 package simulation.ex04;
 
+import madkit.gui.ConsoleAgent;
+import madkit.kernel.Madkit;
 import madkit.kernel.Scheduler;
 import simulation.ex03.MyScheduler03;
 
 /**
+ *     #jws simulation.ex04.MyScheduler04 jws#
  * 
  * Let us define explicitly how a simulation step takes place in order
  * to define our own scheduling policy at will.
  * This is done by overriding {@link Scheduler#doSimulationStep()}.
- * 
- * @author Fabien Michel
- *
- * @version 0.9
  * 
  */
 @SuppressWarnings("serial")
@@ -43,9 +42,9 @@ public class MyScheduler04 extends MyScheduler03 {
 	 */
 	@Override
 	public void doSimulationStep() {
-		triggerActivator(activator1);
-		triggerActivator(activator2);
-		triggerActivator(activator2);
+		activator1.execute();
+		activator2.execute();
+		activator2.execute();
 		setGVT(getGVT()+0.5);
 	}
 	
@@ -55,7 +54,7 @@ public class MyScheduler04 extends MyScheduler03 {
 	 * launch this one properly.
 	 */
 	public static void main(String[] args) {
-		executeThisAgent(args);
+		new Madkit("--launchAgents", MyScheduler04.class.getName()+",true;"+ConsoleAgent.class.getName());
 	}
 
 }

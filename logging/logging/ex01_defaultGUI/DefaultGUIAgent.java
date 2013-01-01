@@ -26,8 +26,6 @@ import madkit.kernel.Madkit;
 /**
  * Shows how the default GUI mechanism works in MaDKit 5
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class DefaultGUIAgent extends Agent {

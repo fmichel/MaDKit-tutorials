@@ -33,8 +33,6 @@ import madkit.kernel.Madkit;
  * automatically called before activate. This method is the 
  * opportunity for the agent to modify the default settings of the frame.
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class OverridingDefaultSettings extends Agent {

@@ -18,7 +18,9 @@
  */
 package simulation.ex03;
 
+import madkit.gui.ConsoleAgent;
 import madkit.kernel.AbstractAgent;
+import madkit.kernel.Madkit;
 import madkit.kernel.Scheduler;
 import madkit.simulation.activator.GenericBehaviorActivator;
 import simulation.ex01.SimulatedAgent;
@@ -26,12 +28,10 @@ import simulation.ex01.SimulationModel;
 import simulation.ex02.SimulatedAgent02;
 
 /**
+ * 		#jws simulation.ex03.MyScheduler03 jws#
  * 
  * Let us have more fun by adding another activator
  * on another role to execute the other behavior of {@link SimulatedAgent03}
- * 
- * @author Fabien Michel
- * @version 0.9
  * 
  */
 @SuppressWarnings("serial")
@@ -47,7 +47,7 @@ public class MyScheduler03 extends Scheduler {
 		createGroup(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP);
 		
 		// 2 : launch some simulated agents
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 10; i++) {
 			launchAgent(new SimulatedAgent());
 			launchAgent(new SimulatedAgent02());
 			launchAgent(new SimulatedAgent03());
@@ -61,6 +61,8 @@ public class MyScheduler03 extends Scheduler {
 		activator2 = new GenericBehaviorActivator<AbstractAgent>(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ANOTHER_ROLE, "anotherBehavior");
 		addActivator(activator2);
 		
+		setDelay(300);
+
 		//4 : let us start the simulation automatically
 		setSimulationState(SimulationState.RUNNING);
 	}
@@ -70,7 +72,7 @@ public class MyScheduler03 extends Scheduler {
 	 * @param 
 	 */
 	public static void main(String[] args) {
-		executeThisAgent(args);
+		new Madkit("--launchAgents", MyScheduler03.class.getName()+",true;"+ConsoleAgent.class.getName());
 	}
 
 }

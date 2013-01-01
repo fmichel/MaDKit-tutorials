@@ -32,7 +32,7 @@ import communication.ex01.PingAgent;
  * 		#jws communication.ex02_targetingRoles.PingAgent2 jws#
  * 
  * Looking for someone, agents do not necessarily 
- * need to know who they talk to in terms a real ID.
+ * need to know who they talk to in terms of real ID.
  * Indeed, what matters in the artificial society is the roles
  * an agent take. Roles tells a lot about what the agent is capable of
  * and what it is supposed to do. So, agents can send messages to roles
@@ -41,8 +41,6 @@ import communication.ex01.PingAgent;
  * Here, the idea is: I need to contact a "ping agent", no matter who
  * receive the message. And it is possible to do so using what follows
  * 
- * @version 0.9
- * @author Fabien Michel
  */
 @SuppressWarnings("serial")
 public class PingAgent2 extends PingAgent {//So I do the same activate
@@ -62,7 +60,7 @@ public class PingAgent2 extends PingAgent {//So I do the same activate
 			pause((int) (Math.random()*1000+100));
 		}
 		
-		//just a way to purge the mailbox and log what I receive
+		//just a way to purge the mailbox and log what I received
 		while(nextMessage() != null);
 		pause(6000);
 	}

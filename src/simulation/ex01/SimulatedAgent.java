@@ -20,13 +20,6 @@ package simulation.ex01;
 
 import madkit.kernel.AbstractAgent;
 
-/**
- * @author Fabien Michel
- *
- * @version 0.9
- * 
- */
-@SuppressWarnings("serial")
 public class SimulatedAgent extends AbstractAgent {
 
 	@Override

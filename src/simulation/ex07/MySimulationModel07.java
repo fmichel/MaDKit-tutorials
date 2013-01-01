@@ -16,22 +16,32 @@
  * You should have received a copy of the GNU General Public License
  * along with MaDKit-tutorials. If not, see <http://www.gnu.org/licenses/>.
  */
-package simulation.ex02;
+package simulation.ex07;
 
+import simulation.ex06.MySimulationModel;
 import madkit.kernel.AbstractAgent;
-import simulation.ex01.SimulationModel;
 
-public class SimulatedAgent02 extends AbstractAgent {
+/**
+ * 		#jws simulation.ex07.MySimulationModel07 jws#
+ * 
+ *  It is time to display using an alternative representation
+ *  for the agents !!
+ *  
+ *  See {@link ImageViewer}
+ * 
+ */
+public class MySimulationModel07 extends MySimulationModel{
 
 	@Override
 	protected void activate() {
-		requestRole(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ROLE);
+		super.activate();
+		
+		// create the new viewer
+		ImageViewer viewer= new ImageViewer();
+		launchAgent(viewer,true);
 	}
 	
-	@SuppressWarnings("unused")
-	private void doIt() {
-		if(logger != null)
-			logger.info("I am doing it, but my way");
+	public static void main(String[] args) {
+		executeThisAgent(1,false); //no gui for me
 	}
-
 }
