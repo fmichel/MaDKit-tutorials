@@ -59,7 +59,7 @@ public class ReplierAgent extends PingAgent {//So I do the same activate
 				logger.info("I have to thank " + m.getSender());
 			sendReply(m, new StringMessage("thanks"));
 		}
-		pause(5000);
+		pause(10000);
 	}
 
 	@SuppressWarnings("unused")

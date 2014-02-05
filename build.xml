@@ -14,7 +14,7 @@
 		 Please, specify the MaDKit version which should be used.
 		 e.g. 5.0.0.15
          ================================= -->
-	<property name="madkit.version" value="5.0.0.21" />
+	<property name="madkit.version" value="5.0.3.2" />
 
 
 	<!-- using specific properties -->
@@ -26,7 +26,7 @@
 	<property name="images.dir" value="images" />
 
 	<!-- specific local user's properties -->
-	<property name="jdk.api.dir" value="/usr/share/doc/java-common/sun-jdk6/docs/api/" />
+	<property name="jdk.api.dir" value="/home/fab/ownCloud/dev/java/java-7/docs/api" />
 	<property name="mdk.api.dir" value="/home/fab/Ubuntu One/dev/madkit/MaDKit-${madkit.version}/docs/api" />
 
 
@@ -81,9 +81,9 @@
 	<!-- ================================= 
           target: release              
          ================================= -->
-	<target name="release" depends="clean,hello-world,gui,communication,simulation,copy-resources" description="description">
+	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,copy-resources" description="description">
 		<zip destfile="${release.dir}/${ant.project.name}-project.zip" level="9">
-			<fileset dir="." excludes=".gitignore,bin/**,lib/j2h.jar,build.xml,${release.dir}/**,**/simu_template/**,**/logging/**,*tutorials.html,images/**,*gz,*jar,.git/**,jnlp/template.jnlp" />
+			<fileset dir="." excludes=".gitignore,draft/**,bin/**,lib/j2h.jar,logging/**,build.xml,${release.dir}/**,**/simu_template/**,*tutorials.html,images/**,*gz,*jar,.git/**,jnlp/template.jnlp" />
 		</zip>
 		<copy tofile="${release.dir}/index.html" file="MaDKit-tutorials.html">
 			<filterchain>
@@ -121,6 +121,18 @@
 			<param name="tuto.src.dir" value="${src.dir}/helloworld" />
 			<param name="tuto.destination" value="hello_world" />
 			<param name="tuto.description" value="Getting started with MaDKit" />
+		</antcall>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: logging         
+         - - - - - - - - - - - - - - - - - -->
+	<target name="logging">
+		<antcall target="html">
+			<param name="tuto.name" value="Logging" />
+			<param name="tuto.src.dir" value="${src.dir}/logging" />
+			<param name="tuto.destination" value="logging" />
+			<param name="tuto.description" value="Using the agent's logging mechanism of MaDKit" />
 		</antcall>
 	</target>
 
@@ -178,8 +190,8 @@
 			<fileset dir="${tuto.src.dir}">
 				<include name="**/*.java" />
 			</fileset>
-			<javadoc localRef="${jdk.api.dir}" httpRef="http://docs.oracle.com/javase/6/docs/api" />
-			<javadoc localRef="${mdk.api.dir}" httpRef="http://www.madkit.net/api/madkit5" />
+			<javadoc localRef="${jdk.api.dir}" httpRef="http://docs.oracle.com/javase/7/docs/api/" />
+			<javadoc localRef="${mdk.api.dir}" httpRef="http://www.madkit.net/docs/api" />
 		</java2html>
 		<!-- inserting jws -->
 		<replace>
@@ -247,7 +259,7 @@
          ================================= -->
     <target name="test-jnlp" description="test jnlps">
 	<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
-		<arg value="simulation.ex07.MySimulationModel07.jnlp" />
+		<arg value="communication.ex05.Agent4.jnlp" />
 	</exec>
     </target>
 

@@ -81,7 +81,7 @@ public class PingAgent extends Agent {
 
 		//waiting other's message: The reception will be logged
 		waitNextMessage();
-		pause(6000);
+		pause(10000);
 	}
 
 	/**

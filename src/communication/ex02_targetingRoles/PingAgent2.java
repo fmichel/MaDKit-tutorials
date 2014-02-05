@@ -62,7 +62,7 @@ public class PingAgent2 extends PingAgent {//So I do the same activate
 		
 		//just a way to purge the mailbox and log what I received
 		while(nextMessage() != null);
-		pause(6000);
+		pause(10000);
 	}
 
 	@SuppressWarnings("unused")
