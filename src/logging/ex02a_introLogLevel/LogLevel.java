@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Fabien Michel
+ * Copyright 2011-2017 Fabien Michel
  * 
  * This file is part of MaDKit-tutorials.
  * 
@@ -23,46 +23,39 @@ import java.util.logging.Level;
 import madkit.kernel.Agent;
 
 /**
- * In the last example, two messages have not been displayed, not
- * because of a mistake in the code but because of their level. Indeed,
- * messages are displayed according to the current level of the logger.
- * So the logger acts as a filter on the message which are logged: For being 
- * logged the message's level has to be higher than the logger's level.
- * The idea is that you can have different setting for the logger so 
- * that you can have different output modes for your agent: 
- * From quiet (OFF) to verbose (ALL).
+ * In the last example, two messages have not been displayed, not because of a mistake in the code but because of their
+ * level. Indeed, messages are displayed according to the current level of the getLogger(). So the logger acts as a
+ * filter on the message which are logged: For being logged the message's level has to be higher than the logger's
+ * level. The idea is that you can have different setting for the logger so that you can have different output modes for
+ * your agent: From quiet (OFF) to verbose (ALL). The logger's level can be modified with the method
+ * getLogger().setLevel(). Here, we log a config message and an info message but the first one will not be displayed.
+ * Then the logger's level is changed so that 'config' messages will appear.
  * 
- * The logger's level can be modified with the method setLogLevel().
+ * #jws logging.ex02a_introLogLevel.LogLevel jws#
  * 
- * Here, we log a config message and an info message but the first one
- * will not be displayed. Then the logger's level is changed so that
- * 'config' messages will appear.
- * 
- * 			#jws logging.ex02a_introLogLevel.LogLevel jws#
  * 
  * 
  * @author Pascal Wager
  */
 
-@SuppressWarnings("serial")
 public class LogLevel extends Agent {
-	
-	@Override
-	protected void live() {
-		pause(2000);
-		logger.info("There are two log records but the second will not be displayed.\n");
-		logger.config("The logger's level is too low to display this message.");
-		pause(4000);
-		
-		setLogLevel(Level.CONFIG);
-		
-		logger.info("The logger's level has been set to "+Level.CONFIG);
-		pause(3000);
-		logger.config("So now the config messages can appear\non the screen!");
-		pause(8000);
-	}
 
-	public static void main(String[] args){
-		executeThisAgent();
-	}
+    @Override
+    protected void live() {
+	pause(2000);
+	getLogger().info("There are two log records but the second will not be displayed.\n");
+	getLogger().config("The logger's level is too low to display this message.");
+	pause(4000);
+
+	getLogger().setLevel(Level.CONFIG);
+
+	getLogger().info("The logger's level has been set to " + Level.CONFIG);
+	pause(3000);
+	getLogger().config("So now the config messages can appear\non the screen!");
+	pause(8000);
+    }
+
+    public static void main(String[] args) {
+	executeThisAgent();
+    }
 }

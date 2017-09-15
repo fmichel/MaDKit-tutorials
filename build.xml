@@ -14,11 +14,11 @@
 		 Please, specify the MaDKit version which should be used.
 		 e.g. 5.0.0.15
          ================================= -->
-	<property name="madkit.version" value="5.0.3.2" />
+	<property name="madkit.version" value="5.2" />
 
 
 	<!-- using specific properties -->
-	<property name="ftp.dir" value="tutorials" />
+	<property name="ftp.tuto.dir" value="madkit/tutorials" />
 	<property name="tuto.dir" value="html" />
 	<property name="release.dir" value="release" />
 	<property name="jnlps.dir" value="jnlp" />
@@ -26,8 +26,9 @@
 	<property name="images.dir" value="images" />
 
 	<!-- specific local user's properties -->
-	<property name="jdk.api.dir" value="/home/fab/ownCloud/dev/java/java-7/docs/api" />
-	<property name="mdk.api.dir" value="/home/fab/Ubuntu One/dev/madkit/MaDKit-${madkit.version}/docs/api" />
+	<property name="jdk.api.dir" value="/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" />
+	<property name="mdk.api.dir" value="/home/fab/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" />
+	<property name="server.info.dir" value="${user.home}/.mdk_keystore" />
 
 
 
@@ -44,7 +45,7 @@
 		 Here, you may set your project properties 
          ================================= -->
 	<property name="src.dir" value="src" />
-	<property name="version" value="1.0" />
+	<property name="version" value="1.3" />
 	<property name="author" value="Fabien Michel" />
 	<property name="description" value="The MaDKit tutorials: Illustrating MaDKit with simple source code examples " />
 	<property name="project.label" value="The MaDKit tutorials" />
@@ -64,7 +65,7 @@
 		 Here, you can specify the web directory in which you will 
 		 put the jar and the jnlp so that it will directly work without editing.
          ================================= -->
-	<property name="web.codebase" value="http://www.madkit.net/tutorials/jnlp" />
+	<property name="web.codebase" value="http://www.madkit.net/madkit/tutorials/jnlp" />
 
 	<!-- =================================
         ================================= -->
@@ -81,7 +82,7 @@
 	<!-- ================================= 
           target: release              
          ================================= -->
-	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,copy-resources" description="description">
+	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,conversation,copy-resources" description="description">
 		<zip destfile="${release.dir}/${ant.project.name}-project.zip" level="9">
 			<fileset dir="." excludes=".gitignore,draft/**,bin/**,lib/j2h.jar,logging/**,build.xml,${release.dir}/**,**/simu_template/**,*tutorials.html,images/**,*gz,*jar,.git/**,jnlp/template.jnlp" />
 		</zip>
@@ -116,7 +117,7 @@
           target: hello-world         
          - - - - - - - - - - - - - - - - - -->
 	<target name="hello-world">
-		<antcall target="html">
+		<antcall target="build_html">
 			<param name="tuto.name" value="Hello world" />
 			<param name="tuto.src.dir" value="${src.dir}/helloworld" />
 			<param name="tuto.destination" value="hello_world" />
@@ -128,7 +129,7 @@
           target: logging         
          - - - - - - - - - - - - - - - - - -->
 	<target name="logging">
-		<antcall target="html">
+		<antcall target="build_html">
 			<param name="tuto.name" value="Logging" />
 			<param name="tuto.src.dir" value="${src.dir}/logging" />
 			<param name="tuto.destination" value="logging" />
@@ -140,7 +141,7 @@
           target: communication         
          - - - - - - - - - - - - - - - - - -->
 	<target name="communication">
-		<antcall target="html">
+		<antcall target="build_html">
 			<param name="tuto.name" value="Communication" />
 			<param name="tuto.src.dir" value="${src.dir}/communication" />
 			<param name="tuto.destination" value="communication" />
@@ -152,7 +153,7 @@
           target: gui      
          - - - - - - - - - - - - - - - - - -->
 	<target name="gui">
-		<antcall target="html">
+		<antcall target="build_html">
 			<param name="tuto.name" value="GUI with MaDKit" />
 			<param name="tuto.src.dir" value="${src.dir}/gui" />
 			<param name="tuto.destination" value="gui" />
@@ -164,11 +165,23 @@
           target: simulation        
          - - - - - - - - - - - - - - - - - -->
 	<target name="simulation">
-		<antcall target="html">
+		<antcall target="build_html">
 			<param name="tuto.name" value="Simulation with MaDKit" />
 			<param name="tuto.src.dir" value="${src.dir}/simulation" />
 			<param name="tuto.destination" value="simulation" />
 			<param name="tuto.description" value="Basics for building simulators with MaDKit" />
+		</antcall>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: conversation        
+         - - - - - - - - - - - - - - - - - -->
+	<target name="conversation">
+		<antcall target="build_html">
+			<param name="tuto.name" value="Advanced communication" />
+			<param name="tuto.src.dir" value="${src.dir}/conversation" />
+			<param name="tuto.destination" value="conversation" />
+			<param name="tuto.description" value="Communication between agents using the replying mechanism" />
 		</antcall>
 	</target>
 
@@ -180,24 +193,24 @@
 	</target>
 
 
-	<target name="html">
+	<target name="build_html">
 		<property name="tuto.instruction" value="Examples are structured in packages explicitely named and ordered according to their complexity" />
 		<property name="html.break" value="\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;" />
-		<property name="tuto.download.html" value="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;a href='http://www.madkit.net/tutorials/MaDKit-tutorials-project.zip'&gt;&lt;img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/tutorials/html/download.png'&gt;&lt;/a&gt;" />
+		<property name="tuto.download.html" value="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;a href='http://www.madkit.net/madkit/tutorials/MaDKit-tutorials-project.zip'&gt;&lt;img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'&gt;&lt;/a&gt;" />
 
 
 		<java2html title="${tuto.name}" simple="no" tabsize="4" marginsize="2" header="true" footer="true" destination="${release.dir}/${tuto.dir}/${tuto.destination}">
 			<fileset dir="${tuto.src.dir}">
 				<include name="**/*.java" />
 			</fileset>
-			<javadoc localRef="${jdk.api.dir}" httpRef="http://docs.oracle.com/javase/7/docs/api/" />
-			<javadoc localRef="${mdk.api.dir}" httpRef="http://www.madkit.net/docs/api" />
+			<javadoc localRef="${jdk.api.dir}" httpRef="http://docs.oracle.com/javase/8/docs/api/" />
+			<javadoc localRef="${mdk.api.dir}" httpRef="http://www.madkit.net/madkit/api" />
 		</java2html>
 		<!-- inserting jws -->
 		<replace>
 			<fileset dir="${release.dir}/${tuto.dir}/${tuto.destination}" includes="**/*java.html" />
-			<replacefilter token="#jws " value="&lt;script&gt;deployJava.createWebStartLaunchButton('http://www.madkit.net/${ftp.dir}/${jnlps.dir}/" />
-			<replacefilter token=" jws#" value=".jnlp', '1.6.0');&lt;/script&gt;" />
+			<replacefilter token="#jws " value="&lt;script&gt;deployJava.createWebStartLaunchButton('http://www.madkit.net/${ftp.tuto.dir}/${jnlps.dir}/" />
+			<replacefilter token=" jws#" value=".jnlp', '1.8.0');&lt;/script&gt;" />
 			<replacefilter token=".java" value=".java  ${tuto.download.html}" />
 			<replacefilter token="/HEAD" value="script src='http://www.madkit.net/js/deployJava.js'&gt;&lt;/script&gt;&lt;/HEAD" />
 		</replace>
@@ -229,14 +242,26 @@
           target:       ftp-push        
          ================================= -->
 	<target name="ftp-push" depends="release, Java-web-start">
-		<property name="server" value="mdk.net" />
-		<property name="ftp.propfile" location="${user.home}/.mk_pass/${server}" />
-		<loadproperties srcFile="${ftp.propfile}" />
+		<loadproperties srcFile="${server.info.dir}/MDK.net" />
 		<copy file="${jnlp.jar.gz}" todir="${release.dir}/${jnlps.dir}" />
-		<echo>FTP upload of TUTO : target is ${ftp.server}</echo>
-		<ftp server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" action="put" remotedir="${ftp.dir}">
+		<echo>FTP upload of TUTO : target is ${ftp.server}/${ftp.tuto.dir}</echo>
+		<ftp server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" action="put" remotedir="${ftp.tuto.dir}">
 			<fileset dir="${release.dir}" />
 		</ftp>
+	</target>
+
+	<!-- ================================= 
+          target:       web-debug        
+         ================================= -->
+	<target name="web-debug" depends="clean,simulation,copy-resources, Java-web-start">
+		<loadproperties srcFile="${server.info.dir}/MDK.net" />
+		<echo>FTP upload of TUTO : target is ${ftp.server}/${ftp.tuto.dir}/${jnlps.dir}</echo>
+		<ftp server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" action="put" remotedir="${ftp.tuto.dir}/${jnlps.dir}">
+			<fileset file="${jnlp.jar.gz}" />
+		</ftp>
+		<exec executable="javaws" dir="${jnlps.dir}">
+			<arg value="simulation.ex06.debug.jnlp" />
+		</exec>
 	</target>
 
 	<!-- ================================= 

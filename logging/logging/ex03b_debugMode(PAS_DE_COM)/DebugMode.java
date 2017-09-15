@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Fabien Michel
+ * Copyright 2011-2017 Fabien Michel
  * 
  * This file is part of MaDKit-tutorials.
  * 
@@ -26,43 +26,47 @@ import madkit.kernel.Madkit;
 /**
  * 		
  * 
- * 			#jws logger.ex03b_debugMode.DebugMode jws#
+ * 			 
+ * 
+ * 		#jws getLogger().ex03b_debugMode.DebugMode jws# 
+ * 
+ * 
  * 
  * 
  * @author Pascal Wagner
  */
 
-@SuppressWarnings("serial")
+
 public class DebugMode extends Agent {
 	
 	@Override
 	protected void activate() {
-		logger.info("Look for the debug mode, activate it and look at the result.");
-		logger.info("This option is in the default GUI of the agent.");
+		getLogger().info("Look for the debug mode, activate it and look at the result.");
+		getLogger().info("This option is in the default GUI of the agent.");
 	}
 
 	@Override
 	protected void live() {
 		int i = 10;
-		Level l = logger.getLevel();
+		Level l = getLogger().getLevel();
 		while((l != Level.ALL) && (i>=0)){
 			pause(1000);
-			logger.info("You have "+ i +" seconds");
-			l = logger.getLevel();
+			getLogger().info("You have "+ i +" seconds");
+			l = getLogger().getLevel();
 			i--;
 		}
 	}
 
 	@Override
 	protected void end() {
-		Level l = logger.getLevel();
+		Level l = getLogger().getLevel();
 		if (l != Level.ALL){
-			logger.info("You are too slow !");
+			getLogger().info("You are too slow !");
 			pause(2000);
 		}
 		else {
-			logger.info("GOOD JOB !\n");
-			logger.info("The debug mode permits to display all messages having\n" +
+			getLogger().info("GOOD JOB !\n");
+			getLogger().info("The debug mode permits to display all messages having\n" +
 						"            any level of all agents !\n");
 			pause(10000);
 			launchAgent(new logging.ex03b_debugMode.LaunchAfter(), true);
