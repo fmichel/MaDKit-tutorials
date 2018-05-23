@@ -54,7 +54,7 @@ public class PingAgent extends Agent {
 	    pause(1000);
 	}
 
-	getLogger().info("\n\tI found someone !!!\n" + other + "\n\n");
+	getLogger().info("\n\tI found someone !!\n" + other + "\n\n");
 	pause(1000);
 
 	// sending the message to other: Success will be logged
