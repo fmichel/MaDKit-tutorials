@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!--
- This is ant build.xml file for building MaDKit 5 tutorials
+ This is ant build.xml file for building MaDKit 6 tutorials
  Author: Fabien Michel
  Version: 1.0
  -->
@@ -18,17 +18,17 @@
 
 
 	<!-- using specific properties -->
-	<property name="ftp.tuto.dir" value="madkit/tutorials" /> <!-- dir created ? -->
-	<property name="tuto.dir" value="html" /> <!-- dir created ? -->
-	<property name="release.dir" value="release" /> <!-- dir created -->
+	<property name="ftp.tuto.dir" value="madkit/tutorials" />
+	<property name="tuto.dir" value="html" />
+	<property name="release.dir" value="release" />
 	<property name="jnlps.dir" value="jnlp" />
 	<property name="lib.dir" value="lib" />
 	<property name="images.dir" value="images" />
 
 	<!-- specific local user's properties -->
-	<property name="jdk.api.dir" value="/usr/lib/jvm/java-8-openjdk-amd64/jre" /> <!-- where is it ? -->
-	<property name="mdk.api.dir" value="/home/eclipse-workspace/MaDKit-jar/docs/api" /> <!-- definitly wrong -->
-	<property name="server.info.dir" value="${user.home}/.mdk_keystore" /> <!-- keystore needed, check it out with FM -->
+	<property name="jdk.api.dir" value="/home/eclipse-workspace/javadoc/" /> <!-- where is it ? | on master : "/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" -->
+	<property name="mdk.api.dir" value="/home/eclipse-workspace/MaDKit-jar/docs/api" /> <!-- maybe right... | on master : "/home/fab/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" -->
+	<property name="server.info.dir" value="${user.home}/.mdk_keystore" /> <!-- keystore needed, check it out -->
 
 
 
@@ -82,7 +82,7 @@
 	<!-- =================================
           target: release
          ================================= -->
-	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,conversation,copy-resources" description="description">
+	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,conversation,exception,copy-resources" description="description">
 		<zip destfile="${release.dir}/${ant.project.name}-project.zip" level="9">
 			<fileset dir="." excludes=".gitignore,draft/**,bin/**,lib/j2h.jar,logging/**,build.xml,${release.dir}/**,**/simu_template/**,*tutorials.html,images/**,*gz,*jar,.git/**,jnlp/template.jnlp" />
 		</zip>
@@ -182,6 +182,18 @@
 			<param name="tuto.src.dir" value="${src.dir}/conversation" />
 			<param name="tuto.destination" value="conversation" />
 			<param name="tuto.description" value="Communication between agents using the replying mechanism" />
+		</antcall>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - -
+          target: exception
+         - - - - - - - - - - - - - - - - - -->
+	<target name="exception">
+		<antcall target="build_html">
+			<param name="tuto.name" value="Exceptions in MaDKit" />
+			<param name="tuto.src.dir" value="${src.dir}/exception" />
+			<param name="tuto.destination" value="exception" />
+			<param name="tuto.description" value="Basics for handling exceptions in MaDkit" />
 		</antcall>
 	</target>
 
