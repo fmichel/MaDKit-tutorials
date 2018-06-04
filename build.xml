@@ -26,8 +26,8 @@
 	<property name="images.dir" value="images" />
 
 	<!-- specific local user's properties -->
-	<property name="jdk.api.dir" value="/home/eclipse-workspace/javadoc/" /> <!-- where is it ? | on master : "/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" -->
-	<property name="mdk.api.dir" value="/home/eclipse-workspace/MaDKit-jar/docs/api" /> <!-- maybe right... | on master : "/home/fab/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" -->
+	<property name="jdk.api.dir" value="/home/eclipse/jdk1.8.0_171/" /> <!-- where is it ? | on master : "/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" -->
+	<property name="mdk.api.dir" value="/home/eclipse-workspace/MaDKit-jar/docs/api/" /> <!-- maybe right... | on master : "/home/fab/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" -->
 	<property name="server.info.dir" value="${user.home}/.mdk_keystore" /> <!-- keystore needed, check it out -->
 
 
