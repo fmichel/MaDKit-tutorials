@@ -58,7 +58,10 @@ public class AgentLeavingTwiceAGroup extends Agent {
 		
 
 /**
- * Launch an exception.ex4_CGRReturnCodes.AgentLeavingTwiceAGroup.
+ * Launch ten an exception.ex4_CGRReturnCodes.AgentLeavingTwiceAGroup.
+ * All the agent's second AbstractAgent#leaveGroup() method will return an ReturnCode.NOT_IN_GROUP
+ * except the last one that will display an ReturnCode.NOT_COMMUNITY.
+ * 
  * @param argss
  */
     public static void main(String[] argss) {
