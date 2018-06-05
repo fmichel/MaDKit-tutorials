@@ -17,12 +17,12 @@
 
 package exception.ex4_CGRReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 
 /**
  * In this example we will see the AbstractAgent.ReturnCode.NOT_COMMUNITY. This code indicates that a community does not exist.
  */
-public class AgentInNilCommunity extends Agent{
+public class _1_NotCommunity extends TutorialAgent{
 
 	/**
 	 * When activate, the exception.ex4_CGRReturnCodes.AgentInNilCommunity will request a role while he has not create any group.

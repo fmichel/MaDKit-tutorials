@@ -9,9 +9,9 @@
  * #jws exception.ex1_exceptions.CrashingAgentWithMadkit jws#
  */
 
-package exception.ex1_exceptions;
+package exception.ex1_exceptions.ex12_madkitCodingError;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
@@ -23,7 +23,7 @@ import madkit.kernel.Message;
  * In this example we will see a madkit.kernel.KernelException being thrown while we try to
  * send a message with an agent without launching him.
  */
-public class CrashingAgentWithMadkit extends Agent {
+public class _1_CrashingAgent extends TutorialAgent {
 	
 	/**
 	 * This will cause the throw of a KernelException.
@@ -31,7 +31,8 @@ public class CrashingAgentWithMadkit extends Agent {
 	 * @param argss
 	 */
 	public static void main(String[] argss) {
-		CrashingAgentWithMadkit agent = new CrashingAgentWithMadkit();
+		/* no gui, c/p error message expected */
+		_1_CrashingAgent agent = new _1_CrashingAgent();
 		agent.sendMessage("myCommunity", "myGroup", "myRole", new Message());
 	}
 

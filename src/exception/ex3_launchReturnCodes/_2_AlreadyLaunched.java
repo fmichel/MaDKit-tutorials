@@ -17,13 +17,12 @@
 
 package exception.ex3_launchReturnCodes;
 
-import madkit.kernel.Agent;
-
+import exception.TutorialAgent;
 /**
  * In this example we will see the AbstractAgent.ReturnCode.ALREADY_LAUNCHED. This code is returned
  * when we try to launch an agent which is already launched.
  */
-public class AgentLaunchingTwice extends Agent{
+public class _2_AlreadyLaunched extends TutorialAgent{
 
 	/**
 	 * On activation, the agent will try to launched himself whereas.... He is already launched.. 

@@ -17,13 +17,13 @@
 
 package exception.ex4_CGRReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 
 /**
  * In this example we will see the AbstractAgent.ReturnCode.ALREADY_GROUP. This code is returned when using
  * AbstractAgent.createGroup(String, String, boolean, Gatekeeper) and that a group already exists.
  */
-public class AgentCreatingExistingGroup extends Agent {
+public class _2_AlreadyGroup extends TutorialAgent {
 
 	/**
 	 * This exception.ex4_CGRReturnCodes.AgentCreatingExistingGroup does not do anything in particular : he is just creating a group.

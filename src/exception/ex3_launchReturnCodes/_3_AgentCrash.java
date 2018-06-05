@@ -17,13 +17,14 @@
 
 package exception.ex3_launchReturnCodes;
 
-import madkit.kernel.AbstractAgent;
+import exception.TutorialAgent;
+import exception.ex1_exceptions.ex11_javaException.CrashingAgent;
 
 /**
  * In this example we will see the AbstractAgent.ReturnCode.AGENT_CRASH. This code is returned by launch primitives
  * when the launched agent crashes in AbstractAgent#activate().
  */
-public class AgentLaunchingCrashingAgent extends AbstractAgent{
+public class _3_AgentCrash extends TutorialAgent{
 
 	/** On activation the agent will try to launch an agent that systematically crashes.. 
 	 * Thus messages saying that the AbstractAgent.launchAgent() has failed will be displayed before our own message.

@@ -17,7 +17,7 @@
 
 package exception.ex4_CGRReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 import madkit.kernel.Madkit;
 import madkit.kernel.Message;
 
@@ -29,7 +29,7 @@ import madkit.kernel.Message;
  * to have. Thus an error will occur. Here the exception.ex4_CGRReturnCodes.AgentSendingToUnknownRole needs only to exist so that we can send him
  * a message.
  */
-public class AgentMistakingItsRole extends Agent{
+public class _7_RoleNotHandled extends TutorialAgent{
 
 	/**
 	 * We activate the exception.ex4_CGRReturnCodes.AgentMistakingItsRole in the same virtual society than the
@@ -64,6 +64,6 @@ public class AgentMistakingItsRole extends Agent{
 	 * @param argss
 	 */
     public static void main(String[] argss){
-    	new Madkit("--launchAgents", AgentMistakingItsRole.class.getName() + ",false,1;", AgentSendingToUnknownRole.class.getName() + ",false,1;");
+    	new Madkit("--launchAgents", _7_RoleNotHandled.class.getName() + ",false,1;", _5_NotRole.class.getName() + ",false,1;");
     }
 }

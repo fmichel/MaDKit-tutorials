@@ -16,14 +16,14 @@
  */
 package exception.ex5_communicationReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
  * In this example we will see the AbstractAgent.ReturnCode.NO_RECIPIENT_FOUND. This code is returned by send primitives
  * when the targeted CGR location does not exist nor contain any agent.
  */
-public class LonelyAgent extends Agent {
+public class _2_NoRecipientFound extends TutorialAgent {
 
 	/**
 	 * Puts the agent in a virtual and lonely society.

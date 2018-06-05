@@ -9,11 +9,11 @@
  * #jws exception.ex1_exceptions.CrashingAgentWithJava jws#
  */
 
-package exception.ex1_exceptions;
+package exception.ex1_exceptions.ex11_javaException;
 
 import java.util.logging.Level;
 
-import madkit.kernel.AbstractAgent;
+import exception.TutorialAgent;
 
 /**
  * In this example you will understand that as MaDKit is a java library, you will have to deal
@@ -21,13 +21,14 @@ import madkit.kernel.AbstractAgent;
  * 
  * Thus as in any java-based program, you will have to be rigorous :)
  */
-public class CrashingAgentWithJava extends AbstractAgent{
+public class CrashingAgent extends TutorialAgent{
 	
 	/* On activation, we want the agent to cause a NullPointer Exception. */
 	@Override
 	protected void activate() {
 		getLogger().setLevel(Level.FINEST); /* So that the agent's life cycle is traced. See the logging tutorial for more information. */
 		
+		pause(2000);
 		/* Now we cause an exception */
 		Object o = null;
 		o.toString();

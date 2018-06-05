@@ -17,7 +17,7 @@
 
 package exception.ex5_communicationReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
@@ -25,7 +25,7 @@ import madkit.kernel.Message;
  * a message which has not been received from another agent, e.g. newly created or sent directly by an object using
  * AbstractAgent.receiveMessage(Message).
  */
-public class AgentCantReply extends Agent{
+public class _1_CantReply extends TutorialAgent{
 
 	/**
 	 * During his life, the agent will try to answer to a new message which is not possible as this message

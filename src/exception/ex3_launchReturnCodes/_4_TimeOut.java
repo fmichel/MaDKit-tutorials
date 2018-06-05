@@ -15,14 +15,14 @@
 
 package exception.ex3_launchReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 
 /**
 * We are creating an agent that pause before the end of his activation. We will use him in exception.ex3_launchReturnCodes.TimedOutScheduler.
 * 
 * #jws exception.ex3_launchReturnCodes.TimedOutScheduler jws#
 */
-public class TimedOutAgent extends Agent {
+public class _4_TimeOut extends TutorialAgent {
 
 	/**
 	 * We are creating an Agent that only aims to be launch by our TimedOutScheduler.
@@ -32,6 +32,24 @@ public class TimedOutAgent extends Agent {
 		createGroupIfAbsent("myTimedOutCommunity", "myTimedOutGroup");
 		requestRole("myTimedOutCommunity", "myTimedOutGroup", "myTimedOutRole");
 		pause(1000);	
-	}	
+	}
 	
+	@Override
+	protected void live() {
+		int timeBeforeTimeOut = 1;	/* an absurd duration */
+		ReturnCode returnLaunch;
+		returnLaunch = launchAgent(new TutorialAgent(), timeBeforeTimeOut, false); /* while minuting we launch a TimedOutAgent */
+		if(returnLaunch == ReturnCode.TIMEOUT) { /* if the time is over */
+			getLogger().info("\n\t Time out :( \n\t The duration of TimedOutAgent's activate() method is greater.\t\n");
+			/* Do what you need to do in this case */
+		}
+	}
+	
+	/**
+	 * Launch an exception.ex3_launchReturnCodes.TimedOutScheduler
+	 * @param argss
+	 */
+		public static void main(String[] argss) {
+			executeThisAgent(1,true);
+		}
 }

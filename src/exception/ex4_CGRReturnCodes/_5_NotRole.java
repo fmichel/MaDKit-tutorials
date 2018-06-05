@@ -17,13 +17,13 @@
 
 package exception.ex4_CGRReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
  * In this example we will see the AbstractAgent.ReturnCode.NOT_ROLE. This code indicates that a role does not exist.
  */
-public class AgentSendingToUnknownRole extends Agent{
+public class _5_NotRole extends TutorialAgent{
 	
 	/**
 	 *  We are initializing our exception.ex4_CGRReturnCodes.AgentSendingToUnknownRole in its virtual society.

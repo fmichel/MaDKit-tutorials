@@ -9,9 +9,10 @@
  * #jws exception.ex1_exceptions.AgentThatLaunchesCrashingAgents jws#
  */
 
-package exception.ex1_exceptions;
+package exception.ex1_exceptions.ex12_madkitCodingError;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
+import exception.ex1_exceptions.ex11_javaException.CrashingAgent;
 import madkit.kernel.Madkit;
 
 /**
@@ -22,15 +23,15 @@ import madkit.kernel.Madkit;
  * In this example we will see how are other agents impacted if one of them crash.
  * We will see this while launching a new kernel.
  */
-public class AgentThatLaunchesCrashingAgents extends Agent{
+public class _2_LaunchingNewCrashingAgentsWithMadkit{
 
 	/**
-	 * Launches three Agent and one exception.ex1_exceptions.CrashingAgentWithJava. As expected, the last agent will crash
+	 * Launches one TutorialAgent and one exception.ex1_exceptions.CrashingAgentWithJava. As expected, the last agent will crash
 	 * but without having any impact on the life of the three other agents. 
 	 * 
 	 * @param argss
 	 */
 	public static void main(String[] argss) {
-		new Madkit("--launchAgents", Agent.class.getName() + ",false,3;", CrashingAgentWithJava.class.getName() + ",false,1;");
+		new Madkit("--launchAgents", TutorialAgent.class.getName() + ",true,1;", CrashingAgent.class.getName() + ",true,1;");
 	}
 }

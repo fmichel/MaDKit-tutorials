@@ -17,7 +17,7 @@
 
 package exception.ex4_CGRReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 
@@ -25,7 +25,7 @@ import madkit.kernel.Message;
  * In this example we will see the AbstractAgent.ReturnCode.NOT_GROUP. This code indicates that a group does not exist.
  */
 
-public class AgentInNilGroup extends Agent {
+public class _3_NotGroup extends TutorialAgent {
 
 	/**
 	 *  We are initializing our AgentInNilGroup in its virtual society.

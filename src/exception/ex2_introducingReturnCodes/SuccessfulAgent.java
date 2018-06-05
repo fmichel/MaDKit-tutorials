@@ -6,9 +6,9 @@
  * In this part of the tutorial we will see what MadKit provides to improve our programs' reliability : AbstractAgent.ReturnCode
  */
 
-package exception.ex2_usingReturnCodes;
+package exception.ex2_introducingReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 
 /**
  * In this example we will show you how you can ensure your programs with methods' return code.
@@ -18,7 +18,7 @@ import madkit.kernel.Agent;
  * In further exercises we will present you these codes : what they mean and example of how you can use them.
  * 
  * 
- *  #jws exception.ex2_usingReturnCodes.SuccessfulAgent jws#
+ *  #jws exception.ex2_introducingReturnCodes.SuccessfulAgent jws#
  * 
  * 
  * In this example we will show you how you can use these codes. We will start with the easiest :
@@ -26,7 +26,7 @@ import madkit.kernel.Agent;
  * As you could have guessed, this code mean that the called method has not encountered any problem.
  */
 
-public class SuccessfulAgent extends Agent {
+public class SuccessfulAgent extends TutorialAgent {
 	
 	/** We will call the method Agent#createGroup(...) and check if something went wrong thanks to
 	 *  the AbstractAgent.ReturnCode.SUCCESS.

@@ -26,8 +26,8 @@
 	<property name="images.dir" value="images" />
 
 	<!-- specific local user's properties -->
-	<property name="jdk.api.dir" value="/home/eclipse/jdk1.8.0_171/" /> <!-- where is it ? | on master : "/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" -->
-	<property name="mdk.api.dir" value="/home/eclipse-workspace/MaDKit-jar/docs/api/" /> <!-- maybe right... | on master : "/home/fab/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" -->
+	<property name="jdk.api.dir" value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/docs/api" /> <!-- where is it ? | on master : "/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" -->
+	<property name="mdk.api.dir" value="/home/amapai/eclipse-workspace/MaDKit-jar/docs/api" /> <!-- maybe right... | on master : "/home/fab/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" -->
 	<property name="server.info.dir" value="${user.home}/.mdk_keystore" /> <!-- keystore needed, check it out -->
 
 
@@ -82,7 +82,7 @@
 	<!-- =================================
           target: release
          ================================= -->
-	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,conversation,exception,copy-resources" description="description">
+	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,exception,copy-resources" description="description">
 		<zip destfile="${release.dir}/${ant.project.name}-project.zip" level="9">
 			<fileset dir="." excludes=".gitignore,draft/**,bin/**,lib/j2h.jar,logging/**,build.xml,${release.dir}/**,**/simu_template/**,*tutorials.html,images/**,*gz,*jar,.git/**,jnlp/template.jnlp" />
 		</zip>

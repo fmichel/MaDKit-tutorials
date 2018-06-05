@@ -17,7 +17,7 @@
 
 package exception.ex5_communicationReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 import madkit.kernel.AgentAddress;
 import madkit.kernel.Message;
 
@@ -25,7 +25,7 @@ import madkit.kernel.Message;
  * In this example we will see the AbstractAgent.ReturnCode.INVALID_AGENT_ADDRESS. This code is returned by send primitives when the targeted
  * agent address does not exist anymore, i.e. the related agent has leaved the corresponding role.
  */
-public class AgentChangingHisAddress extends Agent{
+public class _3_InvalidAgentAddress extends TutorialAgent{
 	
 	/**
 	 *  We are initializing our exception.ex5_communicationReturnCodes.AgentChangingHisAddress

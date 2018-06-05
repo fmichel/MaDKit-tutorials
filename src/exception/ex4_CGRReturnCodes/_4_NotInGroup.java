@@ -17,12 +17,12 @@
 
 package exception.ex4_CGRReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 
 /**
  * In this example we will see the AbstractAgent.ReturnCode.NOT_IN_GROUP. This code indicates that an agent is not in a group.
  */
-public class AgentLeavingTwiceAGroup extends Agent {
+public class _4_NotInGroup extends TutorialAgent {
 
 	/**
 	 *  We are initializing our exception.ex4_CGRReturnCodes.AgentLeavingTwiceAGroup 

@@ -17,14 +17,14 @@
 
 package exception.ex3_launchReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 
 /**
  * In this example we will see the AbstractAgent.ReturnCode.NOT_YET_LAUNCHED. This code is returned by
  * kill primitives when the targeted agent has not been launched priorly.
  */
 
-public class AgentKillingNotLaunchedAgent extends Agent {
+public class _1_NotYetLaunched extends TutorialAgent {
 
 	/**
 	 * During his life, the agent will try to kill an Agent that is not launched. 
@@ -33,7 +33,7 @@ public class AgentKillingNotLaunchedAgent extends Agent {
 	@Override
 	protected void live() {
 		ReturnCode returnKill;
-		returnKill = killAgent(new Agent()); /* we kill a new Agent otherwise an agent who has not been launched */
+		returnKill = killAgent(new TutorialAgent()); /* we kill a new Agent otherwise an agent who has not been launched */
 		if(returnKill == ReturnCode.NOT_YET_LAUNCHED) {
 			getLogger().info("\n\t I can not kill another agent if he is not launched \t\n");	/* getLogger() allows a message to be displayed in the console or the frame of an agent. See logging tutorials. */
 		}

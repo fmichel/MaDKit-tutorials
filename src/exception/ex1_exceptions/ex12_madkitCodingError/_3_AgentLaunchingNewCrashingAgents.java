@@ -8,11 +8,12 @@
  * 
  * #jws exception.ex1_exceptions.AgentThatLaunchesManuallyCrashingAgents jws#
  */
-package exception.ex1_exceptions;
+package exception.ex1_exceptions.ex12_madkitCodingError;
 
 import java.util.logging.Level;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
+import exception.ex1_exceptions.ex11_javaException.CrashingAgent;
 
 /**
  * Good failure's managing is extremely important in multi-agent system.
@@ -22,7 +23,7 @@ import madkit.kernel.Agent;
  * In this example we will see how are other agents impacted if one of them crash.
  * We will see this while using the AbstractAgent#launchAgent(AbstractAgent) method.
  */
-public class AgentThatLaunchesManuallyCrashingAgents extends Agent{
+public class _3_AgentLaunchingNewCrashingAgents extends TutorialAgent{
 	
 	/**
 	 * On activation we will just set the log level on FINEST so that
@@ -39,12 +40,11 @@ public class AgentThatLaunchesManuallyCrashingAgents extends Agent{
 	 */
 	@Override
 	protected void live() {
-		//first launch some Agent
-		for(int counter = 0 ; counter < 3 ; counter++) {
-			launchAgent(new Agent());
-		}
+		//first launch a TutorialAgent
+		launchAgent(new TutorialAgent());
+
 		//then launch a CrashingAgent
-		launchAgent(new CrashingAgentWithJava());
+		launchAgent(new CrashingAgent());
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public class AgentThatLaunchesManuallyCrashingAgents extends Agent{
 	 * @param argss
 	 */
 	public static void main(String[] argss) {
-		executeThisAgent(1, false);
+		executeThisAgent(1, true);
 	}
 }
 

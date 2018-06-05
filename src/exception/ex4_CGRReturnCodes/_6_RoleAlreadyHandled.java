@@ -17,13 +17,13 @@
 
 package exception.ex4_CGRReturnCodes;
 
-import madkit.kernel.Agent;
+import exception.TutorialAgent;
 
 /**
  * In this example we will see the AbstractAgent.ReturnCode.ROLE_ALREADY_HANDLED. This code is returned when the agent already has the
  * requested role.
  * */
-public class AgentAskingSameRole extends Agent{
+public class _6_RoleAlreadyHandled extends TutorialAgent{
 	
 	/**
 	 * Our AgentAskingSameRole will deliberately ask twice the same role : when activate and in his lifetime.
