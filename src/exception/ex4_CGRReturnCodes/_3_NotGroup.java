@@ -45,12 +45,9 @@ public class _3_NotGroup extends TutorialAgent {
 	@Override
 	protected void live(){
 		ReturnCode returnSend;
-		returnSend = sendMessage("myCommunity", "nilGroup", "myRole", new Message()); /* Note that the group mentioned is not "myGroup" */ 
-		if(returnSend == ReturnCode.NOT_GROUP) { /* If the group does not exist */
-			getLogger().info("\t\n The sendMessage() has failed : this group does not exist. \t\n");
-			/* Do what you need to do in this case */
-		}
-				
+		returnSend = sendMessage("myCommunity", "nilGroup", "myRole", new Message()); 
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I can not send a message to a group that does not exist. \t\n");
+					
 		/* Then you can keep doing you want with this agent */
 	}
 		

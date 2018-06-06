@@ -39,10 +39,7 @@ public class _4_TimeOut extends TutorialAgent {
 		int timeBeforeTimeOut = 1;	/* an absurd duration */
 		ReturnCode returnLaunch;
 		returnLaunch = launchAgent(new TutorialAgent(), timeBeforeTimeOut, false); /* while minuting we launch a TimedOutAgent */
-		if(returnLaunch == ReturnCode.TIMEOUT) { /* if the time is over */
-			getLogger().info("\n\t Time out :( \n\t The duration of TimedOutAgent's activate() method is greater.\t\n");
-			/* Do what you need to do in this case */
-		}
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnLaunch.toString() + "\" .\n\tIt means that Time out :( \n\t The duration of TimedOutAgent's activate() method is greater.\t\n");
 	}
 	
 	/**

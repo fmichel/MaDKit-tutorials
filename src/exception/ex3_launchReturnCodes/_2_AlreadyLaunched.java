@@ -32,10 +32,7 @@ public class _2_AlreadyLaunched extends TutorialAgent{
 	protected void activate() {
 		ReturnCode returnLaunch;
 		returnLaunch = launchAgent(this);
-		if(returnLaunch == ReturnCode.ALREADY_LAUNCHED) { /* If the agent had been already launched... */
-			getLogger().info("\n\t I have already been launched : I can not be launched twice \n\t");
-			/* Do what you need to do in this case */
-		}
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnLaunch.toString() + "\" .\n\tIt means that I have already been launched : I can not be launched twice \n\t");
 		/* Then you can keep doing you want with this agent */
 	}
 	

@@ -50,8 +50,7 @@ public class _4_NotInGroup extends TutorialAgent {
 		leaveGroup("myCommunity", "myGroup");
 		returnLeave = leaveGroup("myCommunity", "myGroup");
 		if(returnLeave == ReturnCode.NOT_IN_GROUP) {
-			getLogger().info("\n\t I already have left this group, I can not leave a group twice. \t\n");
-			/* Do what you need to do in this case */
+			getLogger().info("\n\tThe ReturnCode value is : \"" + returnLeave.toString() + "\" .\n\tIt means that I already have left this group, I can not leave a group twice. \t\n");
 		}
 		/* Then you can keep doing you want with this agent */
 	}
@@ -65,6 +64,6 @@ public class _4_NotInGroup extends TutorialAgent {
  * @param argss
  */
     public static void main(String[] argss) {
-    	executeThisAgent(10,false);
+    	executeThisAgent(3,true);
     }
 }

@@ -34,6 +34,12 @@ public class CrashingAgent extends TutorialAgent{
 		o.toString();
 	}
 	
+	@Override
+	protected void end() {
+		getLogger().info("\n\tI have crashed. :(\t\n");
+		super.end();
+	}
+	
 	/**
 	 * We launch an exception.ex1_exceptions.CrashingAgentWithJava. We are willing to
 	 * cause a NullPointer exception : the agent terminate.

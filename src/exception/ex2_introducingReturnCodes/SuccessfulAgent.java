@@ -35,10 +35,7 @@ public class SuccessfulAgent extends TutorialAgent {
 	protected void activate() {
 		ReturnCode returnCreate;
 		returnCreate = createGroup("mySuccessfulCommunity", "mySuccessfulGroup");
-		if(returnCreate != ReturnCode.SUCCESS) {		/* test if the method ended successfully */
-			/* Now you can do what is needed if the method is not successful */
-		}
-		getLogger().info("\n\t" + returnCreate.toString() +"\t\n");
+		getLogger().info("\n\t The ReturnCode value is : \"" + returnCreate.toString() +"\" .\n\tIt means that the method ended successfully.\t\n");
 		
 	}
 	/**

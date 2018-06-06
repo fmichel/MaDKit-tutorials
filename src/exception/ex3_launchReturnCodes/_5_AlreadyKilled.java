@@ -31,18 +31,12 @@ public class _5_AlreadyKilled extends TutorialAgent {
 	@Override
 	protected void live() {
 		TutorialAgent agentToKill = new TutorialAgent();
-		launchAgent(agentToKill); /* Otherwise we will get an "NOT_YET_LAUNCHED" returnCode*/
+		launchAgent(agentToKill,true); /* Otherwise we will get an "NOT_YET_LAUNCHED" returnCode*/
 		
 		ReturnCode returnKill;
 		killAgent(agentToKill);	/* We could have get the AbstractAgent.ReturnCode of this call but it is not what interests us here. */
-		
 		returnKill= killAgent(agentToKill); /* We store the AbstractAgent.ReturnCode of the second call to Agent#killAgent(Agent) in returnKill. */ 
-		//getLogger().info(returnKill.toString());
-		if(returnKill == ReturnCode.ALREADY_KILLED) { /* If the agent had been already killed. */
-			getLogger().info("\n\t I have already killed this agent. I can not killed the same person twice. \t\n");
-			/* Do what you need to do in this case */
-		}
-		
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnKill.toString() + "\" .\n\tIt means that I have already killed this agent. I can not killed the same person twice. \t\n");		
 		/* Then you can keep doing you want with this agent */
 	}
 	

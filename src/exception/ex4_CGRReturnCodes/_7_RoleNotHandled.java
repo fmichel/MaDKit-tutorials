@@ -50,12 +50,9 @@ public class _7_RoleNotHandled extends TutorialAgent{
 	@Override
 	protected void live(){
 		ReturnCode returnSend;
-		returnSend = sendMessageWithRole("myCommunity", "myGroup", "myRole", new Message(), "myRole");
-		if(returnSend == ReturnCode.ROLE_NOT_HANDLED) { 
-			getLogger().info("\t\n You do not have this role ... \t\n");
-			/* Do what you need to do in this case */
-		}
-			
+		returnSend = sendMessageWithRole("myCommunity", "myGroup", "myRole", new Message(), "myRole"); 
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I do not have this role. \t\n");
+					
 		/* Then you can keep doing you want with this agent */
 	}
 	
@@ -64,6 +61,6 @@ public class _7_RoleNotHandled extends TutorialAgent{
 	 * @param argss
 	 */
     public static void main(String[] argss){
-    	new Madkit("--launchAgents", _7_RoleNotHandled.class.getName() + ",false,1;", _5_NotRole.class.getName() + ",false,1;");
+    	new Madkit("--launchAgents", _7_RoleNotHandled.class.getName() + ",true,1;", _5_NotRole.class.getName() + ",true,1;");
     }
 }

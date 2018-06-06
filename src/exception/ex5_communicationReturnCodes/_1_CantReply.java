@@ -36,11 +36,8 @@ public class _1_CantReply extends TutorialAgent{
 		ReturnCode returnSend;
 		returnSend= sendReply(new Message(), new Message()); /* the agent try to answer a new message */
 		
-		if(returnSend == ReturnCode.CANT_REPLY) {
-			getLogger().info("\n\t I can not reply to nothing \n\t");
-			/* Do what you need to do in this case */
-		}
-		
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I can not reply to a message that was not send before. \n\t");
+				
 		/* Then you can keep doing you want with this agent */
 	}
 	

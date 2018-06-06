@@ -33,11 +33,9 @@ public class _2_AlreadyGroup extends TutorialAgent {
 	@Override
 	protected void activate() {
 		ReturnCode returnCreate ;
+		createGroup("myCommunity", "myGroup");
 		returnCreate = createGroup("myCommunity", "myGroup");
-		if(returnCreate == ReturnCode.ALREADY_GROUP) {	/* Test whether or not the group already exists. */
-			getLogger().info("\n\t This group exists already. \t\n");
-			/* Do what you need to do in this case */
-		}
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnCreate.toString() + "\" .\n\tIt means that the group I wanted to create already exists. \t\n");
 		pause(500);
 		/* Then you can keep doing you want with this agent */
 	}
@@ -47,6 +45,6 @@ public class _2_AlreadyGroup extends TutorialAgent {
 	 * @param argss
 	 */
 	public static void main(String[] argss) {
-		executeThisAgent(2, false);
+		executeThisAgent(1, true);
 	}
 }

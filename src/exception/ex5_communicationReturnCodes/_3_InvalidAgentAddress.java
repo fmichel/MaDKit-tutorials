@@ -56,10 +56,8 @@ public class _3_InvalidAgentAddress extends TutorialAgent{
 		// try to send a message with the wrong obtained address.
 		ReturnCode returnSend;
 		returnSend = sendMessage(interlocutor, new Message());
-		if(returnSend == ReturnCode.INVALID_AGENT_ADDRESS) {	/* if the address is wrong */
-			getLogger().warning("\n\t The given address does not match with anyone. I can not communicate. :( \t\n");
-			/* Do what you need to do in this case */
-		}
+		getLogger().warning("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that the given address does not match with anyone. \n\tI can not communicate. :( \t\n");
+
 		/* Then you can keep doing you want with this agent */
 	}
 		

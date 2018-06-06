@@ -46,10 +46,7 @@ public class _5_NotRole extends TutorialAgent{
 	protected void live(){
 		ReturnCode returnSend;
 		returnSend = sendMessage("myCommunity", "myGroup", "notExistingRole", new Message()); /* Note that the role is different then "myRole" */
-		if(returnSend == ReturnCode.NOT_ROLE) {  /* If the role does not exist */
-			getLogger().info("\t\n The sendMessage() has failed : this role does not exist. \t\n");
-			/* Do what you need to do in this case */
-		}
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I can not send a message to an agent whose role does not exist. \t\n");
 			
 		/* Then you can keep doing you want with this agent */
 	}

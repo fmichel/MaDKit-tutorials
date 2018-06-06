@@ -31,14 +31,9 @@ public class _3_AgentCrash extends TutorialAgent{
 	 */
 	@Override
 	protected void activate() {
-		ReturnCode returnLaunching;
-		returnLaunching = launchAgent(new CrashingAgent()); /* The new CrashingAgent() will crash */ 
-		
-		if(returnLaunching == ReturnCode.AGENT_CRASH) { /* If the agent launched crashes */
-			getLogger().info("\n\t The agent I wanted to launched has crashed... \n\t");
-			/* Do what you need to do in this case */
-		}
-		
+		ReturnCode returnLaunch;
+		returnLaunch = launchAgent(new CrashingAgent(),true); /* The new CrashingAgent() will crash */ 
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnLaunch.toString() + "\" .\n\tIt means that the agent I wanted to launched has crashed... \n\t");
 		/* Then you can keep doing you want with this agent */
 	}
 	

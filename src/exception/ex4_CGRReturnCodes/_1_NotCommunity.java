@@ -35,10 +35,7 @@ public class _1_NotCommunity extends TutorialAgent{
 	protected void activate() {
 		ReturnCode returnRequest;
 		returnRequest = requestRole("myCommunity", "myGroup", "myRole");
-		if(returnRequest == ReturnCode.NOT_COMMUNITY) { /* If the community does not exist */
-			getLogger().info("\n\t The requestRole() has failed : you can not request a role in a community that does not exist. \t\n");
-			/* Do what you need to do in this case */
-		}
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnRequest.toString() + "\" .\n\tIt means that I can not request a role in a community that does not exist. \t\n");
 			
 		/* Then you can keep doing you want with this agent */
 	}

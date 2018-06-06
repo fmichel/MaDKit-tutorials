@@ -42,10 +42,8 @@ public class _2_NoRecipientFound extends TutorialAgent {
 	protected void live() {
 		ReturnCode returnSend;
 		returnSend = sendMessage("myLonelyCommunity", "myLonelyGroup", "myLonelyRole", new Message());
-		if(returnSend == ReturnCode.NO_RECIPIENT_FOUND) { /* If I can not find anyone to send message to */
-			getLogger().info("\n\t I am the only agent of the group... \n\t");
-			/* Do what you need to do in this case */
-		}			
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I am the only agent of the group... \n\t");
+					
 		/* Then you can keep doing you want with this agent */
 	}
 

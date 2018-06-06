@@ -42,10 +42,8 @@ public class _6_RoleAlreadyHandled extends TutorialAgent{
 		 */
 		ReturnCode returnRequest;
 		returnRequest = requestRole("myCommunity", "myGroup", "myRole");
-		if(returnRequest == ReturnCode.ROLE_ALREADY_HANDLED) { /* If I already have this role */
-			getLogger().info("\t\n I already have this role \t\n");
-			/* Do what you need to do in this case */
-		}
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnRequest.toString() + "\" .\n\tIt means that I already have this role \t\n");
+		
 			
 		/* Then you can keep doing you want with this agent */
 	}

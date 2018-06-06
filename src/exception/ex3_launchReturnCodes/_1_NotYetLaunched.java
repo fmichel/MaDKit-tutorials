@@ -34,9 +34,7 @@ public class _1_NotYetLaunched extends TutorialAgent {
 	protected void live() {
 		ReturnCode returnKill;
 		returnKill = killAgent(new TutorialAgent()); /* we kill a new Agent otherwise an agent who has not been launched */
-		if(returnKill == ReturnCode.NOT_YET_LAUNCHED) {
-			getLogger().info("\n\t I can not kill another agent if he is not launched \t\n");	/* getLogger() allows a message to be displayed in the console or the frame of an agent. See logging tutorials. */
-		}
+		getLogger().info("\n\tThe ReturnCode value is : \"" + returnKill.toString() + "\" .\n\tIt means that I can not kill another agent if he is not launched. \t\n");	/* getLogger() allows a message to be displayed in the console or the frame of an agent. See logging tutorials. */
 	}
 	
 	/**

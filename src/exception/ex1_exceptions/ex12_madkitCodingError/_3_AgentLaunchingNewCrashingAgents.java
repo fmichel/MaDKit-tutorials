@@ -41,10 +41,10 @@ public class _3_AgentLaunchingNewCrashingAgents extends TutorialAgent{
 	@Override
 	protected void live() {
 		//first launch a TutorialAgent
-		launchAgent(new TutorialAgent());
+		launchAgent(new TutorialAgent(),true);
 
 		//then launch a CrashingAgent
-		launchAgent(new CrashingAgent());
+		launchAgent(new CrashingAgent(),true);
 	}
 	
 	/**
