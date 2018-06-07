@@ -2,19 +2,21 @@ package exception;
 
 import madkit.kernel.Agent;
 
+/**
+ * We create a new agent for this tutorial. 
+ */
+
 public class TutorialAgent extends Agent{
 
 	@Override
 	protected void activate() {
 		createGroupIfAbsent("myCommunity", "myGroup");
 		requestRole("myCommunity", "myGroup", "myRole");
-		pause(500);
+		pause(200);
 	}
 
 	@Override
-	protected void live() {
-		//getLogger().talk("\n\t Hello ! I am a TutorialAgent. I exist only \n\t for the exception's tutorial. \t\n");
-	}
+	protected void live() {}
 
 	@Override
 	protected void end() {

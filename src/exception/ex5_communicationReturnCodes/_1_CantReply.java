@@ -1,30 +1,19 @@
-/**
- * READ ME
- * This tutorial shows how MaDKit is dealing with exceptions. We strongly recommend that you do not start with this tutorial.
- * Please check previous tutorials at : http://www.madkit.net/madkit/tutorials/ . 
- * 
- * In this part of the tutorial we will see what MadKit provides to improve our programs' reliability : AbstractAgent.ReturnCode
- * Now that you know what a AbstractAgent.ReturnCode is (see tutorial exception.ex2_usingReturnCodes), we will
- * see that we can divide them into three main parts
- *    ReturnCode for launch ; 
- *    ReturnCode for CGR ; 
- *    ReturnCode for communication.
- *    
- * This set of examples is about communication's return codes.
- * 
- * #jws exception.ex5_communicationReturnCodes.AgentCantReply jws#
- */
-
 package exception.ex5_communicationReturnCodes;
 
 import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
- * In this example we will see the AbstractAgent.ReturnCode.CANT_REPLY. This code is returned when an agent tries to reply to
- * a message which has not been received from another agent, e.g. newly created or sent directly by an object using
+ * This example is about the ReturnCode concerning agent's communication : CANT_REPLY.
+ * This code is returned when an agent tries to reply to a message which has not been
+ * received from another agent, e.g. newly created or sent directly by an object using
  * AbstractAgent.receiveMessage(Message).
+ * 
+ * 
+ * #jws exception.ex5_communicationReturnCodes._1_CantReply jws#
+ * 
  */
+
 public class _1_CantReply extends TutorialAgent{
 
 	/**
@@ -34,15 +23,15 @@ public class _1_CantReply extends TutorialAgent{
 	@Override
 	protected void live() {
 		ReturnCode returnSend;
-		returnSend= sendReply(new Message(), new Message()); /* the agent try to answer a new message */
-		
+		returnSend = sendReply(new Message(), new Message()); /* the agent try to answer a new message */
 		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I can not reply to a message that was not send before. \n\t");
-				
-		/* Then you can keep doing you want with this agent */
+		
+		/* Then you do what you want with this agent */
 	}
 	
 	/**
-	 * Launch an exception.ex5_communicationReturnCodes.AgentCantReply.
+	 * Launch a _1_CantReply agent.
+	 * 
 	 * @param argss
 	 */
 	public static void main(String[] argss) {

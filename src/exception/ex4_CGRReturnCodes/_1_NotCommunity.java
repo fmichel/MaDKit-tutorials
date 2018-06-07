@@ -1,31 +1,20 @@
-/**
- * READ ME
- * This tutorial shows how MaDKit is dealing with exceptions. We strongly recommend that you do not start with this tutorial.
- * Please check previous tutorials at : http://www.madkit.net/madkit/tutorials/ . 
- * 
- * In this part of the tutorial we will see what MadKit provides to improve our programs' reliability : AbstractAgent.ReturnCode
- * Now that you know what a AbstractAgent.ReturnCode is (see tutorial exception.ex2_usingReturnCodes), we will
- * see that we can divide them into three main parts
- *    ReturnCode for launch ; 
- *    ReturnCode for CGR ; 
- *    ReturnCode for communication.
- *    
- * This set of examples is about CGR's return codes.
- * 
- * #jws exception.ex4_CGRReturnCodes.AgentInNilCommunity jws#
- */
-
 package exception.ex4_CGRReturnCodes;
 
 import exception.TutorialAgent;
 
 /**
- * In this example we will see the AbstractAgent.ReturnCode.NOT_COMMUNITY. This code indicates that a community does not exist.
+ * This example is about the ReturnCode concerning agent's CGR : NOT_COMMUNITY.
+ * This code indicates that a community does not exist.
+ * 
+ * 
+ * #jws exception.ex4_CGRReturnCodes._1_NotCommunity jws#
+ * 
  */
+
 public class _1_NotCommunity extends TutorialAgent{
 
 	/**
-	 * When activate, the exception.ex4_CGRReturnCodes.AgentInNilCommunity will request a role while he has not create any group.
+	 * When activate, the _1_NotCommunity agent will request a role while he has not create any group.
 	 * Thus the community is not set and does not exist for MaDKit. Our agent will display a message explaining why the method
 	 * has failed.
 	 * 
@@ -37,11 +26,12 @@ public class _1_NotCommunity extends TutorialAgent{
 		returnRequest = requestRole("myCommunity", "myGroup", "myRole");
 		getLogger().info("\n\tThe ReturnCode value is : \"" + returnRequest.toString() + "\" .\n\tIt means that I can not request a role in a community that does not exist. \t\n");
 			
-		/* Then you can keep doing you want with this agent */
+		/* Then you do what you want with this agent */
 	}
 	
 	/**
-	 * Launch an exception.ex4_CGRReturnCodes.AgentInNilCommunity.
+	 * Launch a _1_NotCommunity agent.
+	 * 
 	 * @param argss
 	 */
 	public static void main(String[] argss) {

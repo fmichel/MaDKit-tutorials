@@ -1,12 +1,12 @@
 /**
  * READ ME
- * This tutorial shows how MaDKit is dealing with failure. We strongly recommend that you do not start with this tutorial.
- * Please check previous tutorials at : http://www.madkit.net/madkit/tutorials/ . 
+ * This tutorial shows how MaDKit is dealing with exceptions. We advise you to not start with this tutorial.
+ * You can check previous tutorials at : http://www.madkit.net/madkit/tutorials/ . Among those tutorials, you
+ * may use here notions aborded in logging and communication tutorials.
  * 
- * In this part of the tutorial we will see what kind of exceptions may be encountered while developing
- * an application with MaDKit.
+ * In this tutorial we will see what kind of exceptions may be encountered while developing
+ * an application with MaDKit and what MadKit provides to improve our programs' reliability : AbstractAgent.ReturnCode.
  * 
- * #jws exception.ex1_exceptions.CrashingAgentWithJava jws#
  */
 
 package exception.ex1_exceptions.ex11_javaException;
@@ -16,22 +16,36 @@ import java.util.logging.Level;
 import exception.TutorialAgent;
 
 /**
- * In this example you will understand that as MaDKit is a java library, you will have to deal
- * with the same errors and exception that you may encountered with java.
+ * In this example you will understand that as MaDKit is a Java library, you will have to deal
+ * with the same errors and exception that you may have encountered with Java.
  * 
- * Thus as in any java-based program, you will have to be rigorous :)
+ * Thus as in any Java-based program, you will have to be rigorous :)
+ * 
+ * 
+ *  #jws exception.ex1_exceptions.ex11_JavaException.CrashingAgent jws#
+ * 
  */
+
 public class CrashingAgent extends TutorialAgent{
 	
-	/* On activation, we want the agent to cause a NullPointer Exception. */
+	/*
+	 * On activation, we want the agent to throw a NullPointer Exception.
+	 */
 	@Override
 	protected void activate() {
 		getLogger().setLevel(Level.FINEST); /* So that the agent's life cycle is traced. See the logging tutorial for more information. */
 		
 		pause(2000);
-		/* Now we cause an exception */
-		Object o = null;
-		o.toString();
+		/* Now we throw an exception */
+		throw new NullPointerException();
+	}
+	
+	/*
+	 * As the agent throw a NullPointerException, this method should not be called.
+	 */
+	@Override
+	protected void live() {
+		getLogger().info("\n\tI have crashed, this message shall not be displayed.\t\n");
 	}
 	
 	@Override
@@ -41,12 +55,22 @@ public class CrashingAgent extends TutorialAgent{
 	}
 	
 	/**
-	 * We launch an exception.ex1_exceptions.CrashingAgentWithJava. We are willing to
-	 * cause a NullPointer exception : the agent terminate.
+	 * We launch a CrashingAgent that throws a NullPointer exception 
+	 * and the agent terminates.
 	 * 
 	 * @param argss
 	 */
 	public static void main(String[] argss) {
 		executeThisAgent();
+		/**
+		 * The previous line of code shall cause this error :
+		 * 
+		 * [CrashingAgent-2] SEVERE : -*-ACTIVATE BUG*-*
+		 * ** java.lang.NullPointerException
+		 *			at exception.ex1_exceptions.ex11_javaException.CrashingAgent.activate(CrashingAgent.java:40)
+		 *
+		 * Followed by the agent's life cycle.
+		 * 
+		 */
 	}
 }

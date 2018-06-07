@@ -1,31 +1,20 @@
-/**
- * READ ME
- * This tutorial shows how MaDKit is dealing with exceptions. We strongly recommend that you do not start with this tutorial.
- * Please check previous tutorials at : http://www.madkit.net/madkit/tutorials/ . 
- * 
- * In this part of the tutorial we will see what MadKit provides to improve our programs' reliability : AbstractAgent.ReturnCode
- * Now that you know what a AbstractAgent.ReturnCode is (see tutorial exception.ex2_usingReturnCodes), we will
- * see that we can divide them into three main parts
- *    ReturnCode for launch ; 
- *    ReturnCode for CGR ; 
- *    ReturnCode for communication.
- *    
- * This set of examples is about CGR's return codes.
- * 
- * #jws exception.ex4_CGRReturnCodes.AgentLeavingTwiceAGroup jws#
- */
-
 package exception.ex4_CGRReturnCodes;
 
 import exception.TutorialAgent;
 
 /**
- * In this example we will see the AbstractAgent.ReturnCode.NOT_IN_GROUP. This code indicates that an agent is not in a group.
+ * This example is about the ReturnCode concerning agent's CGR : NOT_IN_GROUP.
+ * This code indicates that an agent is not in a group.
+ *
+ * 
+ * #jws exception.ex4_CGRReturnCodes._4_NotInGroup jws#
+ * 
  */
+
 public class _4_NotInGroup extends TutorialAgent {
 
 	/**
-	 *  We are initializing our exception.ex4_CGRReturnCodes.AgentLeavingTwiceAGroup 
+	 *  We are initializing our _4_NotInGroup agent
 	 *  in its virtual society.
 	 */
 	@Override
@@ -36,12 +25,12 @@ public class _4_NotInGroup extends TutorialAgent {
 	}
 	
 	/**
-	 * The exception.ex4_CGRReturnCodes.AgentLeavingTwiceAGroup while deliberately leave the
-	 * same group twice. At the first call of the method he will leave the group. At the second
-	 * the method failed as he is not in this group and a warning is displayed.
+	 * The _4_NotInGroup while deliberately leave the same group twice.
+	 * At the first call of the method he will leave the group. At the second
+	 * the method will fail as he is not in this group and a warning is displayed.
 	 * 
 	 * While checking the returnCode we have decided to display a message explaining why the
-	 * method had failed.A message informing that the sendMessage() has failed will also be
+	 * method has failed. A message informing that the sendMessage() has failed will also be
 	 * displayed as a warning.
 	 */
 	@Override
@@ -52,14 +41,15 @@ public class _4_NotInGroup extends TutorialAgent {
 		if(returnLeave == ReturnCode.NOT_IN_GROUP) {
 			getLogger().info("\n\tThe ReturnCode value is : \"" + returnLeave.toString() + "\" .\n\tIt means that I already have left this group, I can not leave a group twice. \t\n");
 		}
-		/* Then you can keep doing you want with this agent */
+		
+		/* Then you do what you want with this agent */
 	}
 		
 
 /**
- * Launch ten an exception.ex4_CGRReturnCodes.AgentLeavingTwiceAGroup.
- * All the agent's second AbstractAgent#leaveGroup() method will return an ReturnCode.NOT_IN_GROUP
- * except the last one that will display an ReturnCode.NOT_COMMUNITY.
+ * Launch three _4_NotInGroup agents.
+ * All the agent's second leaveGroup() call will return a ReturnCode.NOT_IN_GROUP
+ * except the last one that will return a ReturnCode.NOT_COMMUNITY.
  * 
  * @param argss
  */
