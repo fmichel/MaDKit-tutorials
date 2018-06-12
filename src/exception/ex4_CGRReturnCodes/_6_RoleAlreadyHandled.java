@@ -3,8 +3,8 @@ package exception.ex4_CGRReturnCodes;
 import exception.TutorialAgent;
 
 /**
- * This example is about the ReturnCode concerning agent's CGR : ROLE_ALREADY_HANDLED.
- * This code is returned when the agent already has the
+ * This class exemplifies: ROLE_ALREADY_HANDLED.
+ * This ReturnCode is returned when the agent already has the
  * requested role.
  * 
  * 
@@ -15,13 +15,13 @@ import exception.TutorialAgent;
 public class _6_RoleAlreadyHandled extends TutorialAgent{
 	
 	/**
-	 * Our _6_RoleAlreadyHandled agent will deliberately ask twice the same role : when activate and in his lifetime.
+	 * Our _6_RoleAlreadyHandled agent will deliberately ask twice the same role: when activate and in his lifetime.
 	 */
 	@Override
 	protected void activate() {
 		createGroupIfAbsent("myCommunity", "myGroup");
-		ReturnCode returnRequest1 = requestRole("myCommunity", "myGroup", "myRole");
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnRequest1.toString() + "\" .\n\tI have the role I wanted !\t\n");
+		ReturnCode requestFeedback1 = requestRole("myCommunity", "myGroup", "myRole");
+		getLogger().info("\n\tThe ReturnCode is: \"" + requestFeedback1.toString() + "\" .\n\tI have the role I wanted !\t\n");
 	}
 	
 	@Override
@@ -31,9 +31,9 @@ public class _6_RoleAlreadyHandled extends TutorialAgent{
 		 * so he asks for it again... Thus a message saying that the requestRole()
 		 * has failed will be displayed.
 		 */
-		ReturnCode returnRequest2;
-		returnRequest2 = requestRole("myCommunity", "myGroup", "myRole");
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnRequest2.toString() + "\" .\n\tIt means that I already have this role \t\n");
+		ReturnCode requestFeedback2;
+		requestFeedback2 = requestRole("myCommunity", "myGroup", "myRole");
+		getLogger().info("\n\tThe ReturnCode is: \"" + requestFeedback2.toString() + "\" .\n\tIt means that I already have this role \t\n");
 		
 		/* Then you do what you want with this agent */
 	}

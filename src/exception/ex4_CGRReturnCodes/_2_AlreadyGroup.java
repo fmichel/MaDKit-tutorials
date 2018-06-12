@@ -3,8 +3,8 @@ package exception.ex4_CGRReturnCodes;
 import exception.TutorialAgent;
 
 /**
- * This example is about the ReturnCode concerning agent's CGR : ALREADY_GROUP.
- * This code is returned when using createGroup(String, String, boolean, Gatekeeper)
+ * This class exemplifies: ALREADY_GROUP.
+ * This ReturnCode is returned when using createGroup(String, String, boolean, Gatekeeper)
  * and that a group already exists.
  * 
  * 
@@ -15,16 +15,16 @@ import exception.TutorialAgent;
 public class _2_AlreadyGroup extends TutorialAgent {
 
 	/**
-	 * This _2_AlreadyGroup agent does nothing in particular : he is just creating a group.
+	 * This _2_AlreadyGroup agent does nothing in particular: he is just creating a group.
 	 * What is interesting here is that the agent will display a message saying if the group has
 	 * already been created.
 	 */
 	@Override
 	protected void activate() {
-		ReturnCode returnCreate ;
+		ReturnCode createFeedback ;
 		createGroup("myCommunity", "myGroup");
-		returnCreate = createGroup("myCommunity", "myGroup");
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnCreate.toString() + "\" .\n\tIt means that the group I wanted to create already exists. \t\n");
+		createFeedback = createGroup("myCommunity", "myGroup");
+		getLogger().info("\n\tThe ReturnCode is: \"" + createFeedback.toString() + "\" .\n\tIt means that the group I wanted to create already exists. \t\n");
 		pause(500);
 		
 		/* Then you do what you want with this agent */

@@ -3,8 +3,8 @@ package exception.ex3_launchReturnCodes;
 import exception.TutorialAgent;
 
 /**
- * This example is about the ReturnCode concerning agent's launching : TIMEOUT.
- * This code is returned by various timed primitives of the Agent class.
+ * This class exemplifies: TIMEOUT.
+ * This ReturnCode is returned by various timed primitives of the Agent class.
  * 
  * 
  * #jws exception.ex3_launchReturnCodes._4_TimeOut jws#
@@ -32,9 +32,9 @@ public class _4_TimeOut extends TutorialAgent {
 		 * Here as we are giving him 0 micro second to finish it. Thus it will return this code.
 		 */
 		
-		ReturnCode returnLaunch;
-		returnLaunch = launchAgent(new TutorialAgent(), timeBeforeTimeOut, false); /* while minuting we launch a TutorialAgent. */
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnLaunch.toString() + "\" .\n\tIt means that the activate method did not ended in time. \t\n");
+		ReturnCode launchFeedback;
+		launchFeedback = launchAgent(new TutorialAgent(), timeBeforeTimeOut, false); /* while minuting we launch a TutorialAgent. */
+		getLogger().info("\n\tThe ReturnCode is: \"" + launchFeedback.toString() + "\" .\n\tIt means that the activate method did not ended in time. \t\n");
 	}
 	
 	/**

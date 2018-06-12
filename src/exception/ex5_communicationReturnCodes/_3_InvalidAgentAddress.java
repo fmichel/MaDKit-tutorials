@@ -5,8 +5,8 @@ import madkit.kernel.AgentAddress;
 import madkit.kernel.Message;
 
 /**
- * This example is about the ReturnCode concerning agent's communication : INVALID_AGENT_ADDRESS.
- * This code is returned by send primitives when the targeted agent address does not exist anymore, i.e.
+ * This class exemplifies: INVALID_AGENT_ADDRESS.
+ * This ReturnCode is returned by send primitives when the targeted agent address does not exist anymore, i.e.
  * the related agent has leaved the corresponding role.
  * 
  * 
@@ -43,9 +43,9 @@ public class _3_InvalidAgentAddress extends TutorialAgent{
 		leaveRole("myCommunity", "myGroup", "myRole");		
 		
 		// try to send a message with the wrong obtained address.
-		ReturnCode returnSend;
-		returnSend = sendMessage(interlocutor, new Message());
-		getLogger().warning("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that the given address does not match with anyone. \n\tI can not communicate. :( \t\n");
+		ReturnCode sendFeedback;
+		sendFeedback = sendMessage(interlocutor, new Message());
+		getLogger().warning("\n\tThe ReturnCode is: \"" + sendFeedback.toString() + "\" .\n\tIt means that the given address does not match with anyone. \n\tI can not communicate. :( \t\n");
 
 		/* Then you do what you want with this agent */
 	}

@@ -5,8 +5,8 @@ import madkit.kernel.Madkit;
 import madkit.kernel.Message;
 
 /**
- * This example is about the ReturnCode concerning agent's CGR : ROLE_NOT_HANDLED.
- * This code is returned when the agent does not have the role
+ * This class exemplifies: ROLE_NOT_HANDLED.
+ * This ReturnCode is returned when the agent does not have the role
  * needed if he wants to do a particular action.
  * 
  * 
@@ -18,7 +18,7 @@ public class _7_RoleNotHandled extends TutorialAgent{
 
 	/**
 	 * We activate the _7_RoleNotHandled agent in the same virtual society than the
-	 * TutorialAgent. Nevertheless, our agent will have a different role : myDifferentRole.
+	 * TutorialAgent. Nevertheless, our agent will have a different role: myDifferentRole.
 	 */
 	@Override
 	protected void activate() {
@@ -34,9 +34,9 @@ public class _7_RoleNotHandled extends TutorialAgent{
 	 */
 	@Override
 	protected void live(){
-		ReturnCode returnSend;
-		returnSend = sendMessageWithRole("myCommunity", "myGroup", "myRole", new Message(), "myRole"); 
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I do not have this role. \t\n");
+		ReturnCode sendFeedback;
+		sendFeedback = sendMessageWithRole("myCommunity", "myGroup", "myRole", new Message(), "myRole"); 
+		getLogger().info("\n\tThe ReturnCode is: \"" + sendFeedback.toString() + "\" .\n\tIt means that I do not have this role. \t\n");
 					
 		/* Then you do what you want with this agent */
 	}

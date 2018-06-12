@@ -3,7 +3,7 @@ package exception.ex3_launchReturnCodes;
 import exception.TutorialAgent;
 
 /**
- * This example is about the ReturnCode concerning agent's launching : NOT_YET_LAUNCHED. This code is returned by
+ * This class exemplifies: NOT_YET_LAUNCHED. This ReturnCode is returned by
  * kill primitives when the targeted agent has not been launched priorly.
  * 
  * 
@@ -19,9 +19,9 @@ public class _1_NotYetLaunched extends TutorialAgent {
 	 */
 	@Override
 	protected void live() {
-		ReturnCode returnKill;
-		returnKill = killAgent(new TutorialAgent()); /* we kill a new TutorialAgent otherwise an agent who has not been launched */
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnKill.toString() + "\" .\n\tIt means that I can not kill another agent if he is not launched. \t\n");
+		ReturnCode killFeedback;
+		killFeedback = killAgent(new TutorialAgent()); /* we kill a new TutorialAgent otherwise an agent who has not been launched */
+		getLogger().info("\n\tThe ReturnCode is: \"" + killFeedback.toString() + "\" .\n\tIt means that I can not kill another agent if he is not launched. \t\n");
 	}
 	
 	/**

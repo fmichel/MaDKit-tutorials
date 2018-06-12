@@ -4,8 +4,8 @@ import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
- * This example is about the ReturnCode concerning agent's communication : CANT_REPLY.
- * This code is returned when an agent tries to reply to a message which has not been
+ * This class exemplifies: CANT_REPLY.
+ * This ReturnCode is returned when an agent tries to reply to a message which has not been
  * received from another agent, e.g. newly created or sent directly by an object using
  * AbstractAgent.receiveMessage(Message).
  * 
@@ -22,9 +22,9 @@ public class _1_CantReply extends TutorialAgent{
 	 */
 	@Override
 	protected void live() {
-		ReturnCode returnSend;
-		returnSend = sendReply(new Message(), new Message()); /* the agent try to answer a new message */
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I can not reply to a message that was not send before. \n\t");
+		ReturnCode sendFeedback;
+		sendFeedback = sendReply(new Message(), new Message()); /* the agent try to answer a new message */
+		getLogger().info("\n\tThe ReturnCode is: \"" + sendFeedback.toString() + "\" .\n\tIt means that I can not reply to a message that was not send before. \n\t");
 		
 		/* Then you do what you want with this agent */
 	}

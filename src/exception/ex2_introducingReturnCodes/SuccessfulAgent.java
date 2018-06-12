@@ -8,12 +8,12 @@ import exception.TutorialAgent;
  * You can find the different constants in the documentation (http://www.madkit.net/madkit/repository/MaDKit-5.2/docs/api/)
  * 
  * In further exercises we will present you these codes : what they mean and example of how you can use them.
- * We can class them into three categories :
+ * We can class them into three categories:
  *    ReturnCode for launch ; 
  *    ReturnCode for Community-Group-Role (CGR) ; 
  *    ReturnCode for communication.
  *  
- * In this example we will show you how you can use these codes by starting with the easiest :
+ * In this example we will show you how you can use these codes by starting with the easiest:
  * AbstractCode.ReturnCode.SUCCESS. As you could have guessed, this code means that the called method
  * has not encountered any problem.
  * 
@@ -29,9 +29,9 @@ public class SuccessfulAgent extends TutorialAgent {
 	 */
 	@Override
 	protected void activate() {
-		ReturnCode returnCreate;
-		returnCreate = createGroup("mySuccessfulCommunity", "mySuccessfulGroup");
-		getLogger().info("\n\t The ReturnCode value is : \"" + returnCreate.toString() +"\" .\n\tIt means that the method ended successfully.\t\n");
+		ReturnCode createFeedback;
+		createFeedback = createGroup("mySuccessfulCommunity", "mySuccessfulGroup");
+		getLogger().info("\n\t The ReturnCode is: \"" + createFeedback.toString() +"\" .\n\tIt means that the method ended successfully.\t\n");
 		
 	}
 	/**

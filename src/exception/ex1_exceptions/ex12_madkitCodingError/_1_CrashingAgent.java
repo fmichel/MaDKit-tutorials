@@ -4,7 +4,7 @@ import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
- * In addition of Java's exceptions, there is another category of failure that may happen with MaDKit :
+ * In addition of Java's exceptions, there is another category of failure that may happen with MaDKit:
  * madkit.kernel.KernelException. KernelException is a class of MaDKit that extends RuntimeException. 
  * Actually it is an exception thrown to indicate that the agent is trying to use a method
  * while not launched or already dead.
@@ -29,8 +29,7 @@ public class _1_CrashingAgent extends TutorialAgent {
 		agent.sendMessage("myCommunity", "myGroup", "myRole", new Message());
 		
 		/**
-		 * The previous line of code shall cause this error :
-		 * "INSERTERRORHERE"
+		 * The previous line of code shall cause this error:
 		 * 
 		 * madkit.kernel.KernelException: _1_CrashingAgent-0 (NOT_LAUNCHED) must be launched to use this method 
 		 *			at madkit.kernel.AbstractAgent.sendMessage(Unknown Source)

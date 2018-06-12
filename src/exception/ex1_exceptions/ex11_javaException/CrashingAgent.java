@@ -1,11 +1,11 @@
 /**
  * READ ME
  * This tutorial shows how MaDKit is dealing with exceptions. We advise you to not start with this tutorial.
- * You can check previous tutorials at : http://www.madkit.net/madkit/tutorials/ . Among those tutorials, you
- * may use here notions aborded in logging and communication tutorials.
+ * You can check previous tutorials at: http://www.madkit.net/madkit/tutorials/ . Among those tutorials, you
+ * may use here notions seen in logging and communication tutorials.
  * 
  * In this tutorial we will see what kind of exceptions may be encountered while developing
- * an application with MaDKit and what MadKit provides to improve our programs' reliability : AbstractAgent.ReturnCode.
+ * an application with MaDKit and what MadKit provides to improve our programs' reliability: AbstractAgent.ReturnCode.
  * 
  */
 
@@ -63,7 +63,7 @@ public class CrashingAgent extends TutorialAgent{
 	public static void main(String[] argss) {
 		executeThisAgent();
 		/**
-		 * The previous line of code shall cause this error :
+		 * The previous line of code shall cause this error:
 		 * 
 		 * [CrashingAgent-2] SEVERE : -*-ACTIVATE BUG*-*
 		 * ** java.lang.NullPointerException

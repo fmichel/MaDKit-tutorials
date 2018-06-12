@@ -4,8 +4,8 @@ import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
- * This example is about the ReturnCode concerning agent's communication : NO_RECIPIENT_FOUND.
- * This code is returned by send primitives when the targeted CGR location does not exist nor contain any agent.
+ * This class exemplifies: NO_RECIPIENT_FOUND.
+ * This ReturnCode is returned by send primitives when the targeted CGR location does not exist nor contain any agent.
  * 
  * 
  * #jws exception.ex5_communicationReturnCodes._2_NoRecipientFound jws#
@@ -29,9 +29,9 @@ public class _2_NoRecipientFound extends TutorialAgent {
 	 */
 	@Override
 	protected void live() {
-		ReturnCode returnSend;
-		returnSend = sendMessage("myLonelyCommunity", "myLonelyGroup", "myLonelyRole", new Message());
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I am the only agent of the group... \n\t");
+		ReturnCode sendFeedback;
+		sendFeedback = sendMessage("myLonelyCommunity", "myLonelyGroup", "myLonelyRole", new Message());
+		getLogger().info("\n\tThe ReturnCode is: \"" + sendFeedback.toString() + "\" .\n\tIt means that I am the only agent of the group... \n\t");
 					
 		/* Then you do what you want with this agent */
 	}

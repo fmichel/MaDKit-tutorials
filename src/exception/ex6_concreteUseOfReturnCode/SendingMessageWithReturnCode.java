@@ -10,11 +10,11 @@ import madkit.kernel.Message;
  * in order to correct a method that has failed.
  *
  *
- * #jws exception.ex6_concreteUseOfReturnCode.PingAgent jws#
+ * #jws exception.ex6_concreteUseOfReturnCode.SendingMessageWithReturnCode jws#
  *
  */
 
-public class PingAgent extends TutorialAgent {
+public class SendingMessageWithReturnCode extends TutorialAgent {
 
 	/**
 	 * On activate() the agent allow the most precise's log level in order
@@ -34,14 +34,17 @@ public class PingAgent extends TutorialAgent {
 	 */
 	@Override
 	protected void live() {
-		
-		ReturnCode returnSend = sendMessage("myCommunity", "myGroup", "myRole", new Message());
-		while(returnSend != ReturnCode.SUCCESS) {
+		ReturnCode sendFeedback;
+		do {
 			
-			/* On affiche le code de retour ainsi que son intitulé */
-			getLogger().info("\n\t" + returnSend.name() + "\t" + returnSend.toString() +"\n\t");
+			sendFeedback = sendMessage("myCommunity", "myGroup", "myRole", new Message());
+			/* We display the name of the ReturnCode and its value. */
+			getLogger().info("\n\t" + sendFeedback.name() + "\t" + sendFeedback.toString() +"\n\t");
 			
-			switch(returnSend) {
+			switch(sendFeedback) {
+				case SUCCESS:
+					getLogger().info("\n\t Message send ! \n\t");
+					break;
 				case NOT_COMMUNITY:
 					getLogger().info("\n\t I should create the community. \n\t");
 					createGroupIfAbsent("myCommunity", "myGroup");
@@ -59,18 +62,17 @@ public class PingAgent extends TutorialAgent {
 					requestRole("myCommunity", "myGroup", "myRole");
 					break;
 				case NO_RECIPIENT_FOUND:
-					getLogger().info("\n\tI am alone, thus I can not send a message.\t\n");
-					killAgent(this);
+					getLogger().info("\n\tI am alone, thus I can not find someone to send a message.\t\n");
+					getLogger().info("\n\tI should launch another instance of myself\t\n");
+					launchAgent(new SendingMessageWithReturnCode(),true);
 					break;
 				default:
 					getLogger().info("\n\t Mmh. Something went wrong. Better quit this place. \n\t");
 					killAgent(this);
 					break;
 			}
-		
-			returnSend = sendMessage("myCommunity", "myGroup", "myRole", new Message());
-		
-		}		
+			
+		}while(sendFeedback != ReturnCode.SUCCESS);
 	}
 	
 	/**
@@ -83,7 +85,7 @@ public class PingAgent extends TutorialAgent {
 	}
 	
 	/**
-	 * We launch three PingAgent agents.
+	 * We launch three agents.
 	 * 
 	 * The first agent that will be launch will have to create the group as it does not exist.
 	 * Then for the next agents, the group will exist but as they are not part of it, they will have to ask to join it by requesting a role.

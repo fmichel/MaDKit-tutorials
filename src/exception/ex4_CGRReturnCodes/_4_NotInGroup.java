@@ -3,8 +3,8 @@ package exception.ex4_CGRReturnCodes;
 import exception.TutorialAgent;
 
 /**
- * This example is about the ReturnCode concerning agent's CGR : NOT_IN_GROUP.
- * This code indicates that an agent is not in a group.
+ * This class exemplifies: NOT_IN_GROUP.
+ * This ReturnCode indicates that an agent is not in a group.
  *
  * 
  * #jws exception.ex4_CGRReturnCodes._4_NotInGroup jws#
@@ -35,11 +35,11 @@ public class _4_NotInGroup extends TutorialAgent {
 	 */
 	@Override
 	protected void live() {
-		ReturnCode returnLeave;
+		ReturnCode leaveFeedback;
 		leaveGroup("myCommunity", "myGroup");
-		returnLeave = leaveGroup("myCommunity", "myGroup");
-		if(returnLeave == ReturnCode.NOT_IN_GROUP) {
-			getLogger().info("\n\tThe ReturnCode value is : \"" + returnLeave.toString() + "\" .\n\tIt means that I already have left this group, I can not leave a group twice. \t\n");
+		leaveFeedback = leaveGroup("myCommunity", "myGroup");
+		if(leaveFeedback == ReturnCode.NOT_IN_GROUP) {
+			getLogger().info("\n\tThe ReturnCode is: \"" + leaveFeedback.toString() + "\" .\n\tIt means that I already have left this group, I can not leave a group twice. \t\n");
 		}
 		
 		/* Then you do what you want with this agent */

@@ -4,8 +4,8 @@ import exception.TutorialAgent;
 import madkit.kernel.Message;
 
 /**
- * This example is about the ReturnCode concerning agent's CGR : NOT_ROLE.
- * This code indicates that a role does not exist.
+ * This class exemplifies: NOT_ROLE.
+ * This ReturnCode indicates that a role does not exist.
  *
  * 
  * #jws exception.ex4_CGRReturnCodes._5_NotRole jws#
@@ -33,9 +33,9 @@ public class _5_NotRole extends TutorialAgent{
 	 */
 	@Override
 	protected void live(){
-		ReturnCode returnSend;
-		returnSend = sendMessage("myCommunity", "myGroup", "notExistingRole", new Message()); /* Note that the role is different then "myRole" */
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnSend.toString() + "\" .\n\tIt means that I can not send a message to an agent whose role does not exist. \t\n");
+		ReturnCode sendFeedback;
+		sendFeedback = sendMessage("myCommunity", "myGroup", "notExistingRole", new Message()); /* Note that the role is different then "myRole" */
+		getLogger().info("\n\tThe ReturnCode is: \"" + sendFeedback.toString() + "\" .\n\tIt means that I can not send a message to an agent whose role does not exist. \t\n");
 			
 		/* Then you do what you want with this agent */
 	}

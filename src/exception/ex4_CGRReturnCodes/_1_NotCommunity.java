@@ -3,8 +3,8 @@ package exception.ex4_CGRReturnCodes;
 import exception.TutorialAgent;
 
 /**
- * This example is about the ReturnCode concerning agent's CGR : NOT_COMMUNITY.
- * This code indicates that a community does not exist.
+ * This class exemplifies: NOT_COMMUNITY.
+ * This ReturnCode indicates that a community does not exist.
  * 
  * 
  * #jws exception.ex4_CGRReturnCodes._1_NotCommunity jws#
@@ -22,9 +22,9 @@ public class _1_NotCommunity extends TutorialAgent{
 	 */
 	@Override	
 	protected void activate() {
-		ReturnCode returnRequest;
-		returnRequest = requestRole("myCommunity", "myGroup", "myRole");
-		getLogger().info("\n\tThe ReturnCode value is : \"" + returnRequest.toString() + "\" .\n\tIt means that I can not request a role in a community that does not exist. \t\n");
+		ReturnCode requestFeedback;
+		requestFeedback = requestRole("myCommunity", "myGroup", "myRole");
+		getLogger().info("\n\tThe ReturnCode is: \"" + requestFeedback.toString() + "\" .\n\tIt means that I can not request a role in a community that does not exist. \t\n");
 			
 		/* Then you do what you want with this agent */
 	}
