@@ -28,9 +28,9 @@ public class ImageViewer extends Viewer {
      */
     @Override
     protected void render(Graphics g) {
-	for (SituatedAgent a : agentsLocationProbe.getCurrentAgentsList()) {
-	    Dimension location = agentsLocationProbe.getPropertyValue(a);
-	    g.drawImage(car, location.width, location.height, null);
-	}
+    	for (SituatedAgent a : agentsLocationProbe.getCurrentAgentsList()) {
+    		Dimension location = agentsLocationProbe.getPropertyValue(a);
+    		g.drawImage(car, location.width, location.height, null);
+    	}
     }
 }

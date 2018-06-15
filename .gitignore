@@ -4,3 +4,4 @@ release
 *~
 .externalToolBuilders
 simu_template
+/.apt_generated/

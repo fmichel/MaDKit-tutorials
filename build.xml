@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
-<!-- 
- This is ant build.xml file for building MaDKit 5 tutorials
+<!--
+ This is ant build.xml file for building MaDKit 6 tutorials
  Author: Fabien Michel
  Version: 1.0
  -->
@@ -26,24 +26,23 @@
 	<property name="images.dir" value="images" />
 	<property name="download.url" value="http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials" />
 
-	<!-- specific local user's properties -->
-	<property name="jdk.api.dir" value="${user.home}/ownCloud/java/java-8/java_SE_8_ docs/api" />
+	<property name="jdk.api.dir" value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/docs/api" /> <!-- where is it ? | on master : "/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" -->
 	<property name="mdk.api.dir" value="${user.home}/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" />
-	<property name="server.info.dir" value="${user.home}/.mdk_keystore" />
+	<property name="server.info.dir" value="${user.home}/.mdk_keystore" /> <!-- keystore needed, check it out -->
 
 
 
 	<!-- =================================
 		REQUIRED:
-		 Please, specify the directory where the MaDKit jar file is in 
-		 e.g. 
+		 Please, specify the directory where the MaDKit jar file is in
+		 e.g.
 		 <property name="madkit.lib.dir" value="/userHome/madkit5"/>
          ================================= -->
 	<property name="madkit.lib.dir" value="lib" />
 
 	<!-- =================================
 		OPTIONAL:
-		 Here, you may set your project properties 
+		 Here, you may set your project properties
          ================================= -->
 	<property name="src.dir" value="src" />
 	<property name="version" value="1.4" />
@@ -55,7 +54,7 @@
 	<!-- =================================
 		OPTIONAL:
 		 Here, you can specify which default options
-		 will be used for the runnable jar 
+		 will be used for the runnable jar
          ================================= -->
 	<property name="madkit.args" value="--launchAgents helloworld.ex01.HelloWorldAgent,true" />
 
@@ -63,7 +62,7 @@
 	<!-- =================================
 		OPTIONAL:
 		 A java web start file (.jnlp) could be also generated if possible.
-		 Here, you can specify the web directory in which you will 
+		 Here, you can specify the web directory in which you will
 		 put the jar and the jnlp so that it will directly work without editing.
          ================================= -->
 	<property name="web.codebase" value="http://www.madkit.net/madkit/tutorials/jnlp" />
@@ -80,10 +79,10 @@
 		</javaresource>
 	</import>
 
-	<!-- ================================= 
-          target: release              
+	<!-- =================================
+          target: release
          ================================= -->
-	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,conversation,copy-resources" description="description">
+	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,exception,copy-resources" description="description">
 		<zip destfile="${release.dir}/${ant.project.name}-project.zip" level="9">
 			<fileset dir="." excludes="**/draft/**,**/*conversation*/**,.ant-targets-build.xml,.gitignore,draft/**,bin/**,lib/j2h.jar,logging/**,build.xml,${release.dir}/**,**/simu_template/**,*tutorials.html,images/**,*gz,*jar,.git/**,jnlp/template.jnlp" />
 		</zip>
@@ -104,8 +103,8 @@
 		</classpath>
 	</taskdef>
 
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: copy-resources                      
+	<!-- - - - - - - - - - - - - - - - - -
+          target: copy-resources
          - - - - - - - - - - - - - - - - - -->
 	<target name="copy-resources">
 		<copy todir="${release.dir}/${tuto.dir}">
@@ -114,8 +113,8 @@
 	</target>
 
 
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: hello-world         
+	<!-- - - - - - - - - - - - - - - - - -
+          target: hello-world
          - - - - - - - - - - - - - - - - - -->
 	<target name="hello-world">
 		<antcall target="build_html">
@@ -126,8 +125,8 @@
 		</antcall>
 	</target>
 
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: logging         
+	<!-- - - - - - - - - - - - - - - - - -
+          target: logging
          - - - - - - - - - - - - - - - - - -->
 	<target name="logging">
 		<antcall target="build_html">
@@ -138,8 +137,8 @@
 		</antcall>
 	</target>
 
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: communication         
+	<!-- - - - - - - - - - - - - - - - - -
+          target: communication
          - - - - - - - - - - - - - - - - - -->
 	<target name="communication">
 		<antcall target="build_html">
@@ -150,8 +149,8 @@
 		</antcall>
 	</target>
 
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: gui      
+	<!-- - - - - - - - - - - - - - - - - -
+          target: gui
          - - - - - - - - - - - - - - - - - -->
 	<target name="gui">
 		<antcall target="build_html">
@@ -162,8 +161,8 @@
 		</antcall>
 	</target>
 
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: simulation        
+	<!-- - - - - - - - - - - - - - - - - -
+          target: simulation
          - - - - - - - - - - - - - - - - - -->
 	<target name="simulation">
 		<antcall target="build_html">
@@ -174,8 +173,8 @@
 		</antcall>
 	</target>
 
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: conversation        
+	<!-- - - - - - - - - - - - - - - - - -
+          target: conversation
          - - - - - - - - - - - - - - - - - -->
 	<target name="conversation">
 		<antcall target="build_html">
@@ -186,8 +185,20 @@
 		</antcall>
 	</target>
 
-	<!-- ================================= 
-          target: clean              
+	<!-- - - - - - - - - - - - - - - - - -
+          target: exception
+         - - - - - - - - - - - - - - - - - -->
+	<target name="exception">
+		<antcall target="build_html">
+			<param name="tuto.name" value="Exceptions in MaDKit" />
+			<param name="tuto.src.dir" value="${src.dir}/exception" />
+			<param name="tuto.destination" value="exception" />
+			<param name="tuto.description" value="Basics for handling exceptions in MaDkit" />
+		</antcall>
+	</target>
+
+	<!-- =================================
+          target: clean
          ================================= -->
 	<target name="clean" depends="MDK_targets.clean" description="description">
 		<delete dir="${release.dir}" />
@@ -218,7 +229,7 @@
 
 		<!-- modifying front pages -->
 		<replace file="${release.dir}/${tuto.dir}/${tuto.destination}/front.html">
-			<replacefilter token="Instructions:-" value="&lt;a href='http://www.madkit.org/'&gt;&lt;img alt='MDK' 
+			<replacefilter token="Instructions:-" value="&lt;a href='http://www.madkit.org/'&gt;&lt;img alt='MDK'
 				src='../MaDKit.png' style='border: 0px solid ; width: 100px; height: 100px;' align='right'&gt;&lt;/a&gt;&lt;h1&gt;${tuto.name}&lt;/h1&gt;" />
 			<replacefilter token="Top-Left Panel Selects a Package" value="${tuto.description}" />
 		</replace>
@@ -239,8 +250,8 @@
 		</replaceregexp>
 	</target>
 
-	<!-- ================================= 
-          target:       ftp-push        
+	<!-- =================================
+          target:       ftp-push
          ================================= -->
 	<target name="ftp-push" depends="release, Java-web-start">
 		<loadproperties srcFile="${server.info.dir}/MDK.net" />
@@ -251,8 +262,8 @@
 		</ftp>
 	</target>
 
-	<!-- ================================= 
-          target:       web-debug        
+	<!-- =================================
+          target:       web-debug
          ================================= -->
 	<target name="web-debug" depends="clean,simulation,copy-resources, Java-web-start">
 		<loadproperties srcFile="${server.info.dir}/MDK.net" />
@@ -265,8 +276,8 @@
 		</exec>
 	</target>
 
-	<!-- ================================= 
-          target: test-jnlp              
+	<!-- =================================
+          target: test-jnlp
 		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
 			<arg value="helloworld.ex01.AgentLifeCycle.jnlp" />
 		</exec>
@@ -283,10 +294,10 @@
 			<arg value="simulation.ex04.MyScheduler04.jnlp" />
 		</exec>
          ================================= -->
-	<target name="test-jnlp" description="test jnlps">
+  <target name="test-jnlp" description="test jnlps">
 		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
 			<arg value="communication.ex05.Agent4.jnlp" />
 		</exec>
-	</target>
+  </target>
 
 </project>
