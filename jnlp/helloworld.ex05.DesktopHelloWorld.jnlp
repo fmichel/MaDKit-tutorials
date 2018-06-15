@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE jnlp PUBLIC "-//Sun Microsystems, Inc.//DTD JNLP 1.7//EN" "http://www.netbeans.org/jnlp/DTD/jnlp.dtd">
-<jnlp spec="7.0+" codebase="http://www.madkit.net/madkit/tutorials/jnlp/" href="helloworld.ex02_Desktop.DesktopHelloWorld.jnlp">
+<jnlp spec="7.0+" codebase="http://www.madkit.net/madkit/tutorials/jnlp/" href="helloworld.ex05.DesktopHelloWorld.jnlp">
   <information>
     <title>The MaDKit Tutorials</title>
     <vendor>Fabien Michel</vendor>
@@ -18,6 +18,6 @@
     <property name="jnlp.packEnabled" value="true"/> 
   </resources>
   <application-desc>
-<argument>--desktop --launchAgents helloworld.ex01.AgentLifeCycle,true</argument>
+<argument>--desktop --launchAgents helloworld.ex01.HelloWorldAgent,true,1</argument>
   </application-desc>
 </jnlp>
