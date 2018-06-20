@@ -1,8 +1,8 @@
-package exception.ex6_concreteUseOfReturnCode;
+package returncode.ex7_concreteUseOfReturnCode;
 
 import java.util.logging.Level;
 
-import exception.TutorialAgent;
+import returncode.TutorialAgent;
 import madkit.kernel.Message;
 
 /** 

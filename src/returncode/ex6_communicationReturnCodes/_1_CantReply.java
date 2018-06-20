@@ -1,6 +1,6 @@
-package exception.ex5_communicationReturnCodes;
+package returncode.ex6_communicationReturnCodes;
 
-import exception.TutorialAgent;
+import returncode.TutorialAgent;
 import madkit.kernel.Message;
 
 /**

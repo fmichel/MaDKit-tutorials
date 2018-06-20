@@ -1,6 +1,6 @@
-package exception.ex1_exceptions.ex12_madkitCodingError;
+package returncode.ex2_madkitCodingError;
 
-import exception.TutorialAgent;
+import returncode.TutorialAgent;
 import madkit.kernel.Message;
 
 /**

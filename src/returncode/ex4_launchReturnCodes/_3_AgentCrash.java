@@ -1,7 +1,7 @@
-package exception.ex3_launchReturnCodes;
+package returncode.ex4_launchReturnCodes;
 
-import exception.TutorialAgent;
-import exception.ex1_exceptions.ex11_javaException.CrashingAgent;
+import returncode.TutorialAgent;
+import returncode.ex1_javaException.CrashingAgent;
 
 /**
  * This class exemplifies: AGENT_CRASH.
