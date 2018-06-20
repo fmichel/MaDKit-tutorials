@@ -26,8 +26,8 @@
 	<property name="images.dir" value="images" />
 	<property name="download.url" value="http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials" />
 
-	<property name="jdk.api.dir" value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/docs/api" /> <!-- where is it ? | on master : "/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" -->
-	<property name="mdk.api.dir" value="${user.home}/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" />
+	<loadproperties srcfile="javadoc.api.local.properties" />
+
 	<property name="server.info.dir" value="${user.home}/.mdk_keystore" /> <!-- keystore needed, check it out -->
 
 
@@ -82,7 +82,7 @@
 	<!-- =================================
           target: release
          ================================= -->
-	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,exception,copy-resources" description="description">
+	<target name="release" depends="clean,hello-world,logging,gui,communication,simulation,exception,madkitproperties,copy-resources" description="description">
 		<zip destfile="${release.dir}/${ant.project.name}-project.zip" level="9">
 			<fileset dir="." excludes="**/draft/**,**/*conversation*/**,.ant-targets-build.xml,.gitignore,draft/**,bin/**,lib/j2h.jar,logging/**,build.xml,${release.dir}/**,**/simu_template/**,*tutorials.html,images/**,*gz,*jar,.git/**,jnlp/template.jnlp" />
 		</zip>
@@ -196,6 +196,18 @@
 			<param name="tuto.description" value="Basics for handling exceptions in MaDkit" />
 		</antcall>
 	</target>
+	
+	<!-- - - - - - - - - - - - - - - - - -
+	          target: exception
+	         - - - - - - - - - - - - - - - - - -->
+		<target name="madkitproperties">
+			<antcall target="build_html">
+				<param name="tuto.name" value="Properties in MaDKit" />
+				<param name="tuto.src.dir" value="${src.dir}/madkitproperties" />
+				<param name="tuto.destination" value="madkitproperties" />
+				<param name="tuto.description" value="Basics for handling properties in MaDkit and how to use them." />
+			</antcall>
+		</target>
 
 	<!-- =================================
           target: clean
