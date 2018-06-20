@@ -17,7 +17,6 @@
 	<property name="madkit.version" value="5.2" />
 
 
-	<!-- using specific properties -->
 	<property name="ftp.tuto.dir" value="madkit/tutorials" />
 	<property name="tuto.dir" value="html" />
 	<property name="release.dir" value="release" />
@@ -25,10 +24,15 @@
 	<property name="lib.dir" value="lib" />
 	<property name="images.dir" value="images" />
 	<property name="download.url" value="http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials" />
+	<property name="server.info.dir" value="${user.home}/.mdk_keystore" /><!-- only used in admin deploying tasks -->
 
-	<property name="jdk.api.dir" value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/docs/api" /> <!-- where is it ? | on master : "/home/fab/ownCloud/java/java-8/java_SE_8_ docs/api" -->
-	<property name="mdk.api.dir" value="${user.home}/ownCloud/madkit/releases/MaDKit-${madkit.version}/docs/api" />
-	<property name="server.info.dir" value="${user.home}/.mdk_keystore" /> <!-- keystore needed, check it out -->
+	<!-- using local specific properties 
+		The corresponding file should initialize the two following properties : jdk.api.dir and mdk.api.dir
+		value examples are :
+		jdk.api.dir=/usr/lib/jvm/java-1.8.0-openjdk-amd64/docs/api
+		mdk.api.dir=${user.home}/MDK_installationDir/docs/api
+	-->
+	<loadproperties srcfile="javadoc.api.local.properties" />
 
 
 
@@ -193,7 +197,7 @@
 			<param name="tuto.name" value="Exceptions in MaDKit" />
 			<param name="tuto.src.dir" value="${src.dir}/exception" />
 			<param name="tuto.destination" value="exception" />
-			<param name="tuto.description" value="Basics for handling exceptions in MaDkit" />
+			<param name="tuto.description" value="Basics for handling exceptions in MaDKit" />
 		</antcall>
 	</target>
 
@@ -263,6 +267,15 @@
 	</target>
 
 	<!-- =================================
+          target:       ftp-push-testing
+         ================================= -->
+	<target name="ftp-push-testing">
+		<antcall target="ftp-push">
+			<param name="ftp.tuto.dir" value="madkit/testing/tutorials" />
+		</antcall>
+	</target>
+
+	<!-- =================================
           target:       web-debug
          ================================= -->
 	<target name="web-debug" depends="clean,simulation,copy-resources, Java-web-start">
@@ -294,10 +307,10 @@
 			<arg value="simulation.ex04.MyScheduler04.jnlp" />
 		</exec>
          ================================= -->
-  <target name="test-jnlp" description="test jnlps">
+	<target name="test-jnlp" description="test jnlps">
 		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
 			<arg value="communication.ex05.Agent4.jnlp" />
 		</exec>
-  </target>
+	</target>
 
 </project>
