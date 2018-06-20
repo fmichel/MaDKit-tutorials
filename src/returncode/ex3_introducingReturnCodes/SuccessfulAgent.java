@@ -1,6 +1,6 @@
-package exception.ex2_introducingReturnCodes;
+package returncode.ex3_introducingReturnCodes;
 
-import exception.TutorialAgent;
+import returncode.TutorialAgent;
 
 /**
  * In this example we will show you how you can ensure your programs with methods' return code.

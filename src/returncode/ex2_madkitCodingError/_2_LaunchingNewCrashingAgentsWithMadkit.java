@@ -1,7 +1,7 @@
-package exception.ex1_exceptions.ex12_madkitCodingError;
+package returncode.ex2_madkitCodingError;
 
-import exception.TutorialAgent;
-import exception.ex1_exceptions.ex11_javaException.CrashingAgent;
+import returncode.TutorialAgent;
+import returncode.ex1_javaException.CrashingAgent;
 import madkit.kernel.Madkit;
 
 /**

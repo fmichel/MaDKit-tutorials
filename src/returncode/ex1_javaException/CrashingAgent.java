@@ -9,11 +9,11 @@
  * 
  */
 
-package exception.ex1_exceptions.ex11_javaException;
+package returncode.ex1_javaException;
 
 import java.util.logging.Level;
 
-import exception.TutorialAgent;
+import returncode.TutorialAgent;
 
 /**
  * In this example you will understand that as MaDKit is a Java library, you will have to deal

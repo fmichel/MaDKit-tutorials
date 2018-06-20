@@ -1,6 +1,6 @@
-package exception.ex3_launchReturnCodes;
+package returncode.ex4_launchReturnCodes;
 
-import exception.TutorialAgent;
+import returncode.TutorialAgent;
 
 /**
  * This class exemplifies: ALREADY_KILLED.

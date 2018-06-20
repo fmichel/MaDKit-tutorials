@@ -1,6 +1,6 @@
-package exception.ex4_CGRReturnCodes;
+package returncode.ex5_CGRReturnCodes;
 
-import exception.TutorialAgent;
+import returncode.TutorialAgent;
 
 /**
  * This class exemplifies: ROLE_ALREADY_HANDLED.

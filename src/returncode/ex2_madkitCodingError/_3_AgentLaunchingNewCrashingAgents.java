@@ -1,9 +1,9 @@
-package exception.ex1_exceptions.ex12_madkitCodingError;
+package returncode.ex2_madkitCodingError;
 
 import java.util.logging.Level;
 
-import exception.TutorialAgent;
-import exception.ex1_exceptions.ex11_javaException.CrashingAgent;
+import returncode.TutorialAgent;
+import returncode.ex1_javaException.CrashingAgent;
 
 /**
  * Now that we have seen that misusing MaDKit may generate KernelException, we will

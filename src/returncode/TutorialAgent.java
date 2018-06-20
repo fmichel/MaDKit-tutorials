@@ -1,4 +1,4 @@
-package exception;
+package returncode;
 
 import madkit.kernel.Agent;
 
