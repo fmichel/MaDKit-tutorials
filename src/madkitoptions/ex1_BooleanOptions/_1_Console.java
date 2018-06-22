@@ -13,6 +13,9 @@ import madkit.kernel.Madkit;
 public class _1_Console {
 
 	 public static void main(String[] args) {
-		 new Madkit(Madkit.BooleanOption.console.toString());
+		 // default value is false
+		 new Madkit(Madkit.BooleanOption.console.toString(), "true");
+		 // see the difference by commenting the previous line and decommenting
+		 // new Madkit(Madkit.BooleanOption.console.toString(), "false");
 	 }
 }

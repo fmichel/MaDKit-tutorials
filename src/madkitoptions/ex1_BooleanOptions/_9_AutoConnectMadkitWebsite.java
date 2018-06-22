@@ -5,7 +5,10 @@ import madkit.kernel.Madkit;
 public class _9_AutoConnectMadkitWebsite {
 
 	 public static void main(String[] args) {
-		 new Madkit(Madkit.BooleanOption.autoConnectMadkitWebsite.toString());
+		 // default value : false
+		 // new Madkit(Madkit.BooleanOption.autoConnectMadkitWebsite.toString(), "true");
+		 // see the difference
+		 new Madkit(Madkit.BooleanOption.autoConnectMadkitWebsite.toString(), "false");
 	 }
 
 }
