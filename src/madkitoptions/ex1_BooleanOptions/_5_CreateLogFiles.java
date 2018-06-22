@@ -2,10 +2,10 @@ package madkitoptions.ex1_BooleanOptions;
 
 import madkit.kernel.Madkit;
 
-public class _6_noAgentConsoleLog {
+public class _5_CreateLogFiles {
 
 	 public static void main(String[] args) {
-		 new Madkit(Madkit.BooleanOption.noAgentConsoleLog.toString());
+		 new Madkit(Madkit.BooleanOption.createLogFiles.toString());
 	 }
 
 }

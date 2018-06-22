@@ -1,5 +1,5 @@
 package madkitoptions.ex2_LevelOptions;
 
-public class _4_kernelLogLevel {
+public class _2_AgentLogLevel {
 
 }

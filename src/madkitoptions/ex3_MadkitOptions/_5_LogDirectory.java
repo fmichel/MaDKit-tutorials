@@ -1,5 +1,5 @@
 package madkitoptions.ex3_MadkitOptions;
 
-public class _2_configFile {
+public class _5_LogDirectory {
 
 }

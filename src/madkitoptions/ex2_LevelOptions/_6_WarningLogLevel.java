@@ -1,5 +1,5 @@
 package madkitoptions.ex2_LevelOptions;
 
-public class _2_agentLogLevel {
+public class _6_WarningLogLevel {
 
 }

@@ -1,5 +1,5 @@
 package madkitoptions.ex2_LevelOptions;
 
-public class _5_networkLogLevel {
+public class _4_KernelLogLevel {
 
 }
