@@ -285,11 +285,10 @@
 	<target name="exception">
 		<antcall target="build_tuto_files">
 			<param name="tuto.name" value="Exceptions in MaDKit" />
-			<param name="tuto.src.dir" value="${src.dir}/exception" />
+			<param name="tuto.src.dir" value="${src.dir}/returncode" />
 			<param name="tuto.destination" value="exception" />
 			<param name="tuto.description" value="Basics for handling exceptions in MaDKit" />
 		</antcall>
-
 	</target>
 
 </project>
