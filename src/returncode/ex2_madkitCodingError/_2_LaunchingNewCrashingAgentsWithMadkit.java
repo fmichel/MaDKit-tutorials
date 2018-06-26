@@ -1,8 +1,8 @@
-package returncode.utils.ex2_madkitCodingError;
+package returncode.ex2_madkitCodingError;
 
 import madkit.kernel.Madkit;
+import returncode.ex1_javaException.CrashingAgent;
 import returncode.utils.TutorialAgent;
-import returncode.utils.ex1_javaException.CrashingAgent;
 
 /**
  * Now that we have seen that misusing MaDKit may generate KernelException, we will

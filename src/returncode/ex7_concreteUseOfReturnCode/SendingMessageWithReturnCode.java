@@ -1,4 +1,4 @@
-package returncode.utils.ex7_concreteUseOfReturnCode;
+package returncode.ex7_concreteUseOfReturnCode;
 
 import java.util.logging.Level;
 

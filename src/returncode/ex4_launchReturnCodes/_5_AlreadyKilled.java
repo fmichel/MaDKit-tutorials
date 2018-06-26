@@ -1,4 +1,4 @@
-package returncode.utils.ex4_launchReturnCodes;
+package returncode.ex4_launchReturnCodes;
 
 import returncode.utils.TutorialAgent;
 

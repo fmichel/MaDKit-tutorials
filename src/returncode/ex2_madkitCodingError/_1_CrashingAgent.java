@@ -1,4 +1,4 @@
-package returncode.utils.ex2_madkitCodingError;
+package returncode.ex2_madkitCodingError;
 
 import madkit.kernel.Message;
 import returncode.utils.TutorialAgent;

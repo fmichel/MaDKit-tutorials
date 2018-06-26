@@ -1,4 +1,4 @@
-package returncode.utils.ex5_CGRReturnCodes;
+package returncode.ex5_CGRReturnCodes;
 
 import returncode.utils.TutorialAgent;
 

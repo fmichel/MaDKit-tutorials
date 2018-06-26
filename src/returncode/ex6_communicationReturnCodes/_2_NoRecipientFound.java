@@ -1,4 +1,4 @@
-package returncode.utils.ex6_communicationReturnCodes;
+package returncode.ex6_communicationReturnCodes;
 
 import madkit.kernel.Message;
 import returncode.utils.TutorialAgent;

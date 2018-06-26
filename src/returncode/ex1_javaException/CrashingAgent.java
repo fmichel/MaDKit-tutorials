@@ -9,7 +9,7 @@
  * 
  */
 
-package returncode.utils.ex1_javaException;
+package returncode.ex1_javaException;
 
 import java.util.logging.Level;
 
