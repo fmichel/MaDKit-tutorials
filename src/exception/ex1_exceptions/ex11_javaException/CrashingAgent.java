@@ -22,7 +22,8 @@ import exception.TutorialAgent;
  * Thus as in any Java-based program, you will have to be rigorous :)
  * 
  * 
- *  #jws exception.ex1_exceptions.ex11_JavaException.CrashingAgent jws#
+ *  #jws# exception.ex1_exceptions.ex11_JavaException.CrashingAgent.jnlp #jws#
+ *  #args# --launchAgents exception.ex1_exceptions.ex11_javaException.CrashingAgent #args#
  * 
  */
 
