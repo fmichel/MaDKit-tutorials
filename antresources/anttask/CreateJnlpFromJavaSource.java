@@ -1,10 +1,14 @@
 package anttask;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.logging.Level;
 
+import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 import org.apache.tools.ant.taskdefs.Copy;
 import org.apache.tools.ant.types.FilterSet;
@@ -13,32 +17,49 @@ public class CreateJnlpFromJavaSource extends Task {
 
     private File jnlpDestinationDir;
     private String srcFile;
-    private String srcDir;
     private File jnlpTemplate;
 
+    /* 
+     * #jws# alone is just for creating a button in the html file
+     * 
+     * #jws# + #args# is about creating a corresponding jnlp file
+     * 
+     * @see org.apache.tools.ant.Task#execute()
+     */
     @Override
     public void execute() {
 	String javaWebStartFileName = null;
 	String webStartArguments = null;
 
-	try (Scanner s = new Scanner(new File(srcDir, srcFile))) {
-	    s.useDelimiter("#jws#").next();
-	    javaWebStartFileName = s.next().trim();
-	    s.useDelimiter("#args#").next();
-	    webStartArguments = s.next().trim();
-	}
-	catch(FileNotFoundException e) {
-	    e.printStackTrace();
-	}
-	catch (NoSuchElementException e) {
-	    return;
-	}
-	if (javaWebStartFileName.isEmpty() || webStartArguments.isEmpty())
-	    return;
+	String srcRoot = getProject().getProperty("src.dir");
+	String tutoDir = getProject().getProperty("tuto.src.dir");
+	Path tutoSrcFile = Paths.get(tutoDir, srcFile);
+	Path tutoFilePath = Paths.get(srcRoot, tutoDir, srcFile);
 
-	String jnlpFileName = srcFile.substring(0, srcFile.length() - 4).replace('/', '.');
-	jnlpFileName += "jnlp";
-	System.err.println("created: " + jnlpFileName);
+	try (Scanner s = new Scanner(tutoFilePath)) {
+	    try {
+		s.useDelimiter("#jws#").next();
+		javaWebStartFileName = s.next().trim()+".jnlp";
+	    }
+	    catch(NoSuchElementException e) {
+		return; //no jnlp config at all
+	    }
+	    try {
+		s.useDelimiter("#args#").next();
+		webStartArguments = s.next().trim();
+	    }
+	    catch(NoSuchElementException e) {
+		return;//not a config for creating a jnlp
+	    }
+	}
+	catch(IOException e) {
+	    log(e,Level.SEVERE.intValue());
+	}
+	if (javaWebStartFileName == null || javaWebStartFileName.isEmpty() || webStartArguments == null || webStartArguments.isEmpty()) {
+	    throw new BuildException(tutoFilePath.toString()+" does not contain a valid jnlp config !");
+	}
+
+	log("creating " + javaWebStartFileName);
 
 	Copy copyTask = new Copy();
 	copyTask.setProject(getProject());
@@ -65,13 +86,6 @@ public class CreateJnlpFromJavaSource extends Task {
      */
     public void setDestDir(File jnlpDestinationDir) {
 	this.jnlpDestinationDir = jnlpDestinationDir;
-    }
-
-    /**
-     * @param srcDir the srcDir to set
-     */
-    public void setSrcDir(String srcDir) {
-	this.srcDir = srcDir;
     }
 
 }

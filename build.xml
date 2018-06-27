@@ -114,7 +114,7 @@
 		<property name="html.break" value="\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;\&lt;br/\&gt;" />
 		<property name="tuto.download.html" value="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;a href='${download.url}'&gt;&lt;img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'&gt;&lt;/a&gt;" />
 
-		<fileset id="java.src.files" dir="${tuto.src.dir}" includes="**/*.java" />
+		<fileset id="java.src.files" dir="${src.dir}/${tuto.src.dir}" includes="**/*.java" />
 
 		<java2html title="${tuto.name}" simple="no" tabsize="7" marginsize="0" header="true" footer="true" destination="${release.dir}/${tuto.dir}/${tuto.destination}">
 			<fileset refid="java.src.files" />
@@ -160,13 +160,13 @@
 		<property name="files" refid="java.src.files" />
 		<for list="${files}" delimiter=";" param="file">
 			<sequential>
-				<createjnlpfromjavasource srcfile="@{file}" srcdir="${tuto.src.dir}" jnlptemplate="${jnlp.template}" destdir="${release.dir}/${jnlps.dir}" />
+				<createjnlpfromjavasource srcfile="@{file}" jnlptemplate="${jnlp.template}" destdir="${release.dir}/${jnlps.dir}" />
 			</sequential>
 		</for>
 
 		<!-- add java sources to project zip file -->
 		<zip destfile="${release.dir}/${project.zip.file}" update="true">
-			<zipfileset dir="${tuto.src.dir}" prefix="${tuto.src.dir}" />
+			<zipfileset dir="${src.dir}/${tuto.src.dir}" prefix="${src.dir}/${tuto.src.dir}" />
 		</zip>
 
 	</target>
@@ -213,7 +213,7 @@
 	<target name="hello-world">
 		<antcall target="build_tuto_files">
 			<param name="tuto.name" value="Hello world" />
-			<param name="tuto.src.dir" value="${src.dir}/helloworld" />
+			<param name="tuto.src.dir" value="helloworld" />
 			<param name="tuto.destination" value="hello_world" />
 			<param name="tuto.description" value="Getting started with MaDKit" />
 		</antcall>
@@ -225,7 +225,7 @@
 	<target name="logging">
 		<antcall target="build_tuto_files">
 			<param name="tuto.name" value="Logging" />
-			<param name="tuto.src.dir" value="${src.dir}/logging" />
+			<param name="tuto.src.dir" value="logging" />
 			<param name="tuto.destination" value="logging" />
 			<param name="tuto.description" value="Using the agent's logging mechanism of MaDKit" />
 		</antcall>
@@ -237,7 +237,7 @@
 	<target name="communication">
 		<antcall target="build_tuto_files">
 			<param name="tuto.name" value="Communication" />
-			<param name="tuto.src.dir" value="${src.dir}/communication" />
+			<param name="tuto.src.dir" value="communication" />
 			<param name="tuto.destination" value="communication" />
 			<param name="tuto.description" value="Communication between agents" />
 		</antcall>
@@ -249,7 +249,7 @@
 	<target name="gui">
 		<antcall target="build_tuto_files">
 			<param name="tuto.name" value="GUI with MaDKit" />
-			<param name="tuto.src.dir" value="${src.dir}/gui" />
+			<param name="tuto.src.dir" value="gui" />
 			<param name="tuto.destination" value="gui" />
 			<param name="tuto.description" value="Basics for building GUIs for your multiagent application" />
 		</antcall>
@@ -261,7 +261,7 @@
 	<target name="simulation">
 		<antcall target="build_tuto_files">
 			<param name="tuto.name" value="Simulation with MaDKit" />
-			<param name="tuto.src.dir" value="${src.dir}/simulation" />
+			<param name="tuto.src.dir" value="simulation" />
 			<param name="tuto.destination" value="simulation" />
 			<param name="tuto.description" value="Basics for building simulators with MaDKit" />
 		</antcall>
@@ -273,7 +273,7 @@
 	<target name="conversation">
 		<antcall target="build_tuto_files">
 			<param name="tuto.name" value="Advanced communication" />
-			<param name="tuto.src.dir" value="${src.dir}/conversation" />
+			<param name="tuto.src.dir" value="conversation" />
 			<param name="tuto.destination" value="conversation" />
 			<param name="tuto.description" value="Communication between agents using the replying mechanism" />
 		</antcall>
@@ -285,7 +285,7 @@
 	<target name="exception">
 		<antcall target="build_tuto_files">
 			<param name="tuto.name" value="Exceptions in MaDKit" />
-			<param name="tuto.src.dir" value="${src.dir}/returncode" />
+			<param name="tuto.src.dir" value="returncode" />
 			<param name="tuto.destination" value="exception" />
 			<param name="tuto.description" value="Basics for handling exceptions in MaDKit" />
 		</antcall>

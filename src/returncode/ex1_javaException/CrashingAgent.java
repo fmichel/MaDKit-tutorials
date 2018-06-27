@@ -22,8 +22,8 @@ import returncode.utils.TutorialAgent;
  * Thus as in any Java-based program, you will have to be rigorous :)
  * 
  * 
- *  #jws# exception.ex1_exceptions.ex11_JavaException.CrashingAgent.jnlp #jws#
- *  #args# --launchAgents exception.ex1_exceptions.ex11_javaException.CrashingAgent #args#
+ *  #jws# returncode.ex1_javaException.CrashingAgent #jws#
+ *  #args# --launchAgents returncode.ex1_javaException.CrashingAgent #args#
  * 
  */
 
