@@ -8,3 +8,4 @@ simu_template
 .settings
 javadoc.api.local.properties
 .ant-targets-build.xml
+.classpath
