@@ -15,7 +15,7 @@ import madkit.kernel.Madkit;
 public class _3_Debug {
 	 public static void main(String[] args) {
 		 
-		 new Madkit(Madkit.BooleanOption.debug.toString(), "true", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
+		 new Madkit(Madkit.BooleanOption.debug.toString(), Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
 		 
 		 /* Check the difference by commenting the previous line and decommenting the next one. */
 		 // new Madkit(Madkit.BooleanOption.debug.toString(), "false", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");

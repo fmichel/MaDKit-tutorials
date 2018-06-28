@@ -8,7 +8,7 @@ public class _9_AutoConnectMadkitWebsite {
 		 // default value : false
 		 // new Madkit(Madkit.BooleanOption.autoConnectMadkitWebsite.toString(), "true");
 		 // see the difference
-		 new Madkit(Madkit.BooleanOption.autoConnectMadkitWebsite.toString(), "false");
+		 new Madkit(Madkit.BooleanOption.autoConnectMadkitWebsite.toString(), "true");
 	 }
 
 }
