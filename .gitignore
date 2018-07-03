@@ -5,3 +5,7 @@ release
 .externalToolBuilders
 simu_template
 /.apt_generated/
+.settings
+javadoc.api.local.properties
+.ant-targets-build.xml
+.classpath
