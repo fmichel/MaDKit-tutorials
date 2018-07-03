@@ -10,7 +10,8 @@ import returncode.utils.TutorialAgent;
  * the related agent has leaved the corresponding role.
  * 
  * 
- * #jws exception.ex5_communicationReturnCodes._3_InvalidAgentAddress jws#
+ * #jws# returncode.ex6_communicationReturnCodes._3_InvalidAgentAddress #jws#
+ * #args# --launchAgents returncode.ex6_communicationReturnCodes._3_InvalidAgentAddress #args#
  * 
  */
 

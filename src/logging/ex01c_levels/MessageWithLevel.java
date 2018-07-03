@@ -29,7 +29,9 @@ import madkit.kernel.Agent;
  * messages and two 'config' messages. The last two will not be displayed. The next example of this tutorial explains
  * why...
  * 
- * #jws logging.ex01c_levels.MessageWithLevel jws#
+ * 
+ *  #jws# logging.ex01c_levels.MessageWithLevel #jws#
+ * 	#args# --launchAgents logging.ex01c_levels.MessageWithLevel,true #args# 
  * 
  * 
  * 

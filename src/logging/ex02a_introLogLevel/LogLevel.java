@@ -31,8 +31,9 @@ import madkit.kernel.Agent;
  * getLogger().setLevel(). Here, we log a config message and an info message but the first one will not be displayed.
  * Then the logger's level is changed so that 'config' messages will appear.
  * 
- * #jws logging.ex02a_introLogLevel.LogLevel jws#
  * 
+ *  #jws# logging.ex02a_introLogLevel.LogLevel #jws#
+ *  #args# --launchAgents logging.ex02a_introLogLevel.LogLevel,true #args# 
  * 
  * 
  * @author Pascal Wager

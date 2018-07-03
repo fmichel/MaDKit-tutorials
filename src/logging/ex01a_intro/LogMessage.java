@@ -15,7 +15,8 @@ import madkit.kernel.Agent;
  * 
  * 
  * 
- * #jws logging.ex01a_intro.LogMessage jws#
+ *  #jws# logging.ex01a_intro.LogMessage #jws#
+ * 	#args# --launchAgents logging.ex01a_intro.LogMessage,true #args# 
  * 
  * 
  * 

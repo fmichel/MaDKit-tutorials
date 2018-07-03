@@ -10,7 +10,8 @@ import returncode.utils.TutorialAgent;
  * AbstractAgent.receiveMessage(Message).
  * 
  * 
- * #jws exception.ex5_communicationReturnCodes._1_CantReply jws#
+ * #jws# returncode.ex6_communicationReturnCodes._1_CantReply #jws#
+ * #args# --launchAgents returncode.ex6_communicationReturnCodes._1_CantReply #args#
  * 
  */
 

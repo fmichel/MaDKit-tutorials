@@ -14,7 +14,8 @@ import madkit.message.StringMessage;
  * 
  * 
  * 
- * #jws communication.ex03_replyingToMessages.ReplierAgent jws#
+ * 		#jws# communication.ex03_replyingToMessages.ReplierAgent #jws#
+ *  	#args# --launchAgents communication.ex01.PingAgent,true,2 #args#
  * 
  * 
  * 

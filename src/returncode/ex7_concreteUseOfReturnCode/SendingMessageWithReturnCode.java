@@ -10,7 +10,8 @@ import returncode.utils.TutorialAgent;
  * in order to correct a method that has failed.
  *
  *
- * #jws exception.ex6_concreteUseOfReturnCode.SendingMessageWithReturnCode jws#
+ * #jws# returncode.ex7_concreteUseOfReturnCode.SendingMessageWithReturnCode #jws#
+ * #args# --launchAgents returncode.ex7_concreteUseOfReturnCode.SendingMessageWithReturnCode #args#
  *
  */
 

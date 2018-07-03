@@ -9,7 +9,8 @@ import simulation.ex01.SimulatedAgent;
 import simulation.ex01.SimulationModel;
 
 /**
- * #jws simulation.ex02.MyScheduler02 jws#
+ *  #jws# simulation.ex02.MyScheduler02 #jws#
+ *  #args# --launchAgents simulation.ex02.MyScheduler02,true;madkit.gui.ConsoleAgent #args# 
  * 
  * Let us have more fun by adding another simulated agent class with a different result for the doIt method and see what
  * we now need. We need nothing else and just have to launch this new type of agent: Activators do not care about the

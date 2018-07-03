@@ -11,8 +11,8 @@ import simulation.ex02.SimulatedAgent02;
 
 /**
  * 
- * 
- * #jws simulation.ex03.MyScheduler03 jws#
+ *  #jws# simulation.ex03.MyScheduler03 #jws#
+ * 	#args# --launchAgents simulation.ex03.MyScheduler03,true;madkit.gui.ConsoleAgent #args# 
  * 
  * Let us have more fun by adding another activator on another role to execute the other behavior of
  * {@link SimulatedAgent03}

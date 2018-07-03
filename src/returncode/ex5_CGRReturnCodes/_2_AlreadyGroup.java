@@ -8,7 +8,8 @@ import returncode.utils.TutorialAgent;
  * and that a group already exists.
  * 
  * 
- * #jws exception.ex4_CGRReturnCodes._2_AlreadyGroup jws#
+ * #jws# returncode.ex5_CGRReturnCodes._2_AlreadyGroup #jws#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._2_AlreadyGroup #args#
  * 
  */
 

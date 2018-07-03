@@ -18,7 +18,8 @@ import returncode.utils.TutorialAgent;
  * impact on the launcher agent.
  * 
  * 
- * #jws exception.ex1_exceptions.ex12_madkitCodingError._3_AgentLaunchingNewCrashingAgents jws#
+ *  #jws# returncode.ex2_madkitCodingError._3_AgentLaunchingNewCrashingAgents #jws#
+ *  #args# --launchAgents returncode.ex2_madkitCodingError._3_AgentLaunchingNewCrashingAgents #args#
  * 
  */
 

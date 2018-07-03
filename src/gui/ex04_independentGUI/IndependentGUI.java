@@ -19,7 +19,8 @@ import madkit.kernel.Madkit;
 /**
  * Shows how to build a totally independent GUI for an agent.
  * 
- * #jws gui.ex04_independentGUI.IndependentGUI jws#
+ * #jws# gui.ex04_independentGUI.IndependentGUI #jws#
+ * 	#args# --launchAgents gui.ex04_independentGUI.IndependentGUI #args#
  * 
  * Not using the default GUI mechanism of course makes the source code much more longer without any real benefits here.
  * So, it is safe to say that the default mechanism should be used almost always. This because: (1) the default

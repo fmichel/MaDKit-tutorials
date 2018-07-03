@@ -7,8 +7,9 @@ import simulation.ex03.MyScheduler03;
 
 /**
  * 
+ *  #jws# simulation.ex04.MyScheduler04 #jws#
+ * 	#args# --launchAgents simulation.ex04.MyScheduler04,true;madkit.gui.ConsoleAgent #args# 
  * 
- * #jws simulation.ex04.MyScheduler04 jws#
  * 
  * Let us define explicitly how a simulation step takes place in order to define our own scheduling policy at will. This
  * is done by overriding {@link Scheduler#doSimulationStep()}.

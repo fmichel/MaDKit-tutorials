@@ -8,8 +8,8 @@ import simulation.ex04.MyScheduler04;
 
 /**
  * 
- * 
- * #jws simulation.ex05.MyScheduler05 jws#
+ *  #jws# simulation.ex05.MyScheduler05 #jws#
+ * 	#args# --launchAgents simulation.ex05.MyScheduler05,true;madkit.gui.ConsoleAgent #args# 
  * 
  * Let us illustrate some other basic features of a scheduler
  */
