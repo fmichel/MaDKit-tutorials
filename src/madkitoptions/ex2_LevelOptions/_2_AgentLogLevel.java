@@ -1,5 +1,6 @@
 package madkitoptions.ex2_LevelOptions;
 
+import madkit.kernel.Agent;
 import madkit.kernel.Madkit;
 import madkitoptions.TutorialAgent;
 
@@ -12,9 +13,9 @@ public class _2_AgentLogLevel {
 		//new Madkit(Madkit.LevelOption.agentLogLevel.toString(),"ALL", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
 		
 		/* Displays only the informational messages */
-		//new Madkit(Madkit.LevelOption.agentLogLevel.toString(),"INFO", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
+		new Madkit(Madkit.LevelOption.agentLogLevel.toString(),"INFO", Madkit.Option.launchAgents.toString(), Agent.class.getName() + ",true,1;");
 		
 		/* The logging is turned off */ 
-		new Madkit(Madkit.LevelOption.agentLogLevel.toString(),"OFF", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
+		//new Madkit(Madkit.LevelOption.agentLogLevel.toString(),"OFF", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
 	}
 }
