@@ -19,7 +19,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  * #jws# returncode.ex3_introducingReturnCodes.SuccessfulAgent #jws#
- * #args# --launchAgents returncode.ex3_introducingReturnCodes.SuccessfulAgent #args#
+ * #args# --launchAgents returncode.ex3_introducingReturnCodes.SuccessfulAgent,true #args#
  * 
  */
 

@@ -11,7 +11,7 @@ import returncode.utils.TutorialAgent;
  *
  *
  * #jws# returncode.ex7_concreteUseOfReturnCode.SendingMessageWithReturnCode #jws#
- * #args# --launchAgents returncode.ex7_concreteUseOfReturnCode.SendingMessageWithReturnCode #args#
+ * #args# --launchAgents returncode.ex7_concreteUseOfReturnCode.SendingMessageWithReturnCode, true #args#
  *
  */
 

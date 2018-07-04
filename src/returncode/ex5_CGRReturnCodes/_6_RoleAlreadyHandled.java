@@ -9,7 +9,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  * #jws# returncode.ex5_CGRReturnCodes._6_RoleAlreadyHandled #jws#
- * #args# --launchAgents returncode.ex5_CGRReturnCodes._6_RoleAlreadyHandled #args#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._6_RoleAlreadyHandled, true #args#
  * 
  */
 

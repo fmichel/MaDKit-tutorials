@@ -15,7 +15,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  *  #jws# returncode.ex2_madkitCodingError._2_LaunchingNewCrashingAgentsWithMadkit #jws#
- *  #args# --launchAgents returncode.ex2_madkitCodingError._2_LaunchingNewCrashingAgentsWithMadkit #args#
+ *  #args# --launchAgents returncode.ex2_madkitCodingError._2_LaunchingNewCrashingAgentsWithMadkit, true #args#
  * 
  */
 
