@@ -12,7 +12,10 @@ import madkit.kernel.Message;
 /**
  * Shows how agents exchange messages.
  * 
- * #jws communication.ex05.Agent4 jws#
+ * 
+ *	#jws# communication.ex05.Agent4 #jws#
+ *  #args# --launchAgents communication.ex05.Agent4,true,2 #args#
+ * 
  * 
  * Agent4 will get an agent's address, and then send his message using sendMessageWithRole.
  */

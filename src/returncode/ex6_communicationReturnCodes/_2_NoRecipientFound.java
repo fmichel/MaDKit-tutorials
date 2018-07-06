@@ -8,7 +8,8 @@ import returncode.utils.TutorialAgent;
  * This ReturnCode is returned by send primitives when the targeted CGR location does not exist nor contain any agent.
  * 
  * 
- * #jws exception.ex5_communicationReturnCodes._2_NoRecipientFound jws#
+ * #jws# returncode.ex6_communicationReturnCodes._2_NoRecipientFound #jws#
+ * #args# --launchAgents returncode.ex6_communicationReturnCodes._2_NoRecipientFound, true #args#
  * 
  */
 

@@ -12,7 +12,8 @@ import simulation.ex06.Viewer;
 /**
  * 
  * 
- * #jws simulation.ex07.MySimulationModel07 jws#
+ * #jws# simulation.ex07.MySimulationModel07 #jws#
+ * #args# --launchAgents simulation.ex07.MySimulationModel07 #args# 
  * 
  * We can of course use images to represent the agents.
  */

@@ -12,7 +12,8 @@ import madkit.kernel.Agent;
 	2. override its live method.
 	3. launch the agent using executeThisAgent() within the main method.
 
-		#jws helloworld.ex01.HelloWorldAgent jws#
+		#jws# helloworld.ex01.HelloWorldAgent #jws#
+ * 		#args# --launchAgents helloworld.ex01.HelloWorldAgent,true #args#
  */
 
 public class HelloWorldAgent extends Agent {

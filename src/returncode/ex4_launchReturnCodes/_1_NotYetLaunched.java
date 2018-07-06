@@ -7,7 +7,8 @@ import returncode.utils.TutorialAgent;
  * kill primitives when the targeted agent has not been launched priorly.
  * 
  * 
- * #jws exception.ex3_launchReturnCodes.AgentKillingNotLaunchedAgent jws#
+ * #jws# returncode.ex4_launchReturnCodes._1_NotYetLaunched #jws#
+ * #args# --launchAgents returncode.ex4_launchReturnCodes._1_NotYetLaunched, true #args#
  * 
  */
 

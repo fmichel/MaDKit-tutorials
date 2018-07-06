@@ -7,7 +7,8 @@ import returncode.utils.TutorialAgent;
  * This ReturnCode is returned when we try to launch an agent which is already launched.
  * 
  * 
- * #jws exception.ex3_launchReturnCodes._2_AlreadyLaunched jws#
+ * #jws# returncode.ex4_launchReturnCodes._2_AlreadyLaunched #jws#
+ * #args# --launchAgents returncode.ex4_launchReturnCodes._2_AlreadyLaunched, true #args#
  * 
  */
 

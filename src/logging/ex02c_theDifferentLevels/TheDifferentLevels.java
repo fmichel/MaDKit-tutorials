@@ -15,7 +15,9 @@ import madkit.kernel.AgentLogger;
  * level which is used log a talk message. This is an example which recaps how to set and get the log level and how we
  * display or not messages according to their level. All the levels are used here. 
  * 
- * #jws logging.ex02c_theDifferentLevels.TheDifferentLevels jws#
+ * 
+ *  #jws# logging.ex02c_theDifferentLevels.TheDifferentLevels #jws#
+ * 	#args# --launchAgents logging.ex02c_theDifferentLevels.theDifferentLevels,true #args# 
  * 
  * 
  * @author Pascal Wagner

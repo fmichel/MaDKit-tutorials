@@ -9,7 +9,8 @@ import madkit.kernel.Agent;
  
  Let us launch two similar agents by using executeThisAgent(int, boolean, String...).
  
-		#jws helloworld.ex03.LaunchingTwoAgents jws#
+		#jws# helloworld.ex03.LaunchingTwoAgents #jws#
+  		#args# --launchAgents helloworld.ex03.LaunchingTwoAgents,true,2 #args#
  */
 
 public class LaunchingTwoAgents extends Agent {

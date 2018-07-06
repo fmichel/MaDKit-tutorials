@@ -8,7 +8,8 @@ import returncode.utils.TutorialAgent;
  * This ReturnCode is returned by launch primitives when the launched agent crashes in activate().
  * 
  * 
- * #jws exception.ex3_launchReturnCodes._3_AgentCrash jws#
+ * #jws# returncode.ex4_launchReturnCodes._3_AgentCrash #jws#
+ * #args# --launchAgents returncode.ex4_launchReturnCodes._3_AgentCrash, true #args#
  * 
  */
 
