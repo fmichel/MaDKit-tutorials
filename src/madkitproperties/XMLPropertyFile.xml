@@ -1,10 +1,10 @@
 <MDK name="myConfigName" description="my wonderful description">
 <!-- The <Agents> element is just about structuring this example, i.e. using only the <Agent> element is sufficient -->
 	<Agents>
-		<Agent class="src.madkitproperties._6_ParameterizedAgent" nbOfInstances="5" GUI="true" logLevel="FINEST">
+		<Agent class="src.madkitproperties._6_ParameterizedAgent" nbOfInstances="5" GUI="true" logLevel="FINEST" message ="We are three Parameterized agents with a graphical interface">
 		</Agent>
 	﻿	<!-- nbOfInstances="1" is the default value -->
-		<Agent class="Agent">
+		<Agent class="src.madkitproperties._6_ParameterizedAgent" message="I am a Parameterized agent without any graphical interface.">
 		</Agent>
 	</Agents>
 

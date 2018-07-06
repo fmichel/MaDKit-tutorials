@@ -7,7 +7,8 @@ import madkit.kernel.Madkit;
  * To do so, you have to specify the name of the wanted option as an argument of the
  * Madkit() method. To do so, you have two possibility that will be presented in this example.
  * 
- * BALISES
+ * #jws# madkitproperties._2_ToStringEquivalent #jws#
+ * #args# #args#
  */
 public class _2_ToStringEquivalent {
 

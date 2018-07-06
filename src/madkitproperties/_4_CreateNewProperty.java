@@ -5,7 +5,8 @@ import madkit.kernel.Madkit;
 /**
  * You can also create the property you want with the value you find accurate.
  * 
- * BALISES
+ * #jws# madkitproperties._4_CreateNewProperty #jws#
+ * #args# #args#
  */
 public class _4_CreateNewProperty {
 

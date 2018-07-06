@@ -27,7 +27,8 @@ import madkit.kernel.Madkit;
  *  
  * Now we will present you how to display default properties in MaDKit.
  * 
- * BALISES JWS ?
+ * #jws# madkitproperties._1_DisplayMadkitProperties #jws#
+ * #args# #args#
  */
 public class _1_DisplayMadkitProperties {
 

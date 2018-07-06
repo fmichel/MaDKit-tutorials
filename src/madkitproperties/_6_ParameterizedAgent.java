@@ -2,6 +2,10 @@ package madkitproperties;
 
 import madkit.kernel.Agent;
 
+/**
+ * This class only purpose is to exemplify the use of a XML property file with MaDKit.
+ */
+
 public class _6_ParameterizedAgent extends Agent{
 
 	private String message;

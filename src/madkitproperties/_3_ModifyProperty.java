@@ -4,6 +4,9 @@ import madkit.kernel.Madkit;
 
 /**
  * As every variable, a property has a value that we can change.
+ * 
+ * #jws# madkitproperties._3_ModifyProperty #jws#
+ * #args# #args#
  */
 public class _3_ModifyProperty {
 
