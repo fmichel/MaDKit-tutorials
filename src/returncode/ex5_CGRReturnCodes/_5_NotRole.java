@@ -8,7 +8,8 @@ import returncode.utils.TutorialAgent;
  * This ReturnCode indicates that a role does not exist.
  *
  * 
- * #jws exception.ex4_CGRReturnCodes._5_NotRole jws#
+ * #jws# returncode.ex5_CGRReturnCodes._5_NotRole #jws#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._5_NotRole, true #args#
  * 
  */
 

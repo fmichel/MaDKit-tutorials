@@ -11,8 +11,9 @@ import madkit.kernel.Message;
  * Shows how agents exchange messages.
  * 
  * 
- * 
- * #jws communication.ex04.Agent3 jws#
+ *	#jws# communication.ex04.Agent3 #jws#
+ *  #args# --launchAgents communication.ex04.Agent1,true,1;communication.ex04.Agent3,true,1 #args#
+ *  
  * 
  * This Agent3 is communicating using another method than Agent 1 and 2.
  */

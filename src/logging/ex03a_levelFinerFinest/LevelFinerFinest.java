@@ -14,8 +14,9 @@ import madkit.kernel.Message;
  * by the methods : activate(), live() and end(). - the different pauses are only there for you to see the agent's life
  * cycle.
  * 
- * #jws logging.ex03a_levelFinerFinest.LevelFinerFinest jws#
  * 
+ *  #jws# logging.ex03a_levelFinerFinest.LevelFinerFinest #jws#
+ * 	#args# --launchAgents logging.ex03a_levelFinerFinest.LevelFinerFinest,true #args# 
  * 
  * 
  * @author Pascal Wagner

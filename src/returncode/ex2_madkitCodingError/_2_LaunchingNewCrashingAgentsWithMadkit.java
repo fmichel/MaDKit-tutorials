@@ -14,7 +14,8 @@ import returncode.utils.TutorialAgent;
  * Here we launch two agents and see if the crash of one impacts the activity of the other.
  * 
  * 
- * #jws exception.ex1_exceptions.ex12_madkitCodingError._2_LaunchingNewCrashingAgentsWithMadkit jws#
+ *  #jws# returncode.ex2_madkitCodingError._2_LaunchingNewCrashingAgentsWithMadkit #jws#
+ *  #args# --launchAgents returncode.ex2_madkitCodingError._2_LaunchingNewCrashingAgentsWithMadkit, true #args#
  * 
  */
 

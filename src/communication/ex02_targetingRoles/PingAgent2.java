@@ -15,7 +15,8 @@ import madkit.kernel.Message;
  * 
  * 
  * 
- * #jws communication.ex02_targetingRoles.PingAgent2 jws#
+ * 		#jws# communication.ex02_targetingRoles.PingAgent2 #jws#
+ *  	#args# --launchAgents communication.ex01.PingAgent;communication.ex02_targetingRoles.PingAgent2,true,10 #args#
  * 
  * 
  * 

@@ -7,7 +7,8 @@ import returncode.utils.TutorialAgent;
  * This ReturnCode is returned by kill primitives when the targeted agent is already terminated.
  * 
  * 
- * #jws exception.ex3_launchReturnCodes._5_AlreadyKilled jws#
+ * #jws# returncode.ex4_launchReturnCodes._5_AlreadyKilled #jws#
+ * #args# --launchAgents returncode.ex4_launchReturnCodes._5_AlreadyKilled, true #args#
  * 
  */
 

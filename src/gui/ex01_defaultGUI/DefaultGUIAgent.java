@@ -6,7 +6,8 @@ import madkit.kernel.Madkit;
 /**
  * Shows how the default GUI mechanism works in MaDKit 5.
  * 
- * #jws gui.ex01_defaultGUI.DefaultGUIAgent jws#
+ * 		#jws# gui.ex01_defaultGUI.DefaultGUIAgent #jws#
+ *  	#args# --launchAgents gui.ex01_defaultGUI.DefaultGUIAgent,true #args#
  * 
  * The only thing to do for obtaining a default GUI for an agent is to launch it with the GUI parameter set to true.
  * This could be done either in the MaDKit arguments or when launching an agent.

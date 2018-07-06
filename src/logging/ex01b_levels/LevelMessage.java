@@ -8,9 +8,8 @@ import madkit.kernel.Agent;
  * displayed. In this example, we will log two messages with different levels. You will observe that the messages are
  * preceded by their own log level.
  * 
- * #jws logging.ex01b_levels.LevelMessage jws#
- * 
- * 
+ *  #jws# logging.ex01b_levels.LevelMessage #jws#
+ * 	#args# --launchAgents logging.ex01b_levels.LevelMessage,true #args# 
  * 
  * @author Pascal Wagner
  */

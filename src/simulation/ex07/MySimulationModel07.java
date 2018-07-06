@@ -3,7 +3,8 @@ package simulation.ex07;
 import simulation.ex06.MySimulationModel;
 
 /**
- * #jws simulation.ex07.MySimulationModel07 jws#
+ *  #jws# simulation.ex07.MySimulationModel07 #jws#
+ * 	#args# --launchAgents simulation.ex07.MySimulationModel07 #args# 
  * 
  * It is time to display using an alternative representation for the agents !! See {@link ImageViewer}
  */

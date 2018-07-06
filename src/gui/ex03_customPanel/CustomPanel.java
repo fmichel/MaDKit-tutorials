@@ -15,7 +15,8 @@ import madkit.kernel.Madkit;
 /**
  * Shows how to set a custom panel to the default frame.
  * 
- * #jws gui.ex03_customPanel.CustomPanel jws#
+ * #jws# gui.ex03_customPanel.CustomPanel #jws#
+ * 	#args# --launchAgents gui.ex03_customPanel.CustomPanel,true #args#
  * 
  * In this example, we customize the default frame layout. Doing so, we still use the madkit.gui.OutputPanel component
  * to ease the work.

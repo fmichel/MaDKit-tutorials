@@ -12,8 +12,10 @@ import madkit.kernel.Agent;
 import madkit.kernel.Madkit;
 
 /**
- * Shows how to build a totally independent GUI while still using a default GUI for the agent. #jws
- * gui.ex05_multi_GUI.MultiGUI jws#
+ * Shows how to build a totally independent GUI while still using a default GUI for the agent. 
+ *
+ *  #jws# gui.ex05_multi_GUI.MultiGUI #jws#
+ * 	#args# --launchAgents gui.ex05_multi_GUI.MultiGUI,true #args#
  * 
  * The idea is that it could be interesting to have several GUI for an agent: A main and the default which could be used
  * as a console for the agent.

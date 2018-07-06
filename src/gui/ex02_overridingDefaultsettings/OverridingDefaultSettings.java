@@ -5,8 +5,10 @@ import madkit.kernel.Agent;
 import madkit.kernel.Madkit;
 
 /**
- * Shows how to override the default frame settings of the default GUI. #jws
- * gui.ex02_overridingDefaultsettings.OverridingDefaultSettings jws#
+ * Shows how to override the default frame settings of the default GUI.
+ * 
+ *  #jws# gui.ex02_overridingDefaultsettings.OverridingDefaultSettings #jws#
+ * 	#args# --launchAgents gui.ex02_overridingDefaultsettings.OverridingDefaultSettings,true #args#
  * 
  * When an agent is launched with a GUI, the setupFrame method is automatically called before activate. This method is
  * the opportunity for the agent to modify the default settings of the frame.

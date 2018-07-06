@@ -7,7 +7,8 @@ import returncode.utils.TutorialAgent;
  * This ReturnCode indicates that a community does not exist.
  * 
  * 
- * #jws exception.ex4_CGRReturnCodes._1_NotCommunity jws#
+ * #jws# returncode.ex5_CGRReturnCodes._1_NotCommunity #jws#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._1_NotCommunity, true #args#
  * 
  */
 
