@@ -39,7 +39,7 @@ public class CreateJnlpFromJavaSource extends Task {
 	try (Scanner s = new Scanner(tutoFilePath)) {
 	    try {
 		s.useDelimiter("#jws#").next();
-		javaWebStartFileName = s.next().trim()+".jnlp";
+		javaWebStartFileName = s.next().trim();
 	    }
 	    catch(NoSuchElementException e) {
 		return; //no jnlp config at all
@@ -55,7 +55,12 @@ public class CreateJnlpFromJavaSource extends Task {
 	catch(IOException e) {
 	    log(e,Level.SEVERE.intValue());
 	}
-	if (javaWebStartFileName == null || javaWebStartFileName.isEmpty() || webStartArguments == null || webStartArguments.isEmpty()) {
+	if(javaWebStartFileName.isEmpty()) {
+	    System.err.println(tutoSrcFile);
+	} else {
+	    javaWebStartFileName+=".jnlp";
+	}
+	if (javaWebStartFileName == null || javaWebStartFileName.isEmpty() || webStartArguments == null) {
 	    throw new BuildException(tutoFilePath.toString()+" does not contain a valid jnlp config !");
 	}
 
@@ -66,8 +71,16 @@ public class CreateJnlpFromJavaSource extends Task {
 	copyTask.setFile(jnlpTemplate);
 	copyTask.setTofile(new File(jnlpDestinationDir, javaWebStartFileName));
 	FilterSet filters = copyTask.createFilterSet();
+
 	filters.addFilter("#jnlp.file.name#", javaWebStartFileName);
 	filters.addFilter("#jnlp.arguments#", webStartArguments);
+	if (webStartArguments.isEmpty()) {
+	    filters.addFilter("#main#", "main-class=\""+javaWebStartFileName.replaceAll(".jnlp", "\""));
+	}
+	else {
+	    filters.addFilter("#main#", "");
+	}
+	
 	copyTask.setOverwrite(true);
 	copyTask.execute();
     }

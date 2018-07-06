@@ -36,8 +36,6 @@
 	<loadproperties srcfile="javadoc.api.local.properties" />
 
 
-
-
 	<!-- the following is only used in admin deploying tasks -->
 	<property name="server.info.dir" value="${user.home}/.mdk_keystore" />
 
@@ -54,6 +52,13 @@
 		<taskdef name="java2html" classname="com.java2html.Java2HTMLTask" classpath="lib/j2h.jar" />
 	</target>
 
+	<!-- =================================
+		OPTIONAL:
+		 A java web start file (.jnlp) could be also generated if possible.
+		 Here, you can specify the web directory in which you will
+		 put the jar and the jnlp so that it will directly work without editing.
+         ================================= -->
+	<property name="web.codebase" value="http://www.madkit.net/madkit/tutorials/jnlp" />
 
 	<!-- =================================
 		DO NOT EDIT WHAT FOLLOWS:
