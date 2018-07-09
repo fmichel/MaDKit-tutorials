@@ -21,7 +21,8 @@ import madkit.kernel.Madkit;
  * If this boolean option is set to true, the MaDKit console agent is launched.
  * The default value is false.
  * 
- * #jws madkitoptions.ex1_BooleanOptions._1_Console jws#
+ * #jws# madkitoptions.ex1_BooleanOptions._1_Console #jws#
+ * #args# #args#
  *
  */
 
@@ -32,7 +33,7 @@ public class _1_Console {
 		 /* If no boolean is specified, MaDKit considers it as true */
 		 new Madkit(Madkit.BooleanOption.console.toString()); /* Equivalent to : new Madkit(Madkit.BooleanOption.console.toString(), "true"); */
 		 
-		 /* Check the difference by commenting the previous line and decommenting the next one. */
+		 /* Check the difference by commenting the previous line and uncommenting the next one. */
 		 // new Madkit(Madkit.BooleanOption.console.toString(), "false");
 	 }
 }

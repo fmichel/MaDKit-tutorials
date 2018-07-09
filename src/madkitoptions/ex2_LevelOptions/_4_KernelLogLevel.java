@@ -4,10 +4,13 @@ import madkit.kernel.Madkit;
 import madkitoptions.TutorialAgent;
 
 /**
- * Only useful for kernel developers
- * 
- * INFO and OFF identical
- *
+ * This example is about the level option KernelLogLevel.
+ * This option allow to specify the log level of MaDKit's 
+ * kernel and is extremely useful for debugging.
+ * It is mainly useful for kernel developers.
+ *  
+ * #jws# madkitoptions.ex2_LevelOptions._4_KernelLogLevel #jws#
+ * #args# #args#
  */
 
 public class _4_KernelLogLevel {
@@ -17,10 +20,7 @@ public class _4_KernelLogLevel {
 		/* Displays everything */
 		new Madkit(Madkit.LevelOption.kernelLogLevel.toString(),"ALL");
 		
-		/* Displays only the informational messages */
-		//new Madkit(Madkit.LevelOption.kernelLogLevel.toString(),"INFO");
-		
-		/* The logging is turned off */ 
-		//new Madkit(Madkit.LevelOption.kernelLogLevel.toString(),"OFF");
+		/* Displays only informational messages */
+		// new Madkit(Madkit.LevelOption.kernelLogLevel.toString(),"INFO");
 	}
 }

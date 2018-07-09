@@ -1,6 +1,9 @@
 package madkitoptions.ex1_BooleanOptions;
 
 import madkitoptions.TutorialAgent;
+
+import java.util.logging.Level;
+
 import madkit.kernel.Madkit;
 
 /**
@@ -9,7 +12,8 @@ import madkit.kernel.Madkit;
  * in the agents' console.
  * The default value is false.
  * 
- * #jws madkitoptions.ex1_BooleanOptions._6_NoAgentConsoleLog jws#
+ * #jws# madkitoptions.ex1_BooleanOptions._6_NoAgentConsoleLog #jws#
+ * #args# #args#
  *
  */
 
@@ -17,10 +21,10 @@ public class _6_NoAgentConsoleLog {
 	
 	 public static void main(String[] args) {
 	
-		 new Madkit(Madkit.BooleanOption.noAgentConsoleLog.toString(), Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + " ,true, 2;");
+		 new Madkit(Madkit.BooleanOption.noAgentConsoleLog.toString(), Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + " ,true, 2", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
 		 
-		 /* Check the difference by commenting the previous line and decommenting the next one. */
-		 //new Madkit(Madkit.BooleanOption.noAgentConsoleLog.toString(), "false", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + " ,true, 2;");
+		 /* Check the difference by commenting the previous line and uncommenting the next one. */
+		 //new Madkit(Madkit.BooleanOption.noAgentConsoleLog.toString(), "false", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + " ,true, 2", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
 	 }
 
 }

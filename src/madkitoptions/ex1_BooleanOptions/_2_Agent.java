@@ -13,5 +13,9 @@ public class _2_Agent extends TutorialAgent{
 	@Override
 	protected void activate() {
 		requestRole("COMMUNITY", "GROUP", "ROLE");
+		/**
+		 * By requesting a role in a community that does not exist,
+		 * our agent will cause a CGR warning.
+		 */
 	}
 }

@@ -4,8 +4,13 @@ import madkit.kernel.Madkit;
 import madkitoptions.TutorialAgent;
 
 /**
- * Only useful for kernel developers, still same kind of output that AgentLogLevel
- *
+ * This example is about the level option GuiLogLevel.
+ * This option allow to specify the log level of MaDKit's 
+ * graphical user interface.
+ * It is mainly useful for kernel developers.
+ * 
+ * #jws# madkitoptions.ex2_LevelOptions._3_GuiLogLevel #jws#
+ * #args# #args#
  */
 
 public class _3_GuiLogLevel {
@@ -13,13 +18,10 @@ public class _3_GuiLogLevel {
 	public static void main(String[] args) {
 		
 		/* Displays everything */
-		//new Madkit(Madkit.LevelOption.guiLogLevel.toString(),"ALL");
+		new Madkit(Madkit.LevelOption.guiLogLevel.toString(),"ALL");
 		
-		/* Displays only the informational messages */
-		//new Madkit(Madkit.LevelOption.guiLogLevel.toString(),"INFO");
-		
-		/* Same output as INFO : no particular display .. */ 
-		new Madkit(Madkit.LevelOption.guiLogLevel.toString(),"OFF");
+		/* Displays only informational messages */
+		// new Madkit(Madkit.LevelOption.guiLogLevel.toString(),"INFO");
 	}
 	
 }

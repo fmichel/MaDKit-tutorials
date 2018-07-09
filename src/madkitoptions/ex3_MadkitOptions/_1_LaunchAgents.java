@@ -12,7 +12,7 @@ public class _1_LaunchAgents {
 		//this is equivalent to
 		new Madkit(Madkit.Option.launchAgents.toString(),TutorialAgent.class.getName() + ",false,1");
 		
-		//you can lauch several agent
+		//you can launch several agent
 		new Madkit(Madkit.Option.launchAgents.toString(),TutorialAgent.class.getName() + ",3");
 		
 		//and precise whether you want a GUI or not

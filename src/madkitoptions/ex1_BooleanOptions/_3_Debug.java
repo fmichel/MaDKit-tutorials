@@ -5,11 +5,11 @@ import madkit.kernel.Madkit;
 
 /**
  * This class exemplifies the use of debug's option.
- * If this boolean option is set to true, all the agents' LogLevel is set to "ALL".
+ * If this boolean option is set to true, all the agents' LogLevel are set to "ALL".
  * The default value is false.
  * 
- * #jws madkitoptions.ex1_BooleanOptions._3_Debug  jws#
- *
+ * #jws# madkitoptions.ex1_BooleanOptions._3_Debug  #jws#
+ * #args# #args#
  */
 
 public class _3_Debug {
@@ -17,7 +17,9 @@ public class _3_Debug {
 		 
 		 new Madkit(Madkit.BooleanOption.debug.toString(), Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
 		 
-		 /* Check the difference by commenting the previous line and decommenting the next one. */
+		 /* Check the difference by commenting the previous line and uncommenting the next one. 
+		  * You should have less log displayed
+		  */
 		 // new Madkit(Madkit.BooleanOption.debug.toString(), "false", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
 	 }
 }

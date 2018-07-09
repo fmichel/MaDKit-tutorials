@@ -1,18 +1,18 @@
 package madkitoptions.ex1_BooleanOptions;
 
-import exception.TutorialAgent;
+import madkitoptions.TutorialAgent;
 import madkit.kernel.Madkit;
 
 /**
  * This class exemplifies the use of createLogFiles' option.
  * If this boolean option is set to true, then file(s) storing
  * the logs of every MaDKit's agent with a log level greater
- * then "ALL" will be created. These file(s) are generated
+ * then the "OFF" level will be created. These file(s) are generated
  * in the logs directory of the root's project.
  * The default value is false.
  * 
- * #jws madkitoptions.ex1_BooleanOptions._5_CreateLogFiles jws#
- *
+ * #jws# madkitoptions.ex1_BooleanOptions._5_CreateLogFiles #jws#
+ * #args# #args#
  */
 
 public class _5_CreateLogFiles {

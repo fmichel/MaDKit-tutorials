@@ -7,7 +7,8 @@ import madkit.kernel.Madkit;
  * If this boolean option is set to true, MaDKit desktop is launched.
  * The default value is false.
  * 
- * #jws madkitoptions.ex1_BooleanOptions._4_Desktop jws#
+ * #jws# madkitoptions.ex1_BooleanOptions._4_Desktop #jws#
+ * #args# #args#
  */
 public class _4_Desktop {
 
@@ -24,7 +25,7 @@ public class _4_Desktop {
 		 /* Notice its the same behavior as the next line */
 		 // new Madkit(Madkit.Option.launchAgents.toString(), "null", Madkit.Option.configFile.toString(), "null");
 		 
-		 /* Nevertheless if we specify it... */
+		 /* Nevertheless if we specify it... There is not any Madkit desktop displayed. */
 		 // new Madkit(Madkit.BooleanOption.desktop.toString(),"false"); 
 	 }
 
