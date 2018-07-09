@@ -96,7 +96,7 @@
 	<target name="create-tuto-project-zip-file">
 		<zip destfile="${release.dir}/${project.zip.file}" level="9">
 			<zipfileset dir="." includes=".project,${madkit.lib.dir}/${madkit.jar.name}" />
-			<zipfileset dir="." includes="${ant.task.src.dir}/.eclipse.project.classpath,.project" fullpath=".classpath" />
+			<zipfileset dir="." includes="${ant.task.src.dir}/.eclipse.project.classpath" fullpath=".classpath" />
 		</zip>
 	</target>
 
@@ -169,9 +169,23 @@
 			</sequential>
 		</for>
 
-		<!-- add java sources to project zip file -->
+		<!-- remove jws tags from java source files -->
+		<copy todir="${release.dir}/${src.dir}/${tuto.src.dir}">
+			<fileset dir="${src.dir}/${tuto.src.dir}" />
+			<filterchain>
+				<linecontains negate="true">
+					<contains value="#jws#" />
+				</linecontains>
+			</filterchain>
+			<filterchain>
+				<linecontains negate="true">
+					<contains value="#args#" />
+				</linecontains>
+			</filterchain>
+		</copy>
+		<!-- add cleaned java sources to project zip file -->
 		<zip destfile="${release.dir}/${project.zip.file}" update="true">
-			<zipfileset dir="${src.dir}/${tuto.src.dir}" prefix="${src.dir}/${tuto.src.dir}" />
+			<zipfileset dir="${release.dir}/${src.dir}/${tuto.src.dir}" prefix="${src.dir}/${tuto.src.dir}" />
 		</zip>
 
 	</target>
@@ -185,7 +199,7 @@
 		<echo>FTP upload of TUTO : target is ${ftp.server}/${ftp.tuto.dir}</echo>
 		<ftp server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" action="mkdir" remotedir="${ftp.tuto.dir}" verbose="yes" />
 		<ftp server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" action="put" remotedir="${ftp.tuto.dir}">
-			<fileset dir="${release.dir}" />
+			<fileset dir="${release.dir}" excludes="${src.dir}/**" />
 		</ftp>
 	</target>
 
