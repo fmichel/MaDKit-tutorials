@@ -72,12 +72,14 @@ public class CreateJnlpFromJavaSource extends Task {
 	copyTask.setTofile(new File(jnlpDestinationDir, javaWebStartFileName));
 	FilterSet filters = copyTask.createFilterSet();
 
+	
 	filters.addFilter("#jnlp.file.name#", javaWebStartFileName);
-	filters.addFilter("#jnlp.arguments#", webStartArguments);
 	if (webStartArguments.isEmpty()) {
+	    filters.addFilter("#jnlp.arguments#", webStartArguments);
 	    filters.addFilter("#main#", "main-class=\""+javaWebStartFileName.replaceAll(".jnlp", "\""));
 	}
 	else {
+	    filters.addFilter("#jnlp.arguments#", "<argument>"+webStartArguments+"</argument>");
 	    filters.addFilter("#main#", "");
 	}
 	

@@ -19,6 +19,6 @@
   </resources>
   <application-desc @#main#@>
     <name>The MaDKit tutorials</name>
-	<argument>@#jnlp.arguments#@</argument>
+	@#jnlp.arguments#@
   </application-desc>
 </jnlp>
