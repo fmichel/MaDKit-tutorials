@@ -82,7 +82,7 @@
 	<!-- =================================
           target: release
          ================================= -->
-	<target name="release" depends="clean,create-tuto-project-zip-file,copy-resources,hello-world,logging,gui,communication,simulation,exception">
+	<target name="release" depends="clean,create-tuto-project-zip-file,copy-resources,hello-world,logging,gui,communication,simulation,returncode,madkitproperties">
 		<copy tofile="${release.dir}/index.html" file="MaDKit-tutorials.html">
 			<filterchain>
 				<expandproperties />
@@ -307,6 +307,18 @@
 			<param name="tuto.src.dir" value="returncode" />
 			<param name="tuto.destination" value="returncode" />
 			<param name="tuto.description" value="Basics for handling some exceptions and return code in MaDKit" />
+		</antcall>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - -
+          target: madkitproperties
+         - - - - - - - - - - - - - - - - - -->
+	<target name="madkitproperties">
+		<antcall target="build_tuto_files">
+			<param name="tuto.name" value="MaDKit properties" />
+			<param name="tuto.src.dir" value="madkitproperties" />
+			<param name="tuto.destination" value="madkitproperties" />
+			<param name="tuto.description" value="Introducing MaDKit properties." />
 		</antcall>
 	</target>
 
