@@ -23,7 +23,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  *  #jws# returncode.ex1_javaException.CrashingAgent #jws#
- *  #args# --launchAgents returncode.ex1_javaException.CrashingAgent #args#
+ *  #args# --launchAgents returncode.ex1_javaException.CrashingAgent, true #args#
  * 
  */
 

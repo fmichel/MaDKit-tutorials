@@ -36,8 +36,6 @@
 	<loadproperties srcfile="javadoc.api.local.properties" />
 
 
-
-
 	<!-- the following is only used in admin deploying tasks -->
 	<property name="server.info.dir" value="${user.home}/.mdk_keystore" />
 
@@ -54,6 +52,13 @@
 		<taskdef name="java2html" classname="com.java2html.Java2HTMLTask" classpath="lib/j2h.jar" />
 	</target>
 
+	<!-- =================================
+		OPTIONAL:
+		 A java web start file (.jnlp) could be also generated if possible.
+		 Here, you can specify the web directory in which you will
+		 put the jar and the jnlp so that it will directly work without editing.
+         ================================= -->
+	<property name="web.codebase" value="http://www.madkit.net/madkit/tutorials/jnlp" />
 
 	<!-- =================================
 		DO NOT EDIT WHAT FOLLOWS:
@@ -91,7 +96,7 @@
 	<target name="create-tuto-project-zip-file">
 		<zip destfile="${release.dir}/${project.zip.file}" level="9">
 			<zipfileset dir="." includes=".project,${madkit.lib.dir}/${madkit.jar.name}" />
-			<zipfileset dir="." includes="${ant.task.src.dir}/.eclipse.project.classpath,.project" fullpath=".classpath" />
+			<zipfileset dir="." includes="${ant.task.src.dir}/.eclipse.project.classpath" fullpath=".classpath" />
 		</zip>
 	</target>
 
@@ -164,9 +169,23 @@
 			</sequential>
 		</for>
 
-		<!-- add java sources to project zip file -->
+		<!-- remove jws tags from java source files -->
+		<copy todir="${release.dir}/${src.dir}/${tuto.src.dir}">
+			<fileset dir="${src.dir}/${tuto.src.dir}" />
+			<filterchain>
+				<linecontains negate="true">
+					<contains value="#jws#" />
+				</linecontains>
+			</filterchain>
+			<filterchain>
+				<linecontains negate="true">
+					<contains value="#args#" />
+				</linecontains>
+			</filterchain>
+		</copy>
+		<!-- add cleaned java sources to project zip file -->
 		<zip destfile="${release.dir}/${project.zip.file}" update="true">
-			<zipfileset dir="${src.dir}/${tuto.src.dir}" prefix="${src.dir}/${tuto.src.dir}" />
+			<zipfileset dir="${release.dir}/${src.dir}/${tuto.src.dir}" prefix="${src.dir}/${tuto.src.dir}" />
 		</zip>
 
 	</target>
@@ -180,7 +199,7 @@
 		<echo>FTP upload of TUTO : target is ${ftp.server}/${ftp.tuto.dir}</echo>
 		<ftp server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" action="mkdir" remotedir="${ftp.tuto.dir}" verbose="yes" />
 		<ftp server="${ftp.server}" userid="${ftp.user}" password="${ftp.password}" action="put" remotedir="${ftp.tuto.dir}">
-			<fileset dir="${release.dir}" />
+			<fileset dir="${release.dir}" excludes="${src.dir}/**" />
 		</ftp>
 	</target>
 
@@ -280,14 +299,14 @@
 	</target>
 
 	<!-- - - - - - - - - - - - - - - - - -
-          target: exception
+          target: returncode
          - - - - - - - - - - - - - - - - - -->
-	<target name="exception">
+	<target name="returncode">
 		<antcall target="build_tuto_files">
-			<param name="tuto.name" value="Exceptions in MaDKit" />
+			<param name="tuto.name" value="Return codes in MaDKit" />
 			<param name="tuto.src.dir" value="returncode" />
-			<param name="tuto.destination" value="exception" />
-			<param name="tuto.description" value="Basics for handling exceptions in MaDKit" />
+			<param name="tuto.destination" value="returncode" />
+			<param name="tuto.description" value="Basics for handling some exceptions and return code in MaDKit" />
 		</antcall>
 	</target>
 

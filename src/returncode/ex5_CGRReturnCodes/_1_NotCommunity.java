@@ -8,7 +8,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  * #jws# returncode.ex5_CGRReturnCodes._1_NotCommunity #jws#
- * #args# --launchAgents returncode.ex5_CGRReturnCodes._1_NotCommunity #args#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._1_NotCommunity, true #args#
  * 
  */
 

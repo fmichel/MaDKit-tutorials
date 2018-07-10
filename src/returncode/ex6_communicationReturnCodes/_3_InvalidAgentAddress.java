@@ -11,7 +11,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  * #jws# returncode.ex6_communicationReturnCodes._3_InvalidAgentAddress #jws#
- * #args# --launchAgents returncode.ex6_communicationReturnCodes._3_InvalidAgentAddress #args#
+ * #args# --launchAgents returncode.ex6_communicationReturnCodes._3_InvalidAgentAddress, true #args#
  * 
  */
 

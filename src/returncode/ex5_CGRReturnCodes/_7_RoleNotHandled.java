@@ -12,7 +12,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  * #jws# returncode.ex5_CGRReturnCodes._7_RoleNotHandled #jws#
- * #args# --launchAgents returncode.ex5_CGRReturnCodes._7_RoleNotHandled #args#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._7_RoleNotHandled, true #args#
  * 
  */
 public class _7_RoleNotHandled extends TutorialAgent{
