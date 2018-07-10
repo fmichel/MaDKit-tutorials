@@ -8,7 +8,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  * #jws# returncode.ex4_launchReturnCodes._5_AlreadyKilled #jws#
- * #args# --launchAgents returncode.ex4_launchReturnCodes._5_AlreadyKilled #args#
+ * #args# --launchAgents returncode.ex4_launchReturnCodes._5_AlreadyKilled, true #args#
  * 
  */
 

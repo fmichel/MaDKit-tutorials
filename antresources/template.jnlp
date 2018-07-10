@@ -17,8 +17,8 @@
     <jar href="MaDKit-tutorials.jnlp.jar"/>
     <property name="jnlp.packEnabled" value="true"/> 
   </resources>
-  <application-desc>
+  <application-desc @#main#@>
     <name>The MaDKit tutorials</name>
-	<argument>@#jnlp.arguments#@</argument>
+	@#jnlp.arguments#@
   </application-desc>
 </jnlp>

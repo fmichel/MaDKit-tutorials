@@ -8,7 +8,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  * #jws# returncode.ex4_launchReturnCodes._1_NotYetLaunched #jws#
- * #args# --launchAgents returncode.ex4_launchReturnCodes._1_NotYetLaunched #args#
+ * #args# --launchAgents returncode.ex4_launchReturnCodes._1_NotYetLaunched, true #args#
  * 
  */
 

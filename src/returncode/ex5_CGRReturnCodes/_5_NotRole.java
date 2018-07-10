@@ -9,7 +9,7 @@ import returncode.utils.TutorialAgent;
  *
  * 
  * #jws# returncode.ex5_CGRReturnCodes._5_NotRole #jws#
- * #args# --launchAgents returncode.ex5_CGRReturnCodes._5_NotRole #args#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._5_NotRole, true #args#
  * 
  */
 

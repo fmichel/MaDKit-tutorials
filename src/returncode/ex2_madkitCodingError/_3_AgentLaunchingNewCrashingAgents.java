@@ -19,7 +19,7 @@ import returncode.utils.TutorialAgent;
  * 
  * 
  *  #jws# returncode.ex2_madkitCodingError._3_AgentLaunchingNewCrashingAgents #jws#
- *  #args# --launchAgents returncode.ex2_madkitCodingError._3_AgentLaunchingNewCrashingAgents #args#
+ *  #args# --launchAgents returncode.ex2_madkitCodingError._3_AgentLaunchingNewCrashingAgents,true #args#
  * 
  */
 
