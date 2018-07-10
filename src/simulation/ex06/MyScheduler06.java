@@ -6,8 +6,8 @@ import madkit.simulation.activator.GenericBehaviorActivator;
 
 /**
  * 
- * 
- * #jws simulation.ex06.MySimulationModel jws#
+ *  #jws# simulation.ex06.MyScheduler06 #jws#
+ * 	#args# >--launchAgents simulation.ex06.EnvironmentAgent --agentLogLevel ALL #args# 
  * 
  * Nothing really new here, except that we define an additional Activator which is used to schedule the display.
  * Especially, this is about calling the "observe" method of agents having the role of viewer in the organization

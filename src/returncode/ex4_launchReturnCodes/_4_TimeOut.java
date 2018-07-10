@@ -7,7 +7,8 @@ import returncode.utils.TutorialAgent;
  * This ReturnCode is returned by various timed primitives of the Agent class.
  * 
  * 
- * #jws exception.ex3_launchReturnCodes._4_TimeOut jws#
+ * #jws# returncode.ex4_launchReturnCodes._4_TimeOut #jws#
+ * #args# --launchAgents returncode.ex4_launchReturnCodes._4_TimeOut #args#
  * 
  */
 

@@ -4,8 +4,8 @@ import madkit.kernel.AbstractAgent;
 
 /**
  * 
- * 
- * #jws simulation.ex06.MySimulationModel jws#
+ *  #jws# simulation.ex06.MySimulationModel #jws#
+ * 	#args# --launchAgents simulation.ex06.MySimulationModel #args# 
  * 
  * It is time to display something !! The only purpose of this class is to show an example of what could be a launching
  * sequence. The display work is done in {@link Viewer}

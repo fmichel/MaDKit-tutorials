@@ -7,7 +7,8 @@ import returncode.utils.TutorialAgent;
  * This ReturnCode indicates that an agent is not in a group.
  *
  * 
- * #jws exception.ex4_CGRReturnCodes._4_NotInGroup jws#
+ * #jws# returncode.ex5_CGRReturnCodes._4_NotInGroup #jws#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._4_NotInGroup #args#
  * 
  */
 

@@ -13,7 +13,8 @@ import returncode.utils.TutorialAgent;
  * send a message with an agent without launching him.
  * 
  * 
- * #jws exception.ex1_exceptions.ex12_madkitCodingError._1_CrashingAgent jws#
+ * #jws# returncode.ex2_madkitCodingError._1_CrashingAgent #jws#
+ * #args# --launchAgents returncode.ex2_madkitCodingError._1_CrashingAgent #args#
  * 
  */
 

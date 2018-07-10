@@ -8,7 +8,8 @@ import returncode.utils.TutorialAgent;
  * requested role.
  * 
  * 
- * #jws exception.ex4_CGRReturnCodes._6_RoleAlreadyHandled jws#
+ * #jws# returncode.ex5_CGRReturnCodes._6_RoleAlreadyHandled #jws#
+ * #args# --launchAgents returncode.ex5_CGRReturnCodes._6_RoleAlreadyHandled #args#
  * 
  */
 

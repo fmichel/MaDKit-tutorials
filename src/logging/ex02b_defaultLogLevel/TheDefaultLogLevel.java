@@ -6,8 +6,9 @@ import madkit.kernel.Agent;
  * So we can set the log level with getLogger().setLevel() and we will see the different existing levels in the next
  * example. Here we go to see the method getLevel() and see the default log level which is used in MaDKit. 
  * 
- * #jws logging.ex02b_defaultLogLevel.TheDefaultLogLevel jws#
  * 
+ * #jws# logging.ex02b_defaultLogLevel.TheDefaultLogLevel #jws#
+ * #args# --launchAgents logging.ex02b_defaultLogLevel.TheDefaultLogLevel,true #args# 
  * 
  * 
  * @author Pascal Wagner

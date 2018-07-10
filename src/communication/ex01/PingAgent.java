@@ -15,7 +15,8 @@ import madkit.kernel.Message;
  * 
  * 
  * 
- * 		#jws communication.ex01.PingAgent jws#
+ * 		#jws# communication.ex01.PingAgent #jws#
+ *  	#args# --launchAgents communication.ex01.PingAgent,true,2 #args#
  * 
  * 
  * 

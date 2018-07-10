@@ -8,8 +8,8 @@ import madkit.simulation.activator.GenericBehaviorActivator;
 
 /**
  * 
- * 
- * #jws simulation.ex01.MyScheduler jws#
+ *  #jws# simulation.ex01.MyScheduler #jws#
+ *  #args# --launchAgents simulation.ex01.MyScheduler,true;madkit.gui.ConsoleAgent #args# 
  * 
  * In this first example, the goal is only to manage the execution of some agents. Two classes are needed : a
  * madkit.kernel.Scheduler that manages an madkit.kernel.Activator and a simulated agent class:
