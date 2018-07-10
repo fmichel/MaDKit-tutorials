@@ -5,17 +5,19 @@ import java.awt.Color;
 import madkit.gui.AgentFrame;
 import madkit.kernel.AbstractAgent;
 
-public class _4_CustomAgentFrame extends AgentFrame{
+/**
+ * 
+ * This class represent a customized agent frame with a 
+ * green background.
+ * This class will be used in _4_AgentFrameClass.
+ *
+ */
 
-	/**
-	 * 
-	 */
-	//private static final long serialVersionUID = 1L;
+public class _4_CustomAgentFrame extends AgentFrame{
 
 	public _4_CustomAgentFrame(AbstractAgent agent) {
 		super(agent);
 		setBackground(Color.GREEN);
-		// TODO Auto-generated constructor stub
 	}
 	
 }

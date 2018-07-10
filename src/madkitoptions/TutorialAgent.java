@@ -14,8 +14,6 @@
 
 package madkitoptions;
 
-//import java.util.logging.Level;
-
 import madkit.kernel.Agent;
 
 /**
@@ -26,7 +24,6 @@ public class TutorialAgent extends Agent{
 
 	@Override
 	protected void activate() {
-		//getLogger().setLevel(Level.INFO);
 		pause(5000);
 	}
 	

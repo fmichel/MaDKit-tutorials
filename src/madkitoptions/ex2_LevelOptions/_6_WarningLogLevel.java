@@ -3,25 +3,23 @@ package madkitoptions.ex2_LevelOptions;
 import madkit.kernel.Madkit;
 import madkitoptions.ex1_BooleanOptions._2_Agent;
 
-//this is deprecated, if you 
 /**
- * This example is about the level option KernelLogLevel.
- * This option allow to specify the log level of MaDKit's 
- * kernel and is extremely useful for debugging.
- * It is mainly useful for kernel developers.
+ * This example is about the deprecated option : warningLogLevel.
+ * 
+ * Since MaDKit v5.2 it is replaced by AgentLogger.enableCGRWarnings().
+ * You can check how we use enableCGRWarnings() in the 
+ * _6_AgentWithCGRWarnings class.
  *  
  * #jws# madkitoptions.ex2_LevelOptions._4_KernelLogLevel #jws#
  * #args# #args#
  */
+
 public class _6_WarningLogLevel {
 	
 	public static void main(String[] args) {
 		
-		/* Displays everything */
+		/* This was how we used the warningLogLevel. Keep in mind that it is now deprecated. */
 		new Madkit(Madkit.LevelOption.warningLogLevel.toString(),"ALL", Madkit.Option.launchAgents.toString(), _2_Agent.class.getName() + " ,true,1");
-		
-		/* Displays only informational messages */
-		 new Madkit(Madkit.LevelOption.warningLogLevel.toString(),"INFO", Madkit.Option.launchAgents.toString(), _2_Agent.class.getName() + " ,true,1");
-		
+	
 	}
 }
