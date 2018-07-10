@@ -299,14 +299,14 @@
 	</target>
 
 	<!-- - - - - - - - - - - - - - - - - -
-          target: exception
+          target: returncode
          - - - - - - - - - - - - - - - - - -->
-	<target name="exception">
+	<target name="returncode">
 		<antcall target="build_tuto_files">
-			<param name="tuto.name" value="Exceptions in MaDKit" />
+			<param name="tuto.name" value="Return codes in MaDKit" />
 			<param name="tuto.src.dir" value="returncode" />
-			<param name="tuto.destination" value="exception" />
-			<param name="tuto.description" value="Basics for handling exceptions in MaDKit" />
+			<param name="tuto.destination" value="returncode" />
+			<param name="tuto.description" value="Basics for handling some exceptions and return code in MaDKit" />
 		</antcall>
 	</target>
 
