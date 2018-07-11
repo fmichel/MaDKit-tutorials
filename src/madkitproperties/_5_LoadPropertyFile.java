@@ -5,7 +5,11 @@ import java.io.IOException;
 import madkit.util.MadkitProperties;
 
 /**
- * Comment utiliser MDK Prop dans un nouveau MaDKit ?
+ * Now we will see how to load properties
+ * from a property file.
+ * 
+ * An exception is thrown if the specified file 
+ * does not exist.
  * 
  * #jws# madkitproperties._5_LoadPropertyFile #jws#
  * #args# #args#
@@ -16,7 +20,7 @@ public class _5_LoadPropertyFile {
 	public static void main(String[] args) {
 		try{
 			System.out.println("toto\n");
-			new MadkitProperties().loadPropertiesFromPropertiesFile("src/madkitproperties/LoadingPropertyFile.properties");
+			new MadkitProperties().loadPropertiesFromPropertiesFile("src/madkitproperties/PropertyFile.properties");
 		} catch(IOException e) {
 			e.printStackTrace();
 		}

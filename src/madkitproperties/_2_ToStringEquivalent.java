@@ -3,7 +3,7 @@ package madkitproperties;
 import madkit.kernel.Madkit;
 
 /**
- * Each of the default MaDKit property can be specified while launching MaDKit.
+ * Each of the default MaDKit properties can be specified while launching MaDKit.
  * To do so, you have to specify the name of the wanted option as an argument of the
  * Madkit() method. To do so, you have two possibility that will be presented in this example.
  * 

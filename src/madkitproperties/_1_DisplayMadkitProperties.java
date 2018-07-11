@@ -2,7 +2,7 @@
  * READ ME
  * 
  * This tutorial enlighten MaDKit properties : what is a property and how to use it.
- * As MaDKit is an Java API, you may already be familiar with Java Property.
+ * As MaDKit is a Java API, you may already be familiar with Java Property.
  * If you are not and you want to get used to it before starting this tutorial, you may
  * have a look here in the official documentation or with the following tutorial.
  * 

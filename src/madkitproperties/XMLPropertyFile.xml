@@ -9,7 +9,7 @@
 	</Agents>
 
 	﻿<!--  
-	This allows to set MaDKit properties in the xml configuration. 
+	This allows to set MaDKit properties in the XML configuration. 
 	Regular options like "desktop" or application specific, i.e. anything. 
 	-->
 	<MadkitProperties desktop="true"/>
