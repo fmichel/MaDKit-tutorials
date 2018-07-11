@@ -21,11 +21,13 @@
  */
 package madkitoptions.ex2_LevelOptions;
 
+import java.util.logging.Level;
+
 import madkit.kernel.Madkit;
 
 /**
  * This example is about the level option MadkitLogLevel.
- * This option allow to specify the log level of MaDKit.
+ * This option allows the specification of MaDKit's log level.
  *
  * #jws# madkitoptions.ex2_LevelOptions._1_MadkitLogLevel #jws#
  * #args# #args#
@@ -35,12 +37,12 @@ public class _1_MadkitLogLevel {
 	 public static void main(String[] args) {
 		 
 		/* Displays everything */
-		new Madkit(Madkit.LevelOption.madkitLogLevel.toString(),"ALL");
+		new Madkit(Madkit.LevelOption.madkitLogLevel.toString(),Level.ALL.toString());
 		
 		/* Displays only informational messages */
-		//new Madkit(Madkit.LevelOption.madkitLogLevel.toString(),"INFO");
+		//new Madkit(Madkit.LevelOption.madkitLogLevel.toString(),Level.INFO.toString());
 		
 		/* The logging is turned off */ 
-		//new Madkit(Madkit.LevelOption.madkitLogLevel.toString(),"OFF");
+		//new Madkit(Madkit.LevelOption.madkitLogLevel.toString(),Level.OFF.toString());
 	 }
 }

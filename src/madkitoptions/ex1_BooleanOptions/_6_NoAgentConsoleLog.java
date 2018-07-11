@@ -24,7 +24,7 @@ public class _6_NoAgentConsoleLog {
 		 new Madkit(Madkit.BooleanOption.noAgentConsoleLog.toString(), Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + " ,true, 2", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
 		 
 		 /* Check the difference by commenting the previous line and uncommenting the next one. */
-		 //new Madkit(Madkit.BooleanOption.noAgentConsoleLog.toString(), "false", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + " ,true, 2", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
+		 //new Madkit(Madkit.BooleanOption.noAgentConsoleLog.toString(), Boolean.FALSE.toString(), Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + " ,true, 2", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
 	 }
 
 }

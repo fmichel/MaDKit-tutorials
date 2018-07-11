@@ -13,20 +13,20 @@ import madkit.kernel.Madkit;
 public class _4_Desktop {
 
 	/**
-	 * Despite default value is "false", if this property is not explicitly set
+	 * Despite default value being "false", if this property is not explicitly set
 	 * to "false" and if Madkit.Option.launchAgents and Madkit.Option.configFile
 	 * are both null, then the desktop mode will be automatically set to true
 	 * during startup.
 	 */
 	 public static void main(String[] args) {
 		 
-		 new Madkit(Madkit.BooleanOption.desktop.toString(),"true");
+		 new Madkit(Madkit.BooleanOption.desktop.toString());
 		
 		 /* Notice its the same behavior as the next line */
 		 // new Madkit(Madkit.Option.launchAgents.toString(), "null", Madkit.Option.configFile.toString(), "null");
 		 
-		 /* Nevertheless if we specify it... There is not any Madkit desktop displayed. */
-		 // new Madkit(Madkit.BooleanOption.desktop.toString(),"false"); 
+		 /* Nevertheless if we specify it... There is not any MaDKit desktop displayed. */
+		 // new Madkit(Madkit.BooleanOption.desktop.toString(), Boolean.FALSE.toString()); 
 	 }
 
 }

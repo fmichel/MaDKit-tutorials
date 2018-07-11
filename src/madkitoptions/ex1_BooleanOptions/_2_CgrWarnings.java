@@ -17,9 +17,9 @@ public class _2_CgrWarnings {
 	
 	 public static void main(String[] args) {
 		 
-		 new Madkit(Madkit.BooleanOption.cgrWarnings.toString(),"true", Madkit.Option.launchAgents.toString(), _2_Agent.class.getName() + " ,true,1", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
+		 new Madkit(Madkit.BooleanOption.cgrWarnings.toString(), Madkit.Option.launchAgents.toString(), _2_Agent.class.getName() + " ,true,1", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
 		 
 		 /* Check the difference by commenting the previous line and uncommenting the next one. */
-		 // new Madkit(Madkit.BooleanOption.cgrWarnings.toString(), Madkit.Option.launchAgents.toString(), _2_Agent.class.getName() + " ,true,1", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
+		 // new Madkit(Madkit.BooleanOption.cgrWarnings.toString(), Boolean.FALSE.toString(), Madkit.Option.launchAgents.toString(), _2_Agent.class.getName() + " ,true,1", Madkit.LevelOption.agentLogLevel.toString(), Level.SEVERE.toString());
 	 }
 }

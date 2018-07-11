@@ -1,5 +1,5 @@
 /**
- * Now we will interest into others Options.
+ * Now we will interest to other Options.
  * These features are no longer valued by boolean nor 
  * level but with a string. 
  */
@@ -16,9 +16,9 @@ import madkitoptions.TutorialAgent;
  * launch agents as soon as a new MaDKit is
  * launched. 
  * 
- * You may see that there is different way of doing it,
+ * You may see that there is different ways of doing it,
  * that you can launch several agents, or even different 
- * type of agent.
+ * types of agent.
  *
  * Feel free to uncomment the lines to test and 
  * understand the differences.
@@ -33,24 +33,24 @@ public class _1_LaunchAgents {
 	public static void main(String[] args) {
 				
 		/** 
-		 * If nothing else than the is specified, MaDKit launch one agent
-		 * of the precised class without graphical user interface (gui)
+		 * If nothing else than the class name of the agent to launch is specified,
+		 * MaDKit launch one agent of the precised class without graphical user interface (GUI)
 		 */
 		new Madkit(Madkit.Option.launchAgents.toString(),TutorialAgent.class.getName());
 		
 		/* The previous line was equivalent to the next one. */
 		// new Madkit(Madkit.Option.launchAgents.toString(),TutorialAgent.class.getName() + ",false,1");
 		
-		/* You can decide whether or not the agent has a gui. */
+		/* You can decide whether or not the agent has a GUI. */
 		// new Madkit(Madkit.Option.launchAgents.toString(),TutorialAgent.class.getName() + ",true");
 		
 		/**
-		 * You can also launch several agent by adding the number
-		 * of wanted agent wanted right after the class name.
+		 * You can also launch several agents by adding the number
+		 * of wanted agents right after the class name.
 		 */
 		// new Madkit(Madkit.Option.launchAgents.toString(),TutorialAgent.class.getName() + ",3");
 		
-		/* Let's launch several agents with a gui. */
+		/* Let's launch several agents with a GUI. */
 		// new Madkit(Madkit.Option.launchAgents.toString(),TutorialAgent.class.getName() + ",true,2");
 		
 		/* Now, let's launch different kind of agents. */
@@ -58,7 +58,7 @@ public class _1_LaunchAgents {
 		
 		/**
 		 * Finally, you can note that while launching several (and possibly different)
-		 * agents you don't have to precise everything each time. in that case,
+		 * agents you don't have to precise everything each time. In that case,
 		 * default values will be used.
 		 */
 		// new Madkit(Madkit.Option.launchAgents.toString(),TutorialAgent.class.getName() + ",2;" + TutorialAgent.class.getName() + ",true,1;");

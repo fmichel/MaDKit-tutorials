@@ -3,7 +3,7 @@ package madkitoptions.ex3_MadkitOptions;
 import madkit.kernel.Madkit;
 
 /**
- * This option allow MaDKit users to
+ * This option allows MaDKit users to
  * change MaDKit desktop's display.
  * 
  * Of course, desktopFrameClass need to be associated with an existing 

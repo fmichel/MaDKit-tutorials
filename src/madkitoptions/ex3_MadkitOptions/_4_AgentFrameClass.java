@@ -4,9 +4,9 @@ import madkit.kernel.Madkit;
 import madkitoptions.TutorialAgent;
 
 /**
- * This option allow MaDKit users to modify the display of a category of agent.
+ * This option allows MaDKit users to modify the display of a category of agent.
  * 
- * Of course, agentFrameClass need to be associated with an existing 
+ * Of course, agentFrameClass needs to be associated with an existing 
  * class, here _4_CustomAgentFrame.
  * 
  * 

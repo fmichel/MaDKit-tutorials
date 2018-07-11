@@ -6,7 +6,7 @@ import madkit.gui.MDKDesktopFrame;
 
 /**
  * 
- * This class represent a customized desktop frame with a 
+ * This class represents a customized desktop frame with a 
  * blue background.
  * This class will be used in _3_DesktopFrameClass.
  *

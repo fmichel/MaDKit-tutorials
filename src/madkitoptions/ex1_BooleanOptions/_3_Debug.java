@@ -20,6 +20,6 @@ public class _3_Debug {
 		 /* Check the difference by commenting the previous line and uncommenting the next one. 
 		  * You should have less log displayed
 		  */
-		 // new Madkit(Madkit.BooleanOption.debug.toString(), "false", Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
+		 // new Madkit(Madkit.BooleanOption.debug.toString(), Boolean.FALSE.toString(), Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName() + ",true,1;");
 	 }
 }

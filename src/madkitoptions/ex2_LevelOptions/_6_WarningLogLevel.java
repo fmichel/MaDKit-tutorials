@@ -1,5 +1,7 @@
 package madkitoptions.ex2_LevelOptions;
 
+import java.util.logging.Level;
+
 import madkit.kernel.Madkit;
 import madkitoptions.ex1_BooleanOptions._2_Agent;
 
@@ -19,7 +21,7 @@ public class _6_WarningLogLevel {
 	public static void main(String[] args) {
 		
 		/* This was how we used the warningLogLevel. Keep in mind that it is now deprecated. */
-		new Madkit(Madkit.LevelOption.warningLogLevel.toString(),"ALL", Madkit.Option.launchAgents.toString(), _2_Agent.class.getName() + " ,true,1");
+		new Madkit(Madkit.LevelOption.warningLogLevel.toString(),Level.ALL.toString(), Madkit.Option.launchAgents.toString(), _2_Agent.class.getName() + " ,true,1");
 	
 	}
 }

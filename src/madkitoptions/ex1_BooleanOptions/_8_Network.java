@@ -21,7 +21,7 @@ public class _8_Network {
 		 new Madkit(Madkit.BooleanOption.network.toString());
 		 
 		 /* Check the difference by commenting the previous line and uncommenting the next one. */
-		 // new Madkit(Madkit.BooleanOption.network.toString(),"false");
+		 // new Madkit(Madkit.BooleanOption.network.toString(), Boolean.FALSE.toString());
 	 }
 
 }

@@ -1,12 +1,12 @@
 /**
  * READ ME
  * 
- * This tutorial is about Madkit options. An option is a feature that may be specified or activate.
- * You can find more detail here : http://www.madkit.net/madkit/repository/MaDKit-5.2/docs/api/.
- * Madkit options are divided in three categories :
+ * This tutorial is about MaDKit options. An option is a feature that may be specified or activated.
+ * You can find more details here : http://www.madkit.net/madkit/repository/MaDKit-5.2/docs/api/.
+ * MaDKit options are divided in three categories :
  *    - Boolean Options
  *    - Level Options  
- *    - Madkit Options
+ *    - MaDKit Options
  *    
  * In this first set of examples, we will present you Boolean Options.
  * Among the others options, boolean options are either activated or not. 
