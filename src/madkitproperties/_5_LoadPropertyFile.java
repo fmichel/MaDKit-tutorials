@@ -19,7 +19,6 @@ public class _5_LoadPropertyFile {
 	
 	public static void main(String[] args) {
 		try{
-			System.out.println("toto\n");
 			new MadkitProperties().loadPropertiesFromPropertiesFile("src/madkitproperties/PropertyFile.properties");
 		} catch(IOException e) {
 			e.printStackTrace();
