@@ -35,7 +35,7 @@ public class _1_DisplayMadkitProperties {
 	public static void main(String[] args) {
 
 		/**
-		 * Here we launch a new MaDKit with the option madkitLogLevel set to true. 
+		 * Here we launch a new MaDKit with the option madkitLogLevel activated. 
 		 * This property allows all the logs concerning MaDKit to be displayed, these
 		 * logs include MaDKit options.
 		 */

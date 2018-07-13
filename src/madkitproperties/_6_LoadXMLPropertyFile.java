@@ -3,7 +3,6 @@ package madkitproperties;
 import java.io.IOException;
 import madkit.util.MadkitProperties;
 
-
 /**
  * Now we will see how to load properties from a XML property file.
  * Unlike basics property files, XML allow a parameterization even
@@ -17,6 +16,7 @@ import madkit.util.MadkitProperties;
  * #args# #args#
  *
  */
+
 public class _6_LoadXMLPropertyFile {
 
 	public static void main(String[] args) throws IOException {
