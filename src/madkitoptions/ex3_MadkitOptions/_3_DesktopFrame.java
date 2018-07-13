@@ -1,5 +1,8 @@
 package madkitoptions.ex3_MadkitOptions;
 
+import java.awt.Color;
+
+import madkit.gui.MDKDesktopFrame;
 import madkit.kernel.Madkit;
 
 /**
@@ -15,9 +18,14 @@ import madkit.kernel.Madkit;
  * 
  */
 
-public class _3_DesktopFrameClass {
+public class _3_DesktopFrame extends MDKDesktopFrame{
+
+	public _3_DesktopFrame() {
+		super();
+		setBackground(Color.BLUE);
+	}
 	
 	public static void main(String[] args) {
-		new Madkit(Madkit.Option.desktopFrameClass.toString(), _3_CustomDesktopFrame.class.getName());
+		new Madkit(Madkit.Option.desktopFrameClass.toString(), _3_DesktopFrame.class.getName());
 	}
 }
