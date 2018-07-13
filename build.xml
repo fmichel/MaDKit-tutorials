@@ -82,7 +82,7 @@
 	<!-- =================================
           target: release
          ================================= -->
-	<target name="release" depends="clean,create-tuto-project-zip-file,copy-resources,hello-world,logging,gui,communication,simulation,exception">
+	<target name="release" depends="clean,create-tuto-project-zip-file,copy-resources,hello-world,logging,gui,communication,simulation,returncode,madkitoptions">
 		<copy tofile="${release.dir}/index.html" file="MaDKit-tutorials.html">
 			<filterchain>
 				<expandproperties />
@@ -299,14 +299,25 @@
 	</target>
 
 	<!-- - - - - - - - - - - - - - - - - -
-          target: exception
+          target: returncode
          - - - - - - - - - - - - - - - - - -->
-	<target name="exception">
+	<target name="returncode">
 		<antcall target="build_tuto_files">
-			<param name="tuto.name" value="Exceptions in MaDKit" />
+			<param name="tuto.name" value="Return codes in MaDKit" />
 			<param name="tuto.src.dir" value="returncode" />
-			<param name="tuto.destination" value="exception" />
-			<param name="tuto.description" value="Basics for handling exceptions in MaDKit" />
+			<param name="tuto.destination" value="returncode" />
+			<param name="tuto.description" value="Basics for handling some exceptions and return code in MaDKit" />
+		</antcall>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - -
+          target: madkitoptions
+         - - - - - - - - - - - - - - - - - -->
+	<target name="madkitoptions">
+		<antcall target="build_tuto_files">
+			<param name="tuto.name" value="Options in MaDKit"/><param name="tuto.src.dir" value="madkitoptions"/>
+			<param name="tuto.destination" value="madkitoptions"/>	
+			<param name="tuto.description" value="Basics for handling MaDKit options"/>
 		</antcall>
 	</target>
 
