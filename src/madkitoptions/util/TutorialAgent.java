@@ -12,7 +12,7 @@
  * Among the others options, boolean options are either activated or not. 
  */
 
-package madkitoptions;
+package madkitoptions.util;
 
 import madkit.kernel.Agent;
 

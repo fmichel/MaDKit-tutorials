@@ -22,7 +22,7 @@ public class _4_Desktop {
 		 
 		 new Madkit(Madkit.BooleanOption.desktop.toString());
 		
-		 /* Notice its the same behavior as the next line */
+		 /* Notice that it is the same behavior as the next line */
 		 // new Madkit(Madkit.Option.launchAgents.toString(), "null", Madkit.Option.configFile.toString(), "null");
 		 
 		 /* Nevertheless if we specify it... There is not any MaDKit desktop displayed. */

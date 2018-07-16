@@ -1,15 +1,14 @@
 package madkitoptions.ex1_BooleanOptions;
 
-import madkitoptions.TutorialAgent;
-
 import java.util.logging.Level;
 
 import madkit.kernel.Madkit;
+import madkitoptions.util.TutorialAgent;
 
 /**
  * This class exemplifies the use of noAgentConsoleLog's option.
  * If this boolean option is set to true, there is no log displayed
- * in the agents' console.
+ * in the default console used by the jvm.
  * The default value is false.
  * 
  * #jws# madkitoptions.ex1_BooleanOptions._6_NoAgentConsoleLog #jws#

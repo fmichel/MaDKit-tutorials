@@ -3,7 +3,7 @@ package madkitoptions.ex1_BooleanOptions;
 import java.util.logging.Level;
 
 import madkit.kernel.Madkit;
-import madkitoptions.TutorialAgent;
+import madkitoptions.util.TutorialAgent;
 
 /** 
  * This class exemplifies the use of cgrWarnings's option.

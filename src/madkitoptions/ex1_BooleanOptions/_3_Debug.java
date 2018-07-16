@@ -1,7 +1,7 @@
 package madkitoptions.ex1_BooleanOptions;
 
-import madkitoptions.TutorialAgent;
 import madkit.kernel.Madkit;
+import madkitoptions.util.TutorialAgent;
 
 /**
  * This class exemplifies the use of debug's option.

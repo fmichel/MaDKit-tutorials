@@ -1,7 +1,7 @@
 package madkitoptions.ex3_MadkitOptions;
 
 import madkit.kernel.Madkit;
-import madkitoptions.TutorialAgent;
+import madkitoptions.util.TutorialAgent;
 
 /**
  * This option allows MaDKit users to specify
@@ -18,10 +18,13 @@ public class _5_LogDirectory {
 	public static void main(String[] args) {
 		
 		/**
-		 *  Here the wanted directory is : myLogs.
+		 *  Here the created directory is : "myLogs".
 		 *  We are launching a TutorialAgent to generate logs.
-		 *  Do not forget also to allow the creation of log files.
+		 *  Do not forget to trigger the creation of log files using "createLogFiles".
 		 */
-		new Madkit(Madkit.Option.logDirectory.toString(), "myLogs", Madkit.BooleanOption.createLogFiles.toString(),Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName());
+		new Madkit(
+			Madkit.Option.logDirectory.toString(), "myLogs",
+			Madkit.BooleanOption.createLogFiles.toString(),
+			Madkit.Option.launchAgents.toString(), TutorialAgent.class.getName());
 	}
 }

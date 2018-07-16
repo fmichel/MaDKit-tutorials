@@ -3,7 +3,6 @@ package madkitoptions.ex2_LevelOptions;
 import java.util.logging.Level;
 
 import madkit.kernel.Madkit;
-import madkitoptions.TutorialAgent;
 
 /**
  * This example is about the level option KernelLogLevel.

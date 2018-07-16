@@ -7,7 +7,7 @@ package madkitoptions.ex3_MadkitOptions;
 
 import madkit.kernel.Agent;
 import madkit.kernel.Madkit;
-import madkitoptions.TutorialAgent;
+import madkitoptions.util.TutorialAgent;
 
 
 /**
@@ -20,7 +20,7 @@ import madkitoptions.TutorialAgent;
  * that you can launch several agents, or even different 
  * types of agent.
  *
- * Feel free to uncomment the lines to test and 
+ * Feel free to (un)comment the lines to test and 
  * understand the differences.
  * 
  * #jws# madkitoptions.ex3_MadkitOptions._1_LaunchAgents #jws#

@@ -17,7 +17,7 @@ package madkitoptions.ex1_BooleanOptions;
 import madkit.kernel.Madkit;
 
 /**
- * This class exemplifies the use of console's option.
+ * This class exemplifies the use of the console option.
  * If this boolean option is set to true, the MaDKit console agent is launched.
  * The default value is false.
  * 
