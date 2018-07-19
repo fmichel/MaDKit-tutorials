@@ -20,12 +20,13 @@
 package madkitproperties;
 
 import madkit.kernel.Madkit;
+import madkit.kernel.Madkit.LevelOption;
 
 /**
  * A Property is a distinctive feature that may be used for every MaDKit project.
- * Thus MaDKit configuration is stored in the madkit.kernel.madkit.properties file.
+ * MaDKit has a configuration which is stored in its internal properties file.
  *  
- * Now we will present you how to display default properties in MaDKit.
+ * We here present how to display the properties of a MaDKit run at startup.
  * 
  * #jws# madkitproperties._1_DisplayMadkitProperties #jws#
  * #args# #args#
@@ -37,8 +38,9 @@ public class _1_DisplayMadkitProperties {
 		/**
 		 * Here we launch a new MaDKit with the option madkitLogLevel activated. 
 		 * This property allows all the logs concerning MaDKit to be displayed, these
-		 * logs include MaDKit options.
+		 * logs include MaDKit options. Logs can be seen in the console.
 		 */
-		new Madkit(Madkit.LevelOption.madkitLogLevel.toString());
+		new Madkit(
+			LevelOption.madkitLogLevel.toString(),"FINER");
 	}
 }

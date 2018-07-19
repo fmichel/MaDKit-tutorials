@@ -1,7 +1,9 @@
 package madkitproperties;
 
 import java.io.IOException;
-import madkit.util.MadkitProperties;
+
+import madkit.kernel.Madkit;
+import madkit.kernel.Madkit.Option;
 
 /**
  * Now we will see how to load properties from a XML property file.
@@ -11,7 +13,6 @@ import madkit.util.MadkitProperties;
  * 
  * An exception is thrown if the specified file 
  * does not exist.
- * 
  * #jws# madkitproperties._6_LoadXMLPropertyFile #jws#
  * #args# #args#
  *
@@ -20,10 +21,6 @@ import madkit.util.MadkitProperties;
 public class _6_LoadXMLPropertyFile {
 
 	public static void main(String[] args) throws IOException {
-		try{
-			new MadkitProperties().loadPropertiesFromMaDKitXML("src/madkitproperties/XMLPropertyFile.xml");
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
+			new Madkit(Option.configFile.toString(),"madkitproperties/XMLPropertyFile.xml");
 	}
 }

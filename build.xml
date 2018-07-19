@@ -320,6 +320,9 @@
 			<param name="tuto.src.dir" value="madkitproperties" />
 			<param name="tuto.destination" value="madkitproperties" />
 			<param name="tuto.description" value="Introducing MaDKit properties." />
+			</antcall>
+		</target>
+
 	<!-- - - - - - - - - - - - - - - - - -
           target: madkitoptions
          - - - - - - - - - - - - - - - - - -->

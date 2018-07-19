@@ -25,8 +25,8 @@ public class _5_AgentLoadingPropertyFile extends AbstractAgent{
 		getLogger().talk(getMadkitConfig().toString());
 		try {
 			/* Now we load new properties */
-			getLogger().talk("\nNow I will load properties from : src/madkitproperties/PropertyFileToLoad.properties \n");
-			getMadkitConfig().loadPropertiesFromFile("src/madkitproperties/PropertyFileToLoad.properties");
+			getLogger().talk("\nNow I will load properties from the file: madkitproperties/PropertyFileToLoad.properties \n");
+			getMadkitConfig().loadPropertiesFromFile("madkitproperties/PropertyFileToLoad.properties");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

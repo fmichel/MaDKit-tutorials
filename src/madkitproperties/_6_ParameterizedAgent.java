@@ -8,12 +8,14 @@ import madkit.kernel.Agent;
 
 public class _6_ParameterizedAgent extends Agent{
 
-	private String message;
+	public String message;
 	
 	@Override
 	protected void live() {
 		pause(2500);
-		getLogger().talk("\n\t" + message + "t\n");
+		getLogger().talk("\n\t" + message + "\t\n");
+		pause(2500);
+		getLogger().info(getMadkitProperty("varDefinedInXML"));
 		pause(5000);
 	}
 }
