@@ -6,11 +6,12 @@ import madkit.kernel.Agent;
  
  The default life cycle of a threaded agent is composed of three methods 
  which are automatically called sequentially, and each of which being optional:
- 
- 1. activate(): The first behavior in the life cycle of an agent. 
+
+ 1. activate(): The first behavior in the life cycle of an agent.
  It could be considered as a constructor which is called once the agent is launched.
- The agent cannot use agent primitives before that (e.g. in its constructor). 
- It will be a good place to initialize the agent's position in the artificial society. 
+ The agent cannot use agent primitives before that (e.g. in its constructor).
+ Activate is  a good place to initialize the agent's position in the artificial society.
+ (Artificial society is a notion that will be explained later in the tutorials)
  
  2. live(): This behavior is automatically called when the agent exits activate. It usually
  implements an infinite loop wherein the agent send and receive messages: 
