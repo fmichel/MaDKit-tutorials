@@ -31,7 +31,7 @@ public class LaunchingTwoAgentsB extends Agent {
 
     @Override
     protected void live() {
-        getLogger().info("We are not on top of each other");
+        getLogger().info("Our GUI is managed !");
 	    for (int i = 10; i > 0; i--) {
 	        getLogger().info("Living... I will quit in " + i + " seconds");
 	        pause(1000);
