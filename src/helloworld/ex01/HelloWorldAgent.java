@@ -8,10 +8,12 @@ import madkit.kernel.Agent;
 
  Here we just :
 
-	1. extend the madkit.kernel.Agent class (the MaDKit's threaded agent class).
-	2. override its live method.
-	3. launch the agent using executeThisAgent() within the main method.
+ 1. extend the madkit.kernel.Agent class (the MaDKit's threaded agent class).
+ 2. override its live method.
+ 3. launch the agent using executeThisAgent() within the main method.
 
+ #jws# helloworld.ex01.HelloWorldAgent #jws#
+ * 		#args# --launchAgents helloworld.ex01.HelloWorldAgent,true #args#
  */
 
 public class HelloWorldAgent extends Agent {
@@ -25,36 +27,38 @@ public class HelloWorldAgent extends Agent {
 	}
     }
 
+	/** live() here is a method which is called automatically .It will be explained later in the next tutorial ex02(agentlifecycle) **/
+
     public static void main(String[] args) {
 	executeThisAgent(); // a convenient static method for easily launching agents using an IDE
     }
-    
-    /**
 
-    Implementing a main method within an agent's class is not required at all but it could be
-    used to simulate a command line call to MaDKit with the desired options. 
+	/**
 
-    For this example, the corresponding command line is as follows (assuming a correct classpath)
+	 Implementing a main method within an agent's class is not required at all but it could be
+	 used to simulate a command line call to MaDKit with the desired options.
 
-    > java madkit.kernel.MaDKit --launchAgents helloworld.ex01.HelloWorldAgent,true
+	 For this example, the corresponding command line is as follows (assuming a correct classpath)
 
-    Here we just use the executeThisAgent() method inside the main method 
-    so that the launching is greatly simplified using an IDE.
+	 > java madkit.kernel.MaDKit --launchAgents helloworld.ex01.HelloWorldAgent,true
 
-    Here we could also have used:
+	 Here we just use the executeThisAgent() method inside the main method
+	 so that the launching is greatly simplified using an IDE.
 
-    public static void main(String[] args) {
-	new Madkit("--launchAgents", "helloworld.ex01.HelloWorldAgent,true");
-    }
+	 Here we could also have used:
 
-     Or
+	 public static void main(String[] args) {
+	 new Madkit("--launchAgents", "helloworld.ex01.HelloWorldAgent,true");
+	 }
 
-    public static void main(String[] args) {
-	String[] args2 = { "--launchAgents", "helloworld.ex01.HelloWorldAgent,true" };
-	Madkit.main(args2);
-    }
+	 Or
 
-    All of these calls are equivalent.
+	 public static void main(String[] args) {
+	 String[] args2 = { "--launchAgents", "helloworld.ex01.HelloWorldAgent,true" };
+	 Madkit.main(args2);
+	 }
 
-     */
+	 All of these calls are equivalent.
+
+	 */
 }
