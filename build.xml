@@ -19,7 +19,7 @@
 	<property name="jnlps.dir" value="jnlp" />
 	<property name="lib.dir" value="lib" />
 	<property name="madkit.lib.dir" value="lib" />
-	<property name="madkit.version" value="5.2" />
+	<property name="madkit.version" value="5.3" />
 	<property name="project.label" value="The MaDKit-5 tutorials" />
 	<property name="project.website" value="www.madkit.org" />
 	<property name="project.zip.file" value="${ant.project.name}-project.zip" />
@@ -28,19 +28,24 @@
 	<property name="tuto.dir" value="html" />
 	<property name="version" value="1.5" />
 	<!-- using local specific properties 
-		The corresponding file should initialize the two following properties : jdk.api.dir and mdk.api.dir
-		value examples are :
-		jdk.api.dir=/usr/lib/jvm/java-1.8.0-openjdk-amd64/docs/api
+		The corresponding file should initialize the three following properties : jdk.api.dir and mdk.api.dir path-to-ant-contrib
+		valid values could be:
+		jdk.api.dir=/usr/share/doc/java8-openjdk/api
 		mdk.api.dir=${user.home}/MDK_installationDir/docs/api
+		path-to-ant-contrib=/usr/share/java/apache-ant
 	-->
-	<loadproperties srcfile="javadoc.api.local.properties" />
+	<loadproperties srcfile="paths.local.properties" />
 
 
 	<!-- the following is only used in admin deploying tasks -->
 	<property name="server.info.dir" value="${user.home}/.mdk_keystore" />
 
 	<!-- for using param in ant call  -->
-	<taskdef resource="net/sf/antcontrib/antlib.xml" />
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+	  <classpath>
+	    <pathelement location="${path-to-ant-contrib}/ant-contrib-1.0b3.jar"/>
+	  </classpath>
+	</taskdef>
 
 	<!-- - - - - - - - - - - - - - - - - -
           target: define-ant-tasks
@@ -124,7 +129,7 @@
 
 		<java2html title="${tuto.name}" simple="no" tabsize="7" marginsize="0" header="true" footer="true" destination="${release.dir}/${tuto.dir}/${tuto.destination}">
 			<fileset refid="java.src.files" />
-			<javadoc localRef="${jdk.api.dir}" httpRef="http://docs.oracle.com/javase/8/docs/api/" />
+			<javadoc localRef="/usr/share/doc/java8-openjdk/api" httpRef="http://docs.oracle.com/javase/8/docs/api/" />
 			<javadoc localRef="${mdk.api.dir}" httpRef="http://www.madkit.net/madkit/api" />
 		</java2html>
 
