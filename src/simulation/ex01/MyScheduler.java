@@ -13,7 +13,14 @@ import madkit.simulation.activator.GenericBehaviorActivator;
  * 
  * In this first example, the goal is only to manage the execution of some agents. Two classes are needed : a
  * madkit.kernel.Scheduler that manages an madkit.kernel.Activator and a simulated agent class:
- * simulation.ex01.SimulatedAgent
+ * simulation.ex01.SimulatedAgent.
+ *
+ * The madkit.kernel.Scheduler class defines a generic threaded scheduler agent.
+ * It holds a collection of activators. The default state of a scheduler is Scheduler.SimulationState.PAUSED
+ *
+ * The madkit.kernel.Activator class defines a tool for scheduling mechanism.
+ * An activator is configured according to a community, a group and a role.
+ * It could be used to activate a group of agents on a particular behavior
  */
 
 public class MyScheduler extends Scheduler {
