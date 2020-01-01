@@ -33,6 +33,7 @@ public class CustomPanel extends Agent {
 	talkPanel.setBackground(Color.LIGHT_GRAY);
 	p.add(talkPanel, BorderLayout.CENTER);
 
+	//Add the image to the frame
 	p.add(new JLabel(new ImageIcon(getClass().getResource("agent.png"))), BorderLayout.NORTH);
 
 	frame.add(p);
@@ -43,13 +44,14 @@ public class CustomPanel extends Agent {
     @Override
     protected void live() {
 	getLogger().info("\n\tDo you see my customized panel ?");
-	pause(5000);
+	pause(10000);
     }
 
     /**
      * @param argss
      */
     public static void main(String[] argss) {
+		//To display the panel of an agent, we always need to set the MadKit kernel online
 	String[] args = { "--launchAgents", CustomPanel.class.getName() + ",true" };
 	Madkit.main(args);
     }
