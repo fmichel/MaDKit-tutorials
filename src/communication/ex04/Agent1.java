@@ -66,7 +66,9 @@ public class Agent1 extends Agent {
     }
 
     /*
-     * Set where the agent's window will be for avoiding a clear presentation.
+     * Set where the agent's window will be for avoiding a clear presentation. This method give
+	 * the opportunity to modify the default settings of the frame.
+     * It will be more explained in GUI tutorial.
      */
     @Override
     public void setupFrame(AgentFrame frame) {
