@@ -27,7 +27,7 @@ public class HelloWorldAgent extends Agent {
 	}
     }
 
-	/** live() here is a method which is called automatically .It will be explained later in the next tutorial ex02(agentlifecycle) **/
+	/** live() here is a method which is called automatically. It will be explained later in the next tutorial ex02(agentlifecycle) **/
 
     public static void main(String[] args) {
 	executeThisAgent(); // a convenient static method for easily launching agents using an IDE

@@ -50,6 +50,7 @@ public class PingAgent2 extends PingAgent {// So I do the same activate
 
     @SuppressWarnings("unused")
     public static void main(String[] args) {
+    	//This will launch a new kernel
 	new Madkit("--launchAgents", PingAgent2.class.getName() + ",true,3;", PingAgent.class.getName()// This one so that PingAgent2 agents always find someone (breaking the
 												       // first while)
 	);
