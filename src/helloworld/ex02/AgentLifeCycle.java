@@ -21,8 +21,8 @@ import madkit.kernel.Agent;
  e.g. by the user when closing the agent's GUI. 
  It is usually used to release resources and log the end of life event. 
  
- 	#jws# helloworld.ex02.AgentLifeCycle #jws#
- * 	#args# --launchAgents helloworld.ex02.AgentLifeCycle,true #args#
+ 	#jws# helloworld.ex03.AgentLifeCycle #jws#
+ * 	#args# --launchAgents helloworld.ex03.AgentLifeCycle,true #args#
 */
 
 public class AgentLifeCycle extends Agent {

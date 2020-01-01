@@ -13,8 +13,8 @@ import madkit.kernel.Message;
  * 
  * 
  * 
- *		#jws# communication.ex04.Agent1 #jws#
- *  	#args# --launchAgents communication.ex04.Agent1,true,2;communication.ex04.Agent2,true,2 #args#
+ *		#jws# communication.ex05.Agent1 #jws#
+ *  	#args# --launchAgents communication.ex05.Agent1,true,2;communication.ex05.Agent2,true,2 #args#
  * 
  * 
  * 

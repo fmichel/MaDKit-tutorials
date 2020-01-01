@@ -11,7 +11,7 @@ import madkit.kernel.Message;
 /**
  * Agent2 works as Agent1, using a different role.
  * 
- * #jws communication.ex04.Agent1 jws#
+ * #jws communication.ex05.Agent1 jws#
  * 
  * Agent2 is almost like Agent1, the only difference is the role and frame's location.
  */

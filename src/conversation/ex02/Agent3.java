@@ -28,7 +28,7 @@ import madkit.kernel.Message;
 /**
  * Agent3 works with Agent4, using a different role.
  * 
- * #jws conversation.ex02.sendReply2 jws#
+ * #jws conversation.ex03.sendReply2 jws#
  * 
  * To interact with other agents, agents need a form of communication. Doing so,the agents have MailBox, they can use it
  * to receive and send messages. Here, two agents are replying the other one.
