@@ -1,4 +1,4 @@
-package helloworld.ex03a;
+package helloworld.ex03;
 
 import madkit.kernel.Agent;
 

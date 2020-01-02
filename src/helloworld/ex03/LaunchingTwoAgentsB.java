@@ -1,4 +1,4 @@
-package helloworld.ex03b;
+package helloworld.ex03;
 
 import madkit.gui.AgentFrame;
 import madkit.kernel.Agent;
