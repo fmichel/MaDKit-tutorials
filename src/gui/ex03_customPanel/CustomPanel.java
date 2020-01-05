@@ -51,7 +51,7 @@ public class CustomPanel extends Agent {
      * @param argss
      */
     public static void main(String[] argss) {
-		//To display the panel of an agent, we always need to set the MadKit kernel online
+		//To display the panel of an agent, before that we always need to set the MadKit kernel online
 	String[] args = { "--launchAgents", CustomPanel.class.getName() + ",true" };
 	Madkit.main(args);
     }

@@ -21,7 +21,7 @@ import madkit.kernel.Message;
  * 
  * 
  * Looking for someone, agents do not necessarily need to know who they talk to in terms of real ID. Indeed, what
- * matters in the artificial society is the roles an agent take. Roles tell a lot about what the agent is capable of and
+ * matters in the artificial society is the roles an agent take. organization tell a lot about what the agent is capable of and
  * supposed to do. So, agents can send messages to roles rather than to IDs. Here, the idea is: I need to contact a
  * "ping agent", no matter who will receive the message. And it is possible to do so using what follows:
  */

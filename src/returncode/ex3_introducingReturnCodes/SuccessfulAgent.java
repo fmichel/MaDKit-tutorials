@@ -25,7 +25,7 @@ import returncode.utils.TutorialAgent;
 
 public class SuccessfulAgent extends TutorialAgent {
 	
-	/** We will call createGroup(...) and check if something went wrong thanks to
+	/** We will call createOrganization(...) and check if something went wrong thanks to
 	 *  the ReturnCode.SUCCESS.
 	 */
 	@Override

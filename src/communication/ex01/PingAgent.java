@@ -31,8 +31,7 @@ public class PingAgent extends Agent {
      */
     @Override
     protected void activate() {
-        // Thanks to this log level, everything the agent does in the artificial
-        // society will be automatically logged
+
         getLogger().setLevel(Level.FINEST);
 
         createGroup(COMMUNITY, GROUP);
@@ -47,10 +46,9 @@ public class PingAgent extends Agent {
     @Override
     protected void live() {
 
-        // now getting the address of a partner using getAgentWithRole
+        // method seen in organization's tutorial
         AgentAddress other = null;
         while (other == null) {
-            // This way, I wait for another coming into play
             other = getAgentWithRole(COMMUNITY, GROUP, ROLE);
             pause(1000);
         }
