@@ -2,7 +2,9 @@ package logging.ex03a_levelFinerFinest;
 
 import java.util.logging.Level;
 
+import madkit.kernel.AbstractAgent;
 import madkit.kernel.Agent;
+import madkit.kernel.AgentLogger;
 import madkit.kernel.Message;
 
 /**
@@ -32,7 +34,8 @@ public class LevelFinerFinest extends Agent {
 
     @Override
     protected void live() {
-	Message m = nextMessage();
+	Message m = nextMessage(); /**  In MaDKit, the {@link AbstractAgent#nextMessage()} method is added to
+                                    retrieves and removes the oldest received message contained in the mailbox.  */
 	pause(5000);
     }
 

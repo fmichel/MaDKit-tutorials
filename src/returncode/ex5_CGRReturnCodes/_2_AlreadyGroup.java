@@ -4,7 +4,7 @@ import returncode.utils.TutorialAgent;
 
 /**
  * This class exemplifies: ALREADY_GROUP.
- * This ReturnCode is returned when using createGroup(String, String, boolean, Gatekeeper)
+ * This ReturnCode is returned when using createOrganization(String, String, boolean, Gatekeeper)
  * and that a group already exists.
  * 
  * 

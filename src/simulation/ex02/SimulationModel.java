@@ -1,4 +1,4 @@
-package simulation.ex01;
+package simulation.ex02;
 
 /**
  * Stocking some global properties for this tutorial.

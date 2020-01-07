@@ -12,8 +12,8 @@ import madkit.kernel.Message;
  * Shows how agents exchange messages.
  *
  * 
- *	#jws# communication.ex05.Agent5 #jws#
- *  #args# --launchAgents communication.ex05.Agent4,true,1;communication.ex05.Agent5,true,1 #args#
+ *	#jws# communication.ex02.Agent5 #jws#
+ *  #args# --launchAgents communication.ex02.Agent4,true,1;communication.ex02.Agent5,true,1 #args#
  *
  * 
  * Agent5 is almost like Agent4, the only difference is their roles.

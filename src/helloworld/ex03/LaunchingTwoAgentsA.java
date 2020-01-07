@@ -9,11 +9,11 @@ import madkit.kernel.Agent;
  
  Let us launch two similar agents by using executeThisAgent(int, boolean, String...).
  
-		#jws# helloworld.ex03.LaunchingTwoAgents #jws#
-  		#args# --launchAgents helloworld.ex03.LaunchingTwoAgents,true,2 #args#
+		#jws# helloworld.ex04.LaunchingTwoAgents #jws#
+  		#args# --launchAgents helloworld.ex04.LaunchingTwoAgents,true,2 #args#
  */
 
-public class LaunchingTwoAgents extends Agent {
+public class LaunchingTwoAgentsA extends Agent {
 
     @Override
     protected void activate() {
@@ -27,6 +27,7 @@ public class LaunchingTwoAgents extends Agent {
 
     @Override
     protected void live() {
+        getLogger().info("We are 2 agents but our GUI has not been managed");
 	for (int i = 10; i > 0; i--) {
 	    getLogger().info("Living... I will quit in " + i + " seconds");
 	    pause(1000); 

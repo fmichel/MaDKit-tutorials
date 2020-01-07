@@ -32,7 +32,7 @@ import madkit.kernel.Message;
 /**
  * Shows how agents exchange messages.
  * 
- * #jws conversation.ex04.Agent8 jws#
+ * #jws conversation.ex05.Agent8 jws#
  * 
  * To interact with other agents, agents need a form of communication. Doing so,the agents have MailBox, they can use it
  * to receive and send messages. Here, two agents are sending a message to the other one, we will see the difference

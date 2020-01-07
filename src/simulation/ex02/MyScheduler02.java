@@ -5,16 +5,19 @@ import madkit.kernel.AbstractAgent;
 import madkit.kernel.Madkit;
 import madkit.kernel.Scheduler;
 import madkit.simulation.activator.GenericBehaviorActivator;
-import simulation.ex01.SimulatedAgent;
-import simulation.ex01.SimulationModel;
 
 /**
- *  #jws# simulation.ex02.MyScheduler02 #jws#
- *  #args# --launchAgents simulation.ex02.MyScheduler02,true;madkit.gui.ConsoleAgent #args# 
  * 
- * Let us have more fun by adding another simulated agent class with a different result for the doIt method and see what
- * we now need. We need nothing else and just have to launch this new type of agent: Activators do not care about the
- * exact type of the activated agents. Only the organizational position matters.
+ *  #jws# simulation.ex02.MyScheduler02 #jws#
+ *  #args# --launchAgents simulation.ex02.MyScheduler02,true;madkit.gui.ConsoleAgent #args#
+ * 
+ * In this example, the goal is only to manage the execution of some agents. Two classes are needed : a
+ * madkit.kernel.Scheduler that manages an madkit.kernel.Activator and a simulated agent class:
+ * simulation.ex02.SimulatedAgent02.
+ *
+ * The madkit.kernel.Activator class defines a tool for scheduling mechanism.
+ * An activator is configured according to a community, a group and a role.
+ * It could be used to activate a group of agents on a particular behavior
  */
 
 public class MyScheduler02 extends Scheduler {
@@ -23,26 +26,27 @@ public class MyScheduler02 extends Scheduler {
 
     @Override
     protected void activate() {
+
 	// 1 : create the simulation group
 	createGroup(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP);
 
 	// 2 : launch some simulated agents
-	for (int i = 0; i < 20; i++) {
-	    launchAgent(new SimulatedAgent());
+	for (int i = 0; i < 10; i++) {
 	    launchAgent(new SimulatedAgent02());
 	}
 
-	// 3 : initialize the activator
+	// 3 : initialize the activator on the correct (1) CGR location and (2) behavior
 	activator1 = new GenericBehaviorActivator<AbstractAgent>(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ROLE, "doIt");
 	addActivator(activator1);
 
+	// 4 : we are done, because Scheduler already defines a live method
+	// calling the execution of the activator. We will override it later.
+	// here we just slow down the simulation to not flood the console
 	setDelay(300);
     }
 
     /**
      * A simple way of launching this scheduler
-     * 
-     * @param
      */
     public static void main(String[] args) {
 	new Madkit("--launchAgents", MyScheduler02.class.getName() + ",true;" + ConsoleAgent.class.getName());

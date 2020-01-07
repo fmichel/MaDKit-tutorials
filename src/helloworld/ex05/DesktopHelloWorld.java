@@ -5,7 +5,7 @@ import madkit.kernel.Madkit;
 /**
   Here, we just test the desktop mode of MaDKit-5.
   
-  	#jws# helloworld.ex05.DesktopHelloWorld #jws#
+  	#jws# helloworld.ex02.DesktopHelloWorld #jws#
   	#args# --desktop --launchAgents helloworld.ex01.HelloWorldAgent,true,1 #args#
   
   The Desktop is a GUI front end embedding the agents and which features different actions that can help developing 
