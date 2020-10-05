@@ -15,8 +15,8 @@ import madkit.kernel.Madkit.BooleanOption;
   which is a specific agent embedded that gathers all System.out outputs
   in its own GUI, so that we can also see the outputs of agents that have no GUI.
   
-  		#jws# helloworld.ex05.AddingParametersToExecuteThisAgent #jws#
-  		#args# --console --launchAgents helloworld.ex05.AddingParametersToExecuteThisAgent,false,3 #args#
+  		#jws# helloworld.ex04.AddingParametersToExecuteThisAgent #jws#
+  		#args# --console --launchAgents helloworld.ex04.AddingParametersToExecuteThisAgent,false,3 #args#
   
  */
 

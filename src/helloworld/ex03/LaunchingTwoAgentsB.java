@@ -18,7 +18,7 @@ import madkit.kernel.Agent;
  So one can use this hashcode to place similar agents at different locations.
 
  #jws# helloworld.ex04.ModifyingGUILocation #jws#
- #args# --launchAgents helloworld.ex04.ModifyingGUILocation,true,3 #args#
+ #args# --launchAgents helloworld.ex03.ModifyingGUILocation,true,3 #args#
 
  */
 

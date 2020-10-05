@@ -6,8 +6,8 @@ import madkit.kernel.Agent;
   
   Let us try executeThisAgent(int, boolean, String...) with no GUI for the agents.
   
-  		#jws# helloworld.ex05.ThreeAgentsWithNoGUI #jws#
-  		#args# --launchAgents helloworld.ex05.ThreeAgentsWithNoGUI,false,3 #args#
+  		#jws# helloworld.ex04.ThreeAgentsWithNoGUI #jws#
+  		#args# --launchAgents helloworld.ex04.ThreeAgentsWithNoGUI,false,3 #args#
   
  */
 
