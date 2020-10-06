@@ -13,8 +13,8 @@ import madkit.kernel.Message;
  * 
  * 
  * 
- *		#jws# communication.ex04.Agent1 #jws#
- *  	#args# --launchAgents communication.ex04.Agent1,true,2;communication.ex04.Agent2,true,2 #args#
+ *		#jws# communication.ex05.Agent1 #jws#
+ *  	#args# --launchAgents communication.ex05.Agent1,true,2;communication.ex05.Agent2,true,2 #args#
  * 
  * 
  * 
@@ -66,7 +66,9 @@ public class Agent1 extends Agent {
     }
 
     /*
-     * Set where the agent's window will be for avoiding a clear presentation.
+     * Set where the agent's window will be for avoiding a clear presentation. This method give
+	 * the opportunity to modify the default settings of the frame.
+     * It will be more explained in GUI tutorial.
      */
     @Override
     public void setupFrame(AgentFrame frame) {

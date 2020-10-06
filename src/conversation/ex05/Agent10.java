@@ -31,7 +31,7 @@ import madkit.message.XMLMessage;
 /**
  * Shows how agents exchange messages.
  * 
- * #jws conversation.ex05.Agent10 jws#
+ * #jws conversation.ex02.Agent10 jws#
  * 
  * To interact with other agents, agents need a form of communication. Doing so,the agents have MailBox, they can use it
  * to receive and send messages. Here, agent10 sends a message containing a string.

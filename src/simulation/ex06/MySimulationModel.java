@@ -4,8 +4,7 @@ import madkit.kernel.AbstractAgent;
 
 /**
  * 
- *  #jws# simulation.ex06.MySimulationModel #jws#
- * 	#args# --launchAgents simulation.ex06.MySimulationModel #args# 
+ * #jws# simulation.ex06.MySimulationModel #jws# #args# --launchAgents simulation.ex06.MySimulationModel #args#
  * 
  * It is time to display something !! The only purpose of this class is to show an example of what could be a launching
  * sequence. The display work is done in {@link Viewer}
@@ -33,15 +32,15 @@ public class MySimulationModel extends AbstractAgent {
 	for (int i = 0; i < 10; i++) {
 	    launchAgent(new SituatedAgent());
 	}
-	
+
 	// 5 : create the scheduler
 	MyScheduler06 scheduler = new MyScheduler06();
 	launchAgent(scheduler, true);
-	
+
 	// 3 : create the viewer
 	Viewer viewer = new Viewer();
 	launchAgent(viewer, true);
-	
+
     }
 
     public static void main(String[] args) {

@@ -1,36 +1,58 @@
 package simulation.ex04;
 
 import madkit.gui.ConsoleAgent;
+import madkit.kernel.AbstractAgent;
 import madkit.kernel.Madkit;
 import madkit.kernel.Scheduler;
-import simulation.ex03.MyScheduler03;
+import madkit.simulation.activator.GenericBehaviorActivator;
+import simulation.ex02.SimulatedAgent02;
+import simulation.ex02.SimulationModel;
+import simulation.ex03.SimulatedAgent03;
 
 /**
  * 
  *  #jws# simulation.ex04.MyScheduler04 #jws#
- * 	#args# --launchAgents simulation.ex04.MyScheduler04,true;madkit.gui.ConsoleAgent #args# 
+ * 	#args# --launchAgents simulation.ex04.MyScheduler04,true;madkit.gui.ConsoleAgent #args#
  * 
- * 
- * Let us define explicitly how a simulation step takes place in order to define our own scheduling policy at will. This
- * is done by overriding {@link Scheduler#doSimulationStep()}.
+ * Let us have more fun by adding another activator on another role to execute the other behavior of
+ * {@link SimulatedAgent04}
  */
 
-public class MyScheduler04 extends MyScheduler03 {
+public class MyScheduler04 extends Scheduler {
 
-    /**
-     * Our step consists in activating the first activator one time and the second two times. It could have been anything
-     * else. In fact, we could do anything we want here, especially we also define another granularity for the step: 0.5
-     */
+    protected GenericBehaviorActivator<AbstractAgent> activator1;
+    protected GenericBehaviorActivator<AbstractAgent> activator2;
+
     @Override
-    public void doSimulationStep() {
-	activator1.execute();
-	activator2.execute();
-	activator2.execute();
-	setGVT(getGVT() + 0.5);
+    protected void activate() {
+
+	// 1 : create the simulation group
+	createGroup(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP);
+
+	// 2 : launch some simulated agents
+	for (int i = 0; i < 10; i++) {
+	    launchAgent(new SimulatedAgent02());
+	    launchAgent(new SimulatedAgent03());
+	    launchAgent(new SimulatedAgent04());
+	}
+
+	// 3 : initialize the activators
+	// by default, they are activated once each in the order they have been added
+	activator1 = new GenericBehaviorActivator<AbstractAgent>(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ROLE, "doIt");
+	addActivator(activator1);
+	activator2 = new GenericBehaviorActivator<AbstractAgent>(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ANOTHER_ROLE, "anotherBehavior");
+	addActivator(activator2);
+
+	setDelay(300);
+
+	// 4 : let us start the simulation automatically
+	setSimulationState(SimulationState.RUNNING);
     }
 
     /**
-     * A simple way of launching this scheduler. It is inherited but this is to make the IDE launch this one properly.
+     * A simple way of launching this scheduler
+     * 
+     * @param
      */
     public static void main(String[] args) {
 	new Madkit("--launchAgents", MyScheduler04.class.getName() + ",true;" + ConsoleAgent.class.getName());

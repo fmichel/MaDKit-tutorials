@@ -1,7 +1,6 @@
 package simulation.ex02;
 
 import madkit.kernel.AbstractAgent;
-import simulation.ex01.SimulationModel;
 
 public class SimulatedAgent02 extends AbstractAgent {
 
@@ -12,7 +11,7 @@ public class SimulatedAgent02 extends AbstractAgent {
 
     @SuppressWarnings("unused")
     private void doIt() {
-	getLogger().info("I am doing it, but my way");
+	getLogger().info("I am doing it");
     }
 
 }

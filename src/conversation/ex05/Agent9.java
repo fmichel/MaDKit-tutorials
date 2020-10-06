@@ -28,7 +28,7 @@ import madkit.kernel.Message;
 /**
  * Agent9 works with Agent10, using a different role.
  * 
- * #jws conversation.ex05.Agent10 jws#
+ * #jws conversation.ex02.Agent10 jws#
  * 
  * To interact with other agents, agents need a form of communication. Doing so,the agents have MailBox, they can use it
  * to receive and send messages. Here, agent9 posts the received message.

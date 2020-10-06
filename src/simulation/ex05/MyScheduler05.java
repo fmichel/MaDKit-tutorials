@@ -1,41 +1,36 @@
 package simulation.ex05;
 
-import java.util.logging.Level;
-
 import madkit.gui.ConsoleAgent;
 import madkit.kernel.Madkit;
+import madkit.kernel.Scheduler;
 import simulation.ex04.MyScheduler04;
 
 /**
  * 
- *  #jws# simulation.ex05.MyScheduler05 #jws#
- * 	#args# --launchAgents simulation.ex05.MyScheduler05,true;madkit.gui.ConsoleAgent #args# 
+ *  #jws# simulation.ex05.MyScheduler02 #jws#
+ * 	#args# --launchAgents simulation.ex05.MyScheduler02,true;madkit.gui.ConsoleAgent #args#
  * 
- * Let us illustrate some other basic features of a scheduler
+ * 
+ * Let us define explicitly how a simulation step takes place in order to define our own scheduling policy at will. This
+ * is done by overriding {@link Scheduler#doSimulationStep()}.
  */
 
 public class MyScheduler05 extends MyScheduler04 {
 
+    /**
+     * Our step consists in activating the first activator one time and the second two times. It could have been anything
+     * else. In fact, we could do anything we want here, especially we also define another granularity for the step: 0.5
+     */
     @Override
-    protected void activate() {
-	// This makes a pause of 300 ms between two simulation steps and can be modified later in the code or
-	// using the scheduler GUI.
-	setDelay(300);
-
-	// Let us also display more information:
-	// the FINER log level of the Scheduler displays activation information
-	getLogger().setLevel(Level.FINER);
-
-	// The simulation will run until getGVT() >= 10 and then automatically quit
-	setSimulationDuration(10);
-
-	super.activate();
+    public void doSimulationStep() {
+	activator1.execute();
+	activator2.execute();
+	activator2.execute();
+	setGVT(getGVT() + 0.5);
     }
 
     /**
-     * A simple way of launching this scheduler
-     * 
-     * @param
+     * A simple way of launching this scheduler. It is inherited but this is to make the IDE launch this one properly.
      */
     public static void main(String[] args) {
 	new Madkit("--launchAgents", MyScheduler05.class.getName() + ",true;" + ConsoleAgent.class.getName());

@@ -26,12 +26,12 @@ public class MyScheduler06 extends Scheduler {
 
 	// 3 : initialize the activators
 	// by default, they are activated once each in the order they have been added
-	agents = new GenericBehaviorActivator<AbstractAgent>(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.AGENT_ROLE, "doIt");
+	agents = new GenericBehaviorActivator<>(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.AGENT_ROLE, "doIt");
 	addActivator(agents);
-	viewers = new GenericBehaviorActivator<AbstractAgent>(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.VIEWER_ROLE, "observe");
+	viewers = new GenericBehaviorActivator<>(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.VIEWER_ROLE, "observe");
 	addActivator(viewers);
 
-	setDelay(20);
+//	setDelay(20);
 
 //	 4 : let us start the simulation automatically
 	setSimulationState(SimulationState.RUNNING);

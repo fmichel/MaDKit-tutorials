@@ -223,7 +223,7 @@
          ================================= -->
 	<target name="test-jnlp" description="test jnlps">
 		<exec executable="javaws" dir="${release.dir}/${jnlps.dir}">
-			<arg value="communication.ex05.Agent4.jnlp" />
+			<arg value="communication.ex05.Agent3.jnlp" />
 		</exec>
 	</target>
 
