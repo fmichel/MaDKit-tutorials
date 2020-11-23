@@ -1,4 +1,4 @@
-package simulation.ex07;
+package simulation.ex08;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -6,14 +6,14 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-import simulation.ex06.SituatedAgent;
-import simulation.ex06.Viewer;
+import simulation.ex07.SituatedAgent;
+import simulation.ex07.Viewer;
 
 /**
  * 
  * 
- * #jws# simulation.ex07.MySimulationModel07 #jws#
- * #args# --launchAgents simulation.ex07.MySimulationModel07 #args# 
+ * #jws# simulation.ex08.MySimulationModel08 #jws#
+ * #args# --launchAgents simulation.ex08.MySimulationModel08 #args#
  * 
  * We can of course use images to represent the agents.
  */

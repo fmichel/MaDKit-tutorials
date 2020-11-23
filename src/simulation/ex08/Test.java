@@ -1,4 +1,4 @@
-package simulation.ex07;
+package simulation.ex08;
 
 import madkit.kernel.Agent;
 import madkit.kernel.Madkit;
