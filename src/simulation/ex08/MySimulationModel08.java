@@ -1,14 +1,14 @@
-package simulation.ex07;
+package simulation.ex08;
 
-import simulation.ex06.MySimulationModel;
+import simulation.ex07.MySimulationModel;
 
 /**
- *  #jws# simulation.ex07.MySimulationModel07 #jws#
- * 	#args# --launchAgents simulation.ex07.MySimulationModel07 #args# 
+ *  #jws# simulation.ex08.MySimulationModel08 #jws#
+ * 	#args# --launchAgents simulation.ex08.MySimulationModel08 #args#
  * 
  * It is time to display using an alternative representation for the agents !! See {@link ImageViewer}
  */
-public class MySimulationModel07 extends MySimulationModel {
+public class MySimulationModel08 extends MySimulationModel {
 
     @Override
     protected void activate() {

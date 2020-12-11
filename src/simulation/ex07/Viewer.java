@@ -1,4 +1,4 @@
-package simulation.ex06;
+package simulation.ex07;
 
 import java.awt.Color;
 import java.awt.Dimension;
