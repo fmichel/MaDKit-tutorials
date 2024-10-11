@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex2_madkitCodingError._3_AgentLaunchingNewCrashingAgents (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_3_AgentLaunchingNewCrashingAgents.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex2_madkitCodingError;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/ex1_javaException/CrashingAgent.java.html">returncode.ex1_javaException.CrashingAgent</A>;
+<A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="7"></A>
+<A NAME="8"></A><FONT ID="FormalComment">/**
+<A NAME="9"></A> * Now that we have seen that misusing MaDKit may generate KernelException, we will
+<A NAME="10"></A> * see how other agents are impacted if one of them crash.
+<A NAME="11"></A> * 
+<A NAME="12"></A> * Good failure managing is extremely important in multi-agent system.
+<A NAME="13"></A> * We do not want the whole society to crash because of the crash of one of our agents.
+<A NAME="14"></A> * 
+<A NAME="15"></A> * Here we launch an agent that will launch two agents during his life.
+<A NAME="16"></A> * The first one is a basic TutorialAgent while the second is a CrashingAgent.
+<A NAME="17"></A> * The aim of this exercise is to see if the crash of a launched agent may have any
+<A NAME="18"></A> * impact on the launcher agent.
+<A NAME="19"></A> * 
+<A NAME="20"></A> * 
+<A NAME="21"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex2_madkitCodingError._3_AgentLaunchingNewCrashingAgents', '1.8.0');</script>
+<A NAME="22"></A> *  
+<A NAME="23"></A> * 
+<A NAME="24"></A> */</FONT>
+<A NAME="25"></A>
+<A NAME="26"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _3_AgentLaunchingNewCrashingAgents <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>{
+<A NAME="27"></A>       
+<A NAME="28"></A>       <FONT ID="FormalComment">/**
+<A NAME="29"></A>        * On activation we will just set the log level on FINEST so that
+<A NAME="30"></A>        * the agent's life cycle is traced.
+<A NAME="31"></A>        * See the logging tutorial for more information.
+<A NAME="32"></A>        */</FONT>
+<A NAME="33"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="34"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="35"></A>              getLogger().setLevel(Level.FINEST);
+<A NAME="36"></A>       }
+<A NAME="37"></A>       
+<A NAME="38"></A>       <FONT ID="FormalComment">/**
+<A NAME="39"></A>        * Launches a TutorialAgent and a CrashingAgent. 
+<A NAME="40"></A>        */</FONT>
+<A NAME="41"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="42"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="43"></A>              <FONT ID="SingleLineComment">//first launch a TutorialAgent
+<A NAME="44"></A></FONT>              launchAgent(<FONT ID="New">new</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>(),<FONT ID="True">true</FONT>);
+<A NAME="45"></A>
+<A NAME="46"></A>              <FONT ID="SingleLineComment">//then launch a CrashingAgent
+<A NAME="47"></A></FONT>              launchAgent(<FONT ID="New">new</FONT> <A HREF="../../returncode/ex1_javaException/CrashingAgent.java.html">CrashingAgent</A>(),<FONT ID="True">true</FONT>);
+<A NAME="48"></A>       }
+<A NAME="49"></A>       
+<A NAME="50"></A>       <FONT ID="FormalComment">/**
+<A NAME="51"></A>        * Launch a _3_AgentLaunchingNewCrashingAgents. As expected, the
+<A NAME="52"></A>        * CrashingAgent will crash but without having any impact
+<A NAME="53"></A>        * on the life of the others. 
+<A NAME="54"></A>        * 
+<A NAME="55"></A>        * @param argss
+<A NAME="56"></A>        */</FONT>
+<A NAME="57"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="58"></A>              executeThisAgent(<FONT ID="IntegerLiteral">1</FONT>, <FONT ID="True">true</FONT>);
+<A NAME="59"></A>       }
+<A NAME="60"></A>}
+<A NAME="61"></A>
+<A NAME="62"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_3_AgentLaunchingNewCrashingAgents.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

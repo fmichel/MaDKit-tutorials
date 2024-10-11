@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulation.ex07.SituatedAgent (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">SituatedAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> simulation.ex07;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">java.awt.Dimension</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">madkit.kernel.AbstractAgent</A>;
+<A NAME="6"></A>
+<A NAME="7"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> SituatedAgent <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A> {
+<A NAME="8"></A>
+<A NAME="9"></A>    <FONT ID="FormalComment">/**
+<A NAME="10"></A>     * The agent's environment. Here it is just used to know its boundaries. It will be automatically set by the environment
+<A NAME="11"></A>     * agent itself: No need to instantiate anything here.
+<A NAME="12"></A>     */</FONT>
+<A NAME="13"></A>    <FONT ID="Protected">protected</FONT> <A HREF="../../simulation/ex07/EnvironmentAgent.java.html">EnvironmentAgent</A> environment;
+<A NAME="14"></A>
+<A NAME="15"></A>    <FONT ID="FormalComment">/**
+<A NAME="16"></A>     * agent's position
+<A NAME="17"></A>     */</FONT>
+<A NAME="18"></A>    <FONT ID="Protected">protected</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A> location = <FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A>();
+<A NAME="19"></A>
+<A NAME="20"></A>    <FONT ID="FormalComment">/**
+<A NAME="21"></A>     * initialize my role and fields
+<A NAME="22"></A>     */</FONT>
+<A NAME="23"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="24"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="25"></A>       requestRole(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.AGENT_ROLE);
+<A NAME="26"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A> envDim = environment.getDimension();
+<A NAME="27"></A>       location.width = (<FONT ID="Int">int</FONT>) (Math.random() * envDim.width);
+<A NAME="28"></A>       location.height = (<FONT ID="Int">int</FONT>) (Math.random() * envDim.height);
+<A NAME="29"></A>    }
+<A NAME="30"></A>
+<A NAME="31"></A>    <FONT ID="FormalComment">/**
+<A NAME="32"></A>     * A non sense behavior, just moving around.
+<A NAME="33"></A>     */</FONT>
+<A NAME="34"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/SuppressWarnings.html">SuppressWarnings</A>(<FONT ID="StringLiteral">"unused"</FONT>)
+<A NAME="35"></A>    <FONT ID="Private">private</FONT> <FONT ID="Void">void</FONT> doIt() {
+<A NAME="36"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A> envDim = environment.getDimension();
+<A NAME="37"></A>       location.width += Math.random() * <FONT ID="IntegerLiteral">4</FONT> - <FONT ID="IntegerLiteral">1</FONT>;
+<A NAME="38"></A>       location.height += Math.random() * <FONT ID="IntegerLiteral">4</FONT> - <FONT ID="IntegerLiteral">1</FONT>;
+<A NAME="39"></A>       location.width %= envDim.width;
+<A NAME="40"></A>       location.height %= envDim.height;
+<A NAME="41"></A>    }
+<A NAME="42"></A>
+<A NAME="43"></A>}
+<A NAME="44"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">SituatedAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

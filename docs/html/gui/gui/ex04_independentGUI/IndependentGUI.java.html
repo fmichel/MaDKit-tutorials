@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>gui.ex04_independentGUI.IndependentGUI (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">IndependentGUI.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> gui.ex04_independentGUI;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/BorderLayout.html">java.awt.BorderLayout</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Color.html">java.awt.Color</A>;
+<A NAME="5"></A>
+<A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/ImageIcon.html">javax.swing.ImageIcon</A>;
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JFrame.html">javax.swing.JFrame</A>;
+<A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JLabel.html">javax.swing.JLabel</A>;
+<A NAME="9"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JMenuBar.html">javax.swing.JMenuBar</A>;
+<A NAME="10"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JPanel.html">javax.swing.JPanel</A>;
+<A NAME="11"></A>
+<A NAME="12"></A><FONT ID="Import">import</FONT> <A HREF="../../gui/ex03_customPanel/CustomPanel.java.html">gui.ex03_customPanel.CustomPanel</A>;
+<A NAME="13"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/OutputPanel.html">madkit.gui.OutputPanel</A>;
+<A NAME="14"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/menu/AgentLogLevelMenu.html">madkit.gui.menu.AgentLogLevelMenu</A>;
+<A NAME="15"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/menu/AgentMenu.html">madkit.gui.menu.AgentMenu</A>;
+<A NAME="16"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="17"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="18"></A>
+<A NAME="19"></A><FONT ID="FormalComment">/**
+<A NAME="20"></A> * Shows how to build a totally independent GUI for an agent.
+<A NAME="21"></A> * 
+<A NAME="22"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/gui.ex04_independentGUI.IndependentGUI', '1.8.0');</script>
+<A NAME="23"></A> *     
+<A NAME="24"></A> * 
+<A NAME="25"></A> * Not using the default GUI mechanism of course makes the source code much more longer without any real benefits here.
+<A NAME="26"></A> * So, it is safe to say that the default mechanism should be used almost always. This because: (1) the default
+<A NAME="27"></A> * mechanism does not prevent a full control over the created frame. (2) the life cycle of the agent is automatically
+<A NAME="28"></A> * related with the frame's, so that nothing has to be added. Still, there are of course cases where it could be a
+<A NAME="29"></A> * convenient solution. Especially, it could be interesting to use both the default mechanism and an independent GUI for
+<A NAME="30"></A> * developing/debugging purposes like in the next example.
+<A NAME="31"></A> */</FONT>
+<A NAME="32"></A>
+<A NAME="33"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> IndependentGUI <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="34"></A>
+<A NAME="35"></A>    <FONT ID="Private">private</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JFrame.html">JFrame</A> myFrame;
+<A NAME="36"></A>
+<A NAME="37"></A>    <FONT ID="FormalComment">/**
+<A NAME="38"></A>     * building my own GUI here
+<A NAME="39"></A>     */</FONT>
+<A NAME="40"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="41"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="42"></A>       myFrame = <FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JFrame.html">JFrame</A>(<FONT ID="StringLiteral">"My own title"</FONT>);
+<A NAME="43"></A>
+<A NAME="44"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JPanel.html">JPanel</A> p = <FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JPanel.html">JPanel</A>(<FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/BorderLayout.html">BorderLayout</A>());
+<A NAME="45"></A>
+<A NAME="46"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JPanel.html">JPanel</A> talkPanel = <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/OutputPanel.html">OutputPanel</A>(<FONT ID="This">this</FONT>);
+<A NAME="47"></A>       talkPanel.setBackground(Color.LIGHT_GRAY);
+<A NAME="48"></A>       p.add(talkPanel, BorderLayout.CENTER);
+<A NAME="49"></A>
+<A NAME="50"></A>       p.add(<FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JLabel.html">JLabel</A>(<FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/ImageIcon.html">ImageIcon</A>(<A HREF="../../gui/ex03_customPanel/CustomPanel.java.html">CustomPanel</A>.<FONT ID="Class">class</FONT>.getResource(<FONT ID="StringLiteral">"agent.png"</FONT>))), BorderLayout.NORTH);
+<A NAME="51"></A>
+<A NAME="52"></A>       myFrame.add(p);
+<A NAME="53"></A>       <FONT ID="SingleLineComment">// but still getting some help from madkit.gui components
+<A NAME="54"></A></FONT>       <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JMenuBar.html">JMenuBar</A> menuBar = <FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//javax/swing/JMenuBar.html">JMenuBar</A>();
+<A NAME="55"></A>       menuBar.add(<FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/menu/AgentMenu.html">AgentMenu</A>(<FONT ID="This">this</FONT>));
+<A NAME="56"></A>       menuBar.add(<FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/menu/AgentLogLevelMenu.html">AgentLogLevelMenu</A>(<FONT ID="This">this</FONT>));
+<A NAME="57"></A>       myFrame.setJMenuBar(menuBar);
+<A NAME="58"></A>
+<A NAME="59"></A>       myFrame.setSize(<FONT ID="IntegerLiteral">400</FONT>, <FONT ID="IntegerLiteral">500</FONT>);
+<A NAME="60"></A>       myFrame.setLocationRelativeTo(<FONT ID="Null">null</FONT>);<FONT ID="SingleLineComment">// centered
+<A NAME="61"></A></FONT>
+<A NAME="62"></A>       <FONT ID="SingleLineComment">// Beware that end will not be called
+<A NAME="63"></A></FONT>       <FONT ID="SingleLineComment">// if the frame is closed by the user...
+<A NAME="64"></A></FONT>       myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+<A NAME="65"></A>
+<A NAME="66"></A>       myFrame.setVisible(<FONT ID="True">true</FONT>);
+<A NAME="67"></A>    }
+<A NAME="68"></A>
+<A NAME="69"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="70"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="71"></A>       getLogger().info(<FONT ID="StringLiteral">"\n\tI have defined my own frame,\n\twith some predefined menus, though"</FONT>);
+<A NAME="72"></A>       pause(<FONT ID="IntegerLiteral">5000</FONT>);
+<A NAME="73"></A>    }
+<A NAME="74"></A>
+<A NAME="75"></A>    <FONT ID="FormalComment">/**
+<A NAME="76"></A>     * I have to close the frame myself because its life cycle is not managed by the MaDKit kernel.
+<A NAME="77"></A>     */</FONT>
+<A NAME="78"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="79"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> end() {
+<A NAME="80"></A>       myFrame.dispose();
+<A NAME="81"></A>
+<A NAME="82"></A>       System.exit(<FONT ID="IntegerLiteral">0</FONT>);
+<A NAME="83"></A>    }
+<A NAME="84"></A>
+<A NAME="85"></A>    <FONT ID="FormalComment">/**
+<A NAME="86"></A>     * @param argss
+<A NAME="87"></A>     *            unused here
+<A NAME="88"></A>     */</FONT>
+<A NAME="89"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="90"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args = { <FONT ID="StringLiteral">"--launchAgents"</FONT>, <A HREF="../../gui/ex04_independentGUI/IndependentGUI.java.html">IndependentGUI</A>.<FONT ID="Class">class</FONT>.getName() };
+<A NAME="91"></A>       <FONT ID="SingleLineComment">// + ",false" }; would not change anything as it is the default setting
+<A NAME="92"></A></FONT>       Madkit.main(args);
+<A NAME="93"></A>    }
+<A NAME="94"></A>
+<A NAME="95"></A>}
+<A NAME="96"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">IndependentGUI.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>helloworld.ex02.AgentLifeCycle (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">AgentLifeCycle.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> helloworld.ex02;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A> 
+<A NAME="7"></A> The default life cycle of a threaded agent is composed of three methods 
+<A NAME="8"></A> which are automatically called sequentially, and each of which being optional:
+<A NAME="9"></A>
+<A NAME="10"></A> 1. activate(): The first behavior in the life cycle of an agent.
+<A NAME="11"></A> It could be considered as a constructor which is called once the agent is launched.
+<A NAME="12"></A> The agent cannot use agent primitives before that (e.g. in its constructor).
+<A NAME="13"></A> Activate is a good place to initialize the agent's position in the artificial society.
+<A NAME="14"></A> (Artificial society is a notion that will be explained later in the tutorials)
+<A NAME="15"></A> 
+<A NAME="16"></A> 2. live(): This behavior is automatically called when the agent exits activate. It usually
+<A NAME="17"></A> implements an infinite loop wherein the agent send and receive messages: 
+<A NAME="18"></A> It corresponds to the life of the agent. Here the agent lives 10 seconds and quits.
+<A NAME="19"></A> 
+<A NAME="20"></A> 3. end() this behavior is automatically called when live exits or when the agent is killed, 
+<A NAME="21"></A> e.g. by the user when closing the agent's GUI. 
+<A NAME="22"></A> It is usually used to release resources and log the end of life event. 
+<A NAME="23"></A> 
+<A NAME="24"></A>       <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/helloworld.ex02.AgentLifeCycle', '1.8.0');</script>
+<A NAME="25"></A> *     
+<A NAME="26"></A>*/</FONT>
+<A NAME="27"></A>
+<A NAME="28"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> AgentLifeCycle <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="29"></A>
+<A NAME="30"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="31"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="32"></A>       getLogger().info(<FONT ID="StringLiteral">"\tHello World!!\n\n\tI am activating..."</FONT>);
+<A NAME="33"></A>       pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="34"></A>    }
+<A NAME="35"></A>
+<A NAME="36"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="37"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="38"></A>       <FONT ID="Int">int</FONT> nb = <FONT ID="IntegerLiteral">10</FONT>;
+<A NAME="39"></A>       <FONT ID="While">while</FONT> (nb-- &gt; <FONT ID="IntegerLiteral">0</FONT>) {
+<A NAME="40"></A>           getLogger().info(<FONT ID="StringLiteral">"Living... I will quit in "</FONT> + nb + <FONT ID="StringLiteral">" seconds"</FONT>);
+<A NAME="41"></A>           pause(<FONT ID="IntegerLiteral">1000</FONT>);
+<A NAME="42"></A>       }
+<A NAME="43"></A>    }
+<A NAME="44"></A>
+<A NAME="45"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="46"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> end() {
+<A NAME="47"></A>       getLogger().info(<FONT ID="StringLiteral">"Bye bye !"</FONT>);
+<A NAME="48"></A>       pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="49"></A>    }
+<A NAME="50"></A>
+<A NAME="51"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="52"></A>       executeThisAgent();
+<A NAME="53"></A>    }
+<A NAME="54"></A>}
+<A NAME="55"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">AgentLifeCycle.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

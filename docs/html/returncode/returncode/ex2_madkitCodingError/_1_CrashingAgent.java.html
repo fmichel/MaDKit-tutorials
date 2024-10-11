@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex2_madkitCodingError._1_CrashingAgent (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_CrashingAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex2_madkitCodingError;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">madkit.kernel.Message</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="5"></A>
+<A NAME="6"></A><FONT ID="FormalComment">/**
+<A NAME="7"></A> * In addition of Java's exceptions, there is another category of failure that may happen with MaDKit:
+<A NAME="8"></A> * madkit.kernel.KernelException. KernelException is a class of MaDKit that extends RuntimeException. 
+<A NAME="9"></A> * Actually it is an exception thrown to indicate that the agent is trying to use a method
+<A NAME="10"></A> * while not launched or already dead.
+<A NAME="11"></A> * 
+<A NAME="12"></A> * In this example we will see a KernelException being thrown while we try to
+<A NAME="13"></A> * send a message with an agent without launching him.
+<A NAME="14"></A> * 
+<A NAME="15"></A> * 
+<A NAME="16"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex2_madkitCodingError._1_CrashingAgent', '1.8.0');</script>
+<A NAME="17"></A> * 
+<A NAME="18"></A> * 
+<A NAME="19"></A> */</FONT>
+<A NAME="20"></A>
+<A NAME="21"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _1_CrashingAgent <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A> {
+<A NAME="22"></A>       
+<A NAME="23"></A>       <FONT ID="FormalComment">/**
+<A NAME="24"></A>        * This will throw a KernelException.
+<A NAME="25"></A>        * 
+<A NAME="26"></A>        * @param argss
+<A NAME="27"></A>        */</FONT>
+<A NAME="28"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="29"></A>              <A HREF="../../returncode/ex2_madkitCodingError/_1_CrashingAgent.java.html">_1_CrashingAgent</A> agent = <FONT ID="New">new</FONT> <A HREF="../../returncode/ex2_madkitCodingError/_1_CrashingAgent.java.html">_1_CrashingAgent</A>();
+<A NAME="30"></A>              agent.sendMessage(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>, <FONT ID="StringLiteral">"myRole"</FONT>, <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A>());
+<A NAME="31"></A>              
+<A NAME="32"></A>              <FONT ID="FormalComment">/**
+<A NAME="33"></A>               * The previous line of code shall cause this error:
+<A NAME="34"></A>               * 
+<A NAME="35"></A>               * madkit.kernel.KernelException: _1_CrashingAgent-0 (NOT_LAUNCHED) must be launched to use this method 
+<A NAME="36"></A>               *                   at madkit.kernel.AbstractAgent.sendMessage(Unknown Source)
+<A NAME="37"></A>               * Exception in thread "main" madkit.kernel.KernelException: _1_CrashingAgent-0 (NOT_LAUNCHED) must be launched to use this method 
+<A NAME="38"></A>               *                   at madkit.kernel.AbstractAgent.sendMessage(Unknown Source)
+<A NAME="39"></A>               *
+<A NAME="40"></A>               */</FONT>
+<A NAME="41"></A>       }
+<A NAME="42"></A>}
+<A NAME="43"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_CrashingAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

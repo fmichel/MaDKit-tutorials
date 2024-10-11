@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex5_CGRReturnCodes._6_RoleAlreadyHandled (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_6_RoleAlreadyHandled.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex5_CGRReturnCodes;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A> * This class exemplifies: ROLE_ALREADY_HANDLED.
+<A NAME="7"></A> * This ReturnCode is returned when the agent already has the
+<A NAME="8"></A> * requested role.
+<A NAME="9"></A> * 
+<A NAME="10"></A> * 
+<A NAME="11"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex5_CGRReturnCodes._6_RoleAlreadyHandled', '1.8.0');</script>
+<A NAME="12"></A> * 
+<A NAME="13"></A> * 
+<A NAME="14"></A> */</FONT>
+<A NAME="15"></A>
+<A NAME="16"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _6_RoleAlreadyHandled <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>{
+<A NAME="17"></A>       
+<A NAME="18"></A>       <FONT ID="FormalComment">/**
+<A NAME="19"></A>        * Our _6_RoleAlreadyHandled agent will deliberately ask twice the same role: when activate and in his lifetime.
+<A NAME="20"></A>        */</FONT>
+<A NAME="21"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="22"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="23"></A>              createGroupIfAbsent(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>);
+<A NAME="24"></A>              ReturnCode requestFeedback1 = requestRole(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>, <FONT ID="StringLiteral">"myRole"</FONT>);
+<A NAME="25"></A>              getLogger().info(<FONT ID="StringLiteral">"\n\tThe ReturnCode is: \""</FONT> + requestFeedback1.toString() + <FONT ID="StringLiteral">"\" .\n\tI have the role I wanted !\t\n"</FONT>);
+<A NAME="26"></A>       }
+<A NAME="27"></A>       
+<A NAME="28"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="29"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="30"></A>              <FONT ID="FormalComment">/**
+<A NAME="31"></A>               * The _6_RoleAlreadyHandled agent forgets that he already has this role,
+<A NAME="32"></A>               * so he asks for it again... Thus a message saying that the requestRole()
+<A NAME="33"></A>               * has failed will be displayed.
+<A NAME="34"></A>               */</FONT>
+<A NAME="35"></A>              ReturnCode requestFeedback2;
+<A NAME="36"></A>              requestFeedback2 = requestRole(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>, <FONT ID="StringLiteral">"myRole"</FONT>);
+<A NAME="37"></A>              getLogger().info(<FONT ID="StringLiteral">"\n\tThe ReturnCode is: \""</FONT> + requestFeedback2.toString() + <FONT ID="StringLiteral">"\" .\n\tIt means that I already have this role \t\n"</FONT>);
+<A NAME="38"></A>              
+<A NAME="39"></A>              <FONT ID="MultiLineComment">/* Then you do what you want with this agent */</FONT>
+<A NAME="40"></A>       }
+<A NAME="41"></A>       
+<A NAME="42"></A>       <FONT ID="FormalComment">/**
+<A NAME="43"></A>        * Launch a _6_RoleAlreadyHandled agent.
+<A NAME="44"></A>        * 
+<A NAME="45"></A>        * @param argss
+<A NAME="46"></A>        */</FONT>
+<A NAME="47"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="48"></A>       executeThisAgent();
+<A NAME="49"></A>    }
+<A NAME="50"></A>}
+<A NAME="51"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_6_RoleAlreadyHandled.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

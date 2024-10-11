@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulation.ex07.EnvironmentAgent (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">EnvironmentAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> simulation.ex07;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">java.awt.Dimension</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">madkit.kernel.AbstractAgent</A>;
+<A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Watcher.html">madkit.kernel.Watcher</A>;
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/probe/PropertyProbe.html">madkit.simulation.probe.PropertyProbe</A>;
+<A NAME="8"></A>
+<A NAME="9"></A><FONT ID="FormalComment">/**
+<A NAME="10"></A> * This agent is used to model a quite simple environment. Nothing in it; It just defines its boundaries and uses a
+<A NAME="11"></A> * {@link PropertyProbe} to set the agents' environment field so that they can use the environment's methods once they
+<A NAME="12"></A> * enter the artificial society.
+<A NAME="13"></A> */</FONT>
+<A NAME="14"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> EnvironmentAgent <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Watcher.html">Watcher</A> {
+<A NAME="15"></A>
+<A NAME="16"></A>    <FONT ID="FormalComment">/**
+<A NAME="17"></A>     * environment's boundaries
+<A NAME="18"></A>     */</FONT>
+<A NAME="19"></A>    <FONT ID="Private">private</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A> dimension;
+<A NAME="20"></A>
+<A NAME="21"></A>    <FONT ID="FormalComment">/**
+<A NAME="22"></A>     * so that the agents can perceive my dimension
+<A NAME="23"></A>     */</FONT>
+<A NAME="24"></A>    <FONT ID="Public">public</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A> getDimension() {
+<A NAME="25"></A>       <FONT ID="Return">return</FONT> dimension;
+<A NAME="26"></A>    }
+<A NAME="27"></A>
+<A NAME="28"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="29"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="30"></A>       dimension = <FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A>(<FONT ID="IntegerLiteral">400</FONT>, <FONT ID="IntegerLiteral">400</FONT>);
+<A NAME="31"></A>       
+<A NAME="32"></A>       <FONT ID="SingleLineComment">// 1 : request my role so that the viewer can probe me
+<A NAME="33"></A></FONT>       requestRole(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.ENV_ROLE);
+<A NAME="34"></A>
+<A NAME="35"></A>       <FONT ID="SingleLineComment">// 2 : this probe is used to initialize the agents' environment field
+<A NAME="36"></A></FONT>       addProbe(<FONT ID="New">new</FONT> AgentsProbe(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.AGENT_ROLE, <FONT ID="StringLiteral">"environment"</FONT>));
+<A NAME="37"></A>       
+<A NAME="38"></A>   }
+<A NAME="39"></A>
+<A NAME="40"></A>    <FONT ID="Class">class</FONT> AgentsProbe <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/probe/PropertyProbe.html">PropertyProbe</A>&lt;<A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A>, <A HREF="../../simulation/ex07/EnvironmentAgent.java.html">EnvironmentAgent</A>&gt; {
+<A NAME="41"></A>
+<A NAME="42"></A>       <FONT ID="Public">public</FONT> AgentsProbe(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> community, <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> group, <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> role, <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> fieldName) {
+<A NAME="43"></A>           <FONT ID="Super">super</FONT>(community, group, role, fieldName);
+<A NAME="44"></A>       }
+<A NAME="45"></A>
+<A NAME="46"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="47"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> adding(<A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A> agent) {
+<A NAME="48"></A>           <FONT ID="Super">super</FONT>.adding(agent);
+<A NAME="49"></A>           setPropertyValue(agent, EnvironmentAgent.<FONT ID="This">this</FONT>);
+<A NAME="50"></A>       }
+<A NAME="51"></A>    }
+<A NAME="52"></A>
+<A NAME="53"></A>}</pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">EnvironmentAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

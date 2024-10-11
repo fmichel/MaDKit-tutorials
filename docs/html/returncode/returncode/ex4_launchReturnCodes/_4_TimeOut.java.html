@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex4_launchReturnCodes._4_TimeOut (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_4_TimeOut.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex4_launchReturnCodes;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A> * This class exemplifies: TIMEOUT.
+<A NAME="7"></A> * This ReturnCode is returned by various timed primitives of the Agent class.
+<A NAME="8"></A> * 
+<A NAME="9"></A> * 
+<A NAME="10"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex4_launchReturnCodes._4_TimeOut', '1.8.0');</script>
+<A NAME="11"></A> * 
+<A NAME="12"></A> * 
+<A NAME="13"></A> */</FONT>
+<A NAME="14"></A>
+<A NAME="15"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _4_TimeOut <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A> {
+<A NAME="16"></A>
+<A NAME="17"></A>       <FONT ID="FormalComment">/**
+<A NAME="18"></A>        * We install our agent in his virtual society.
+<A NAME="19"></A>        */</FONT>
+<A NAME="20"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="21"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="22"></A>              createGroupIfAbsent(<FONT ID="StringLiteral">"myTimedOutCommunity"</FONT>, <FONT ID="StringLiteral">"myTimedOutGroup"</FONT>);
+<A NAME="23"></A>              requestRole(<FONT ID="StringLiteral">"myTimedOutCommunity"</FONT>, <FONT ID="StringLiteral">"myTimedOutGroup"</FONT>, <FONT ID="StringLiteral">"myTimedOutRole"</FONT>);
+<A NAME="24"></A>       }
+<A NAME="25"></A>       
+<A NAME="26"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="27"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="28"></A>              <FONT ID="Int">int</FONT> timeBeforeTimeOut = <FONT ID="IntegerLiteral">0</FONT>;  <FONT ID="MultiLineComment">/* an absurd duration */</FONT>
+<A NAME="29"></A>              
+<A NAME="30"></A>       
+<A NAME="31"></A>              <FONT ID="FormalComment">/**
+<A NAME="32"></A>               * The ReturnCode of the next method will be TIME_OUT if the agent we launch has not ended his activate method.
+<A NAME="33"></A>               * Here as we are giving him 0 micro second to finish it. Thus it will return this code.
+<A NAME="34"></A>               */</FONT>
+<A NAME="35"></A>              
+<A NAME="36"></A>              ReturnCode launchFeedback;
+<A NAME="37"></A>              launchFeedback = launchAgent(<FONT ID="New">new</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>(), timeBeforeTimeOut, <FONT ID="False">false</FONT>); <FONT ID="MultiLineComment">/* while minuting we launch a TutorialAgent. */</FONT>
+<A NAME="38"></A>              getLogger().info(<FONT ID="StringLiteral">"\n\tThe ReturnCode is: \""</FONT> + launchFeedback.toString() + <FONT ID="StringLiteral">"\" .\n\tIt means that the activate method did not ended in time. \t\n"</FONT>);
+<A NAME="39"></A>       }
+<A NAME="40"></A>       
+<A NAME="41"></A>       <FONT ID="FormalComment">/**
+<A NAME="42"></A>        * Launch a _4_TimeOut agent.
+<A NAME="43"></A>        * 
+<A NAME="44"></A>        * @param argss
+<A NAME="45"></A>        */</FONT>
+<A NAME="46"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="47"></A>              executeThisAgent(<FONT ID="IntegerLiteral">1</FONT>,<FONT ID="True">true</FONT>);
+<A NAME="48"></A>       }
+<A NAME="49"></A>}
+<A NAME="50"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_4_TimeOut.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

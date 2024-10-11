@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>logging.ex01b_levels.LevelMessage (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LevelMessage.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> logging.ex01b_levels;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A> * The main advantage of using the Logger class is that all messages are associated with a level. Indeed, depending on
+<A NAME="7"></A> * the logging method used, a message will have a particular level. This level will have an impact on how the message is
+<A NAME="8"></A> * displayed. In this example, we will log two messages with different levels. You will observe that the messages are
+<A NAME="9"></A> * preceded by their own log level.
+<A NAME="10"></A> * 
+<A NAME="11"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/logging.ex01b_levels.LevelMessage', '1.8.0');</script>
+<A NAME="12"></A> *      
+<A NAME="13"></A> * 
+<A NAME="14"></A> * @author Pascal Wagner
+<A NAME="15"></A> */</FONT>
+<A NAME="16"></A>
+<A NAME="17"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> LevelMessage <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="18"></A>
+<A NAME="19"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="20"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="21"></A>       pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="22"></A>       getLogger().info(<FONT ID="StringLiteral">"This is a message which has a level 'info'."</FONT>);
+<A NAME="23"></A>       pause(<FONT ID="IntegerLiteral">3000</FONT>);
+<A NAME="24"></A>       getLogger().warning(<FONT ID="StringLiteral">"This is a message which has a level 'warning'."</FONT>);
+<A NAME="25"></A>       pause(<FONT ID="IntegerLiteral">5000</FONT>);
+<A NAME="26"></A>    }
+<A NAME="27"></A>
+<A NAME="28"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="29"></A>       executeThisAgent();
+<A NAME="30"></A>    }
+<A NAME="31"></A>}
+<A NAME="32"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LevelMessage.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>logging.ex03a_levelFinerFinest.LevelFinerFinest (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LevelFinerFinest.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> logging.ex03a_levelFinerFinest;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">madkit.kernel.AbstractAgent</A>;
+<A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AgentLogger.html">madkit.kernel.AgentLogger</A>;
+<A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">madkit.kernel.Message</A>;
+<A NAME="9"></A>
+<A NAME="10"></A><FONT ID="FormalComment">/**
+<A NAME="11"></A> * You have surely noticed that some additional finer and finest messages appeared in the console in the last example
+<A NAME="12"></A> * while they did not appear in the code. In fact, finest messages are used to log many of the agent methods defined in
+<A NAME="13"></A> * MaDKit. And the agent's life cycle is traced at the finer level. So, setting the logger's level to finer, finest or
+<A NAME="14"></A> * all represents a very easy way of debugging MaDKit agents ! Here, we just set the logger's level to all to show that
+<A NAME="15"></A> * there are log messages which are displayed whereas there is no explicit code here. notes : - agent's life is composed
+<A NAME="16"></A> * by the methods : activate(), live() and end(). - the different pauses are only there for you to see the agent's life
+<A NAME="17"></A> * cycle.
+<A NAME="18"></A> * 
+<A NAME="19"></A> * 
+<A NAME="20"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/logging.ex03a_levelFinerFinest.LevelFinerFinest', '1.8.0');</script>
+<A NAME="21"></A> *      
+<A NAME="22"></A> * 
+<A NAME="23"></A> * 
+<A NAME="24"></A> * @author Pascal Wagner
+<A NAME="25"></A> */</FONT>
+<A NAME="26"></A>
+<A NAME="27"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> LevelFinerFinest <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">Agent</A> {
+<A NAME="28"></A>
+<A NAME="29"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="30"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="31"></A>       getLogger().setLevel(Level.ALL);
+<A NAME="32"></A>       pause(<FONT ID="IntegerLiteral">5000</FONT>);
+<A NAME="33"></A>    }
+<A NAME="34"></A>
+<A NAME="35"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="36"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="37"></A>       <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A> m = nextMessage(); <FONT ID="FormalComment">/**  In MaDKit, the {@link AbstractAgent#nextMessage()} method is added to
+<A NAME="38"></A>                                    retrieves and removes the oldest received message contained in the mailbox.  */</FONT>
+<A NAME="39"></A>       pause(<FONT ID="IntegerLiteral">5000</FONT>);
+<A NAME="40"></A>    }
+<A NAME="41"></A>
+<A NAME="42"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="43"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> end() {
+<A NAME="44"></A>       pause(<FONT ID="IntegerLiteral">5000</FONT>);
+<A NAME="45"></A>    }
+<A NAME="46"></A>
+<A NAME="47"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="48"></A>       executeThisAgent();
+<A NAME="49"></A>    }
+<A NAME="50"></A>}</pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LevelFinerFinest.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

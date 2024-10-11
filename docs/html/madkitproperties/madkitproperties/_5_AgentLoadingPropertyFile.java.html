@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>madkitproperties._5_AgentLoadingPropertyFile (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_5_AgentLoadingPropertyFile.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> madkitproperties;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/io/IOException.html">java.io.IOException</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">madkit.kernel.AbstractAgent</A>;
+<A NAME="6"></A>
+<A NAME="7"></A><FONT ID="FormalComment">/**
+<A NAME="8"></A> * Now we will see how to load properties from a property file.
+<A NAME="9"></A> * The loadPropertiesFromFile(nameOfFile) method allows to 
+<A NAME="10"></A> * add and update properties that are stored in this particular file.
+<A NAME="11"></A> * 
+<A NAME="12"></A> * An exception is thrown if the specified file 
+<A NAME="13"></A> * does not exist.
+<A NAME="14"></A> * 
+<A NAME="15"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/madkitproperties._5_AgentLoadingPropertyFile', '1.8.0');</script>
+<A NAME="16"></A> * 
+<A NAME="17"></A> *
+<A NAME="18"></A> */</FONT>
+<A NAME="19"></A>
+<A NAME="20"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _5_AgentLoadingPropertyFile <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A>{
+<A NAME="21"></A>
+<A NAME="22"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="23"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="24"></A>              <FONT ID="MultiLineComment">/* We display the original MaDKit configuration */</FONT>
+<A NAME="25"></A>              getLogger().talk(getMadkitConfig().toString());
+<A NAME="26"></A>              <FONT ID="Try">try</FONT> {
+<A NAME="27"></A>                     <FONT ID="MultiLineComment">/* Now we load new properties */</FONT>
+<A NAME="28"></A>                     getLogger().talk(<FONT ID="StringLiteral">"\nNow I will load properties from the file: madkitproperties/PropertyFileToLoad.properties \n"</FONT>);
+<A NAME="29"></A>                     getMadkitConfig().loadPropertiesFromFile(<FONT ID="StringLiteral">"madkitproperties/PropertyFileToLoad.properties"</FONT>);
+<A NAME="30"></A>              } <FONT ID="Catch">catch</FONT> (<A HREF="http://docs.oracle.com/javase/8/docs/api//java/io/IOException.html">IOException</A> e) {
+<A NAME="31"></A>                     e.printStackTrace();
+<A NAME="32"></A>              }
+<A NAME="33"></A>              <FONT ID="MultiLineComment">/* Finally, we display the properties again to notice the differences */</FONT>
+<A NAME="34"></A>              getLogger().talk(getMadkitConfig().toString());
+<A NAME="35"></A>       }
+<A NAME="36"></A>       
+<A NAME="37"></A>       <FONT ID="FormalComment">/**
+<A NAME="38"></A>        * Launch a _5_AgentLoadingPropertyFile.
+<A NAME="39"></A>        * @param args
+<A NAME="40"></A>        */</FONT>
+<A NAME="41"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="42"></A>              executeThisAgent();
+<A NAME="43"></A>       }
+<A NAME="44"></A>       
+<A NAME="45"></A>}
+<A NAME="46"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_5_AgentLoadingPropertyFile.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

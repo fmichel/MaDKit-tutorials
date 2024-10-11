@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex1_javaException.CrashingAgent (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">CrashingAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="FormalComment">/**
+<A NAME="2"></A> * READ ME
+<A NAME="3"></A> * This tutorial shows how MaDKit is dealing with exceptions. We advise you to not start with this tutorial.
+<A NAME="4"></A> * You can check previous tutorials at: http://www.madkit.net/madkit/tutorials/ . Among those tutorials, you
+<A NAME="5"></A> * may use here notions seen in logging and communication tutorials.
+<A NAME="6"></A> * 
+<A NAME="7"></A> * In this tutorial we will see what kind of exceptions may be encountered while developing
+<A NAME="8"></A> * an application with MaDKit and what MadKit provides to improve our programs' reliability: AbstractAgent.ReturnCode.
+<A NAME="9"></A> * 
+<A NAME="10"></A> */</FONT>
+<A NAME="11"></A>
+<A NAME="12"></A><FONT ID="Package">package</FONT> returncode.ex1_javaException;
+<A NAME="13"></A>
+<A NAME="14"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="15"></A>
+<A NAME="16"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="17"></A>
+<A NAME="18"></A><FONT ID="FormalComment">/**
+<A NAME="19"></A> * In this example you will understand that as MaDKit is a Java library, you will have to deal
+<A NAME="20"></A> * with the same errors and exception that you may have encountered with Java.
+<A NAME="21"></A> * 
+<A NAME="22"></A> * Thus as in any Java-based program, you will have to be rigorous :)
+<A NAME="23"></A> * 
+<A NAME="24"></A> * 
+<A NAME="25"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex1_javaException.CrashingAgent', '1.8.0');</script>
+<A NAME="26"></A> *  
+<A NAME="27"></A> * 
+<A NAME="28"></A> */</FONT>
+<A NAME="29"></A>
+<A NAME="30"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> CrashingAgent <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>{
+<A NAME="31"></A>       
+<A NAME="32"></A>       <FONT ID="MultiLineComment">/*
+<A NAME="33"></A>        * On activation, we want the agent to throw a NullPointer Exception.
+<A NAME="34"></A>        */</FONT>
+<A NAME="35"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="36"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="37"></A>              getLogger().setLevel(Level.FINEST); <FONT ID="MultiLineComment">/* So that the agent's life cycle is traced. See the logging tutorial for more information. */</FONT>
+<A NAME="38"></A>              
+<A NAME="39"></A>              pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="40"></A>              <FONT ID="MultiLineComment">/* Now we throw an exception */</FONT>
+<A NAME="41"></A>              <FONT ID="Throw">throw</FONT> <FONT ID="New">new</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/NullPointerException.html">NullPointerException</A>();
+<A NAME="42"></A>       }
+<A NAME="43"></A>       
+<A NAME="44"></A>       <FONT ID="MultiLineComment">/*
+<A NAME="45"></A>        * As the agent throw a NullPointerException, this method should not be called.
+<A NAME="46"></A>        */</FONT>
+<A NAME="47"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="48"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="49"></A>              getLogger().info(<FONT ID="StringLiteral">"\n\tI have crashed, this message shall not be displayed.\t\n"</FONT>);
+<A NAME="50"></A>       }
+<A NAME="51"></A>       
+<A NAME="52"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="53"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> end() {
+<A NAME="54"></A>              getLogger().info(<FONT ID="StringLiteral">"\n\tI have crashed. :(\t\n"</FONT>);
+<A NAME="55"></A>              <FONT ID="Super">super</FONT>.end();
+<A NAME="56"></A>       }
+<A NAME="57"></A>       
+<A NAME="58"></A>       <FONT ID="FormalComment">/**
+<A NAME="59"></A>        * We launch a CrashingAgent that throws a NullPointer exception 
+<A NAME="60"></A>        * and the agent terminates.
+<A NAME="61"></A>        * 
+<A NAME="62"></A>        * @param argss
+<A NAME="63"></A>        */</FONT>
+<A NAME="64"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="65"></A>              executeThisAgent();
+<A NAME="66"></A>              <FONT ID="FormalComment">/**
+<A NAME="67"></A>               * The previous line of code shall cause this error:
+<A NAME="68"></A>               * 
+<A NAME="69"></A>               * [CrashingAgent-2] SEVERE : -*-ACTIVATE BUG*-*
+<A NAME="70"></A>               * ** java.lang.NullPointerException
+<A NAME="71"></A>               *                   at exception.ex1_exceptions.ex11_javaException.CrashingAgent.activate(CrashingAgent.java:40)
+<A NAME="72"></A>               *
+<A NAME="73"></A>               * Followed by the agent's life cycle.
+<A NAME="74"></A>               * 
+<A NAME="75"></A>               */</FONT>
+<A NAME="76"></A>       }
+<A NAME="77"></A>}
+<A NAME="78"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">CrashingAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

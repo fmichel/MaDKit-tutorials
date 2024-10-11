@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex6_communicationReturnCodes._1_CantReply (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_CantReply.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex6_communicationReturnCodes;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">madkit.kernel.Message</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="5"></A>
+<A NAME="6"></A><FONT ID="FormalComment">/**
+<A NAME="7"></A> * This class exemplifies: CANT_REPLY.
+<A NAME="8"></A> * This ReturnCode is returned when an agent tries to reply to a message which has not been
+<A NAME="9"></A> * received from another agent, e.g. newly created or sent directly by an object using
+<A NAME="10"></A> * AbstractAgent.receiveMessage(Message).
+<A NAME="11"></A> * 
+<A NAME="12"></A> * 
+<A NAME="13"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex6_communicationReturnCodes._1_CantReply', '1.8.0');</script>
+<A NAME="14"></A> * 
+<A NAME="15"></A> * 
+<A NAME="16"></A> */</FONT>
+<A NAME="17"></A>
+<A NAME="18"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _1_CantReply <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>{
+<A NAME="19"></A>
+<A NAME="20"></A>       <FONT ID="FormalComment">/**
+<A NAME="21"></A>        * During his life, the agent will try to answer to a new message which is not possible as this message
+<A NAME="22"></A>        * was not sent by any other agent.
+<A NAME="23"></A>        */</FONT>
+<A NAME="24"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="25"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="26"></A>              ReturnCode sendFeedback;
+<A NAME="27"></A>              sendFeedback = sendReply(<FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A>(), <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A>()); <FONT ID="MultiLineComment">/* the agent try to answer a new message */</FONT>
+<A NAME="28"></A>              getLogger().info(<FONT ID="StringLiteral">"\n\tThe ReturnCode is: \""</FONT> + sendFeedback.toString() + <FONT ID="StringLiteral">"\" .\n\tIt means that I can not reply to a message that was not send before. \n\t"</FONT>);
+<A NAME="29"></A>              
+<A NAME="30"></A>              <FONT ID="MultiLineComment">/* Then you do what you want with this agent */</FONT>
+<A NAME="31"></A>       }
+<A NAME="32"></A>       
+<A NAME="33"></A>       <FONT ID="FormalComment">/**
+<A NAME="34"></A>        * Launch a _1_CantReply agent.
+<A NAME="35"></A>        * 
+<A NAME="36"></A>        * @param argss
+<A NAME="37"></A>        */</FONT>
+<A NAME="38"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="39"></A>              executeThisAgent();
+<A NAME="40"></A>       }
+<A NAME="41"></A>}
+<A NAME="42"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_CantReply.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

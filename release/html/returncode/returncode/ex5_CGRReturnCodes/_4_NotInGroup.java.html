@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex5_CGRReturnCodes._4_NotInGroup (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_4_NotInGroup.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex5_CGRReturnCodes;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A> * This class exemplifies: NOT_IN_GROUP.
+<A NAME="7"></A> * This ReturnCode indicates that an agent is not in a group.
+<A NAME="8"></A> *
+<A NAME="9"></A> * 
+<A NAME="10"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex5_CGRReturnCodes._4_NotInGroup', '1.8.0');</script>
+<A NAME="11"></A> * 
+<A NAME="12"></A> * 
+<A NAME="13"></A> */</FONT>
+<A NAME="14"></A>
+<A NAME="15"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _4_NotInGroup <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A> {
+<A NAME="16"></A>
+<A NAME="17"></A>       <FONT ID="FormalComment">/**
+<A NAME="18"></A>        *  We are initializing our _4_NotInGroup agent
+<A NAME="19"></A>        *  in its virtual society.
+<A NAME="20"></A>        */</FONT>
+<A NAME="21"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="22"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="23"></A>              createGroupIfAbsent(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>);
+<A NAME="24"></A>              requestRole(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>, <FONT ID="StringLiteral">"myRole"</FONT>);
+<A NAME="25"></A>              pause(<FONT ID="IntegerLiteral">1500</FONT>);
+<A NAME="26"></A>       }
+<A NAME="27"></A>       
+<A NAME="28"></A>       <FONT ID="FormalComment">/**
+<A NAME="29"></A>        * The _4_NotInGroup while deliberately leave the same group twice.
+<A NAME="30"></A>        * At the first call of the method he will leave the group. At the second
+<A NAME="31"></A>        * the method will fail as he is not in this group and a warning is displayed.
+<A NAME="32"></A>        * 
+<A NAME="33"></A>        * While checking the returnCode we have decided to display a message explaining why the
+<A NAME="34"></A>        * method has failed. A message informing that the sendMessage() has failed will also be
+<A NAME="35"></A>        * displayed as a warning.
+<A NAME="36"></A>        */</FONT>
+<A NAME="37"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="38"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="39"></A>              ReturnCode leaveFeedback;
+<A NAME="40"></A>              leaveGroup(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>);
+<A NAME="41"></A>              leaveFeedback = leaveGroup(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>);
+<A NAME="42"></A>              <FONT ID="If">if</FONT>(leaveFeedback == ReturnCode.NOT_IN_GROUP) {
+<A NAME="43"></A>                     getLogger().info(<FONT ID="StringLiteral">"\n\tThe ReturnCode is: \""</FONT> + leaveFeedback.toString() + <FONT ID="StringLiteral">"\" .\n\tIt means that I already have left this group, I can not leave a group twice. \t\n"</FONT>);
+<A NAME="44"></A>              }
+<A NAME="45"></A>              
+<A NAME="46"></A>              <FONT ID="MultiLineComment">/* Then you do what you want with this agent */</FONT>
+<A NAME="47"></A>       }
+<A NAME="48"></A>              
+<A NAME="49"></A>
+<A NAME="50"></A><FONT ID="FormalComment">/**
+<A NAME="51"></A> * Launch three _4_NotInGroup agents.
+<A NAME="52"></A> * All the agent's second leaveGroup() call will return a ReturnCode.NOT_IN_GROUP
+<A NAME="53"></A> * except the last one that will return a ReturnCode.NOT_COMMUNITY.
+<A NAME="54"></A> * 
+<A NAME="55"></A> * @param argss
+<A NAME="56"></A> */</FONT>
+<A NAME="57"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="58"></A>       executeThisAgent(<FONT ID="IntegerLiteral">3</FONT>,<FONT ID="True">true</FONT>);
+<A NAME="59"></A>    }
+<A NAME="60"></A>}</pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_4_NotInGroup.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

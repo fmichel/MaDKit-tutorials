@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>communication.ex06.Agent7 (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">Agent7.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> communication.ex06;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/AgentFrame.html">madkit.gui.AgentFrame</A>;
+<A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">madkit.kernel.Message</A>;
+<A NAME="8"></A>
+<A NAME="9"></A><FONT ID="FormalComment">/**
+<A NAME="10"></A> * Shows how agents exchange messages. As in previous examples, Agent7 is doing the same job as Agent6, having a
+<A NAME="11"></A> * RoleTest7.
+<A NAME="12"></A> * 
+<A NAME="13"></A> * @author Authors ARAGON Joseph and WAGNER Pascal.
+<A NAME="14"></A> */</FONT>
+<A NAME="15"></A>
+<A NAME="16"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> Agent7 <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="17"></A>
+<A NAME="18"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="19"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="20"></A>       getLogger().setLevel(Level.FINEST);
+<A NAME="21"></A>
+<A NAME="22"></A>       createGroupIfAbsent(<FONT ID="StringLiteral">"communication"</FONT>, <FONT ID="StringLiteral">"GroupTest"</FONT>);
+<A NAME="23"></A>       requestRole(<FONT ID="StringLiteral">"communication"</FONT>, <FONT ID="StringLiteral">"GroupTest"</FONT>, <FONT ID="StringLiteral">"RoleTest7"</FONT>);
+<A NAME="24"></A>       pause(<FONT ID="IntegerLiteral">500</FONT>);
+<A NAME="25"></A>    }
+<A NAME="26"></A>
+<A NAME="27"></A>    <FONT ID="MultiLineComment">/*
+<A NAME="28"></A>     * Trying to send a message in a loop until this Agent succeeds sending a message with sendMessageWithRole.
+<A NAME="29"></A>     */</FONT>
+<A NAME="30"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="31"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="32"></A>       ReturnCode code = <FONT ID="Null">null</FONT>;
+<A NAME="33"></A>
+<A NAME="34"></A>       <FONT ID="While">while</FONT> (code != ReturnCode.SUCCESS) {
+<A NAME="35"></A>           code = sendMessageWithRole(<FONT ID="StringLiteral">"communication"</FONT>, <FONT ID="StringLiteral">"GroupTest"</FONT>, <FONT ID="StringLiteral">"RoleTest6"</FONT>, <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A>(), <FONT ID="StringLiteral">"RoleTest7"</FONT>);
+<A NAME="36"></A>           pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="37"></A>       }
+<A NAME="38"></A>       <FONT ID="While">while</FONT> (nextMessage() != <FONT ID="Null">null</FONT>)
+<A NAME="39"></A>           pause(<FONT ID="IntegerLiteral">6000</FONT>);
+<A NAME="40"></A>    }
+<A NAME="41"></A>
+<A NAME="42"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="43"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> setupFrame(<A HREF="http://www.madkit.net/madkit/api/madkit/gui/AgentFrame.html">AgentFrame</A> frame) {
+<A NAME="44"></A>       <FONT ID="Super">super</FONT>.setupFrame(frame);
+<A NAME="45"></A>       frame.setLocation(<FONT ID="IntegerLiteral">500</FONT>, <FONT ID="IntegerLiteral">100</FONT>);
+<A NAME="46"></A>    }
+<A NAME="47"></A>}
+<A NAME="48"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">Agent7.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

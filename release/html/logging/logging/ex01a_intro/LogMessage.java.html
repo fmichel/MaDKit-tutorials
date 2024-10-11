@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>logging.ex01a_intro.LogMessage (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LogMessage.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> logging.ex01a_intro;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A> * This tutorial is about the agent's logger attribute which is an alternative to the method System.out.println(). In
+<A NAME="7"></A> * fact the logger can do the same thing as System.out.println() : displaying message on the screen but it does many
+<A NAME="8"></A> * other things. The logger is an instance of the AgentLogger class of the MaDKit library which extends the Logger class
+<A NAME="9"></A> * of the Java SE. In this tutorial we will see why and how the logger replaces the method System.out.println() in
+<A NAME="10"></A> * MaDKit. In the different examples of this tutorial we will see : - how to log a message - the different log levels -
+<A NAME="11"></A> * the "finest" level particular features - how to create a log file - how to choose the log directory Firstly, we just
+<A NAME="12"></A> * display a message to the screen with the method AgentLogger#info(String) of the getLogger(). A simple agent is used,
+<A NAME="13"></A> * which has a default GUI, lives 10 seconds and quits. During the life of the agent, we show how to log an "info"
+<A NAME="14"></A> * message. As you will see, by default this message is displayed in both the output console and the agent's GUI
+<A NAME="15"></A> * 
+<A NAME="16"></A> * 
+<A NAME="17"></A> * 
+<A NAME="18"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/logging.ex01a_intro.LogMessage', '1.8.0');</script>
+<A NAME="19"></A> *      
+<A NAME="20"></A> * 
+<A NAME="21"></A> * 
+<A NAME="22"></A> * 
+<A NAME="23"></A> * @author Pascal Wagner
+<A NAME="24"></A> */</FONT>
+<A NAME="25"></A>
+<A NAME="26"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> LogMessage <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="27"></A>
+<A NAME="28"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="29"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="30"></A>       pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="31"></A>       getLogger().info(<FONT ID="StringLiteral">"This agent logs an 'info' message."</FONT>);
+<A NAME="32"></A>       pause(<FONT ID="IntegerLiteral">8000</FONT>);
+<A NAME="33"></A>    }
+<A NAME="34"></A>
+<A NAME="35"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="36"></A>       executeThisAgent();
+<A NAME="37"></A>    }
+<A NAME="38"></A>}
+<A NAME="39"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LogMessage.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

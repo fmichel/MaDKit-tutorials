@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex2_madkitCodingError._2_LaunchingNewCrashingAgentsWithMadkit (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_2_LaunchingNewCrashingAgentsWithMadkit.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex2_madkitCodingError;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/ex1_javaException/CrashingAgent.java.html">returncode.ex1_javaException.CrashingAgent</A>;
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="6"></A>
+<A NAME="7"></A><FONT ID="FormalComment">/**
+<A NAME="8"></A> * Now that we have seen that misusing MaDKit may generate KernelException, we will
+<A NAME="9"></A> * see how other agents are impacted if one of them crash.
+<A NAME="10"></A> * 
+<A NAME="11"></A> * Good failure managing is extremely important in multi-agent system.
+<A NAME="12"></A> * We do not want the whole society to crash because of the crash of one of our agents.
+<A NAME="13"></A> * 
+<A NAME="14"></A> * Here we launch two agents and see if the crash of one impacts the activity of the other.
+<A NAME="15"></A> * 
+<A NAME="16"></A> * 
+<A NAME="17"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex2_madkitCodingError._2_LaunchingNewCrashingAgentsWithMadkit', '1.8.0');</script>
+<A NAME="18"></A> *  
+<A NAME="19"></A> * 
+<A NAME="20"></A> */</FONT>
+<A NAME="21"></A>
+<A NAME="22"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _2_LaunchingNewCrashingAgentsWithMadkit{
+<A NAME="23"></A>
+<A NAME="24"></A>       <FONT ID="FormalComment">/**
+<A NAME="25"></A>        * Launches one TutorialAgent and one CrashingAgent. As expected, the last agent will crash
+<A NAME="26"></A>        * but without having any impact on the life of the agents. 
+<A NAME="27"></A>        * 
+<A NAME="28"></A>        * @param argss
+<A NAME="29"></A>        */</FONT>
+<A NAME="30"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="31"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(<FONT ID="StringLiteral">"--launchAgents"</FONT>, <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true,1;"</FONT>, <A HREF="../../returncode/ex1_javaException/CrashingAgent.java.html">CrashingAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true,1;"</FONT>);
+<A NAME="32"></A>       }
+<A NAME="33"></A>}
+<A NAME="34"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_2_LaunchingNewCrashingAgentsWithMadkit.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

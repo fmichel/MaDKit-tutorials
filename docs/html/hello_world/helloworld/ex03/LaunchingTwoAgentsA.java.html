@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>helloworld.ex03.LaunchingTwoAgentsA (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LaunchingTwoAgentsA.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> helloworld.ex03;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A>
+<A NAME="7"></A> By default {@link #executeThisAgent()} launches one agent with a GUI. 
+<A NAME="8"></A> However, we can add parameters to launch more agents or add other options.
+<A NAME="9"></A> 
+<A NAME="10"></A> Let us launch two similar agents by using executeThisAgent(int, boolean, String...).
+<A NAME="11"></A> 
+<A NAME="12"></A>              <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/helloworld.ex04.LaunchingTwoAgents', '1.8.0');</script>
+<A NAME="13"></A>              
+<A NAME="14"></A> */</FONT>
+<A NAME="15"></A>
+<A NAME="16"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> LaunchingTwoAgentsA <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="17"></A>
+<A NAME="18"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="19"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="20"></A>       getLogger().info(<FONT ID="StringLiteral">"Hello, my name is "</FONT>+getName());
+<A NAME="21"></A>       <FONT ID="MultiLineComment">/*
+<A NAME="22"></A>        The agent's default name is built using its class + its ID (instantiation number). 
+<A NAME="23"></A>        Here the name should be LaunchingTwoAgents-02 and -03. 
+<A NAME="24"></A>        This is because two agents were priorly launched: (0) The kernel agent &amp; (1) The GUI manager
+<A NAME="25"></A>       */</FONT>
+<A NAME="26"></A>    }
+<A NAME="27"></A>
+<A NAME="28"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="29"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="30"></A>        getLogger().info(<FONT ID="StringLiteral">"We are 2 agents but our GUI has not been managed"</FONT>);
+<A NAME="31"></A>       <FONT ID="For">for</FONT> (<FONT ID="Int">int</FONT> i = <FONT ID="IntegerLiteral">10</FONT>; i &gt; <FONT ID="IntegerLiteral">0</FONT>; i--) {
+<A NAME="32"></A>           getLogger().info(<FONT ID="StringLiteral">"Living... I will quit in "</FONT> + i + <FONT ID="StringLiteral">" seconds"</FONT>);
+<A NAME="33"></A>           pause(<FONT ID="IntegerLiteral">1000</FONT>); 
+<A NAME="34"></A>       }
+<A NAME="35"></A>    }
+<A NAME="36"></A>
+<A NAME="37"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="38"></A>       <FONT ID="SingleLineComment">// the first parameter is the number of agents to launch
+<A NAME="39"></A></FONT>       <FONT ID="SingleLineComment">// the second specifies if a GUI should be installed or not for the agents
+<A NAME="40"></A></FONT>       executeThisAgent(<FONT ID="IntegerLiteral">2</FONT>, <FONT ID="True">true</FONT>);
+<A NAME="41"></A>    }
+<A NAME="42"></A>}
+<A NAME="43"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LaunchingTwoAgentsA.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

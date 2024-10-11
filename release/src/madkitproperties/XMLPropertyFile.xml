@@ -1,0 +1,18 @@
+<MDK name="myConfigName" description="my wonderful description">
+<!-- The <Agents> element is just about structuring this example, i.e. using only the <Agent> element is sufficient -->
+	<Agents>
+		<Agent class="madkitproperties._6_ParameterizedAgent" nbOfInstances="3" GUI="true" logLevel="FINE">
+			<Attributes message ="We are three Parameterized agents with a graphical interface" />
+		</Agent>
+	﻿	<!-- nbOfInstances="1" is the default value -->
+		<Agent class="madkitproperties._6_ParameterizedAgent">
+			<Attributes message="I am a Parameterized agent without any graphical interface." />
+		</Agent>
+	</Agents>
+
+	﻿<!--  
+	This allows to set MaDKit properties in the XML configuration. 
+	Regular options like "desktop" or application specific, i.e. anything. 
+	-->
+	<MadkitProperties desktop="false"   varDefinedInXML="aValueDefinedInTheXMLFile"/>
+</MDK>

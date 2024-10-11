@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex5_CGRReturnCodes._5_NotRole (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_5_NotRole.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex5_CGRReturnCodes;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">madkit.kernel.Message</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="5"></A>
+<A NAME="6"></A><FONT ID="FormalComment">/**
+<A NAME="7"></A> * This class exemplifies: NOT_ROLE.
+<A NAME="8"></A> * This ReturnCode indicates that a role does not exist.
+<A NAME="9"></A> *
+<A NAME="10"></A> * 
+<A NAME="11"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex5_CGRReturnCodes._5_NotRole', '1.8.0');</script>
+<A NAME="12"></A> * 
+<A NAME="13"></A> * 
+<A NAME="14"></A> */</FONT>
+<A NAME="15"></A>
+<A NAME="16"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _5_NotRole <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>{
+<A NAME="17"></A>       
+<A NAME="18"></A>       <FONT ID="FormalComment">/**
+<A NAME="19"></A>        *  We are initializing our _5_NotRole agent in its virtual society.
+<A NAME="20"></A>        */</FONT>
+<A NAME="21"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="22"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="23"></A>              createGroupIfAbsent(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>);
+<A NAME="24"></A>              requestRole(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>, <FONT ID="StringLiteral">"myRole"</FONT>);
+<A NAME="25"></A>              pause(<FONT ID="IntegerLiteral">500</FONT>);
+<A NAME="26"></A>       }
+<A NAME="27"></A>              
+<A NAME="28"></A>       <FONT ID="FormalComment">/**
+<A NAME="29"></A>        * The _5_NotRole agent send a message to a role that does not exist. Thus the method sendMessage() will fail and a 
+<A NAME="30"></A>        * warning is displayed.
+<A NAME="31"></A>        * While checking the returnCode we have decided to display a message explaining why the method has failed.
+<A NAME="32"></A>        * 
+<A NAME="33"></A>        * A message informing that the sendMessage() has failed will also be displayed as a warning.
+<A NAME="34"></A>        */</FONT>
+<A NAME="35"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="36"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live(){
+<A NAME="37"></A>              ReturnCode sendFeedback;
+<A NAME="38"></A>              sendFeedback = sendMessage(<FONT ID="StringLiteral">"myCommunity"</FONT>, <FONT ID="StringLiteral">"myGroup"</FONT>, <FONT ID="StringLiteral">"notExistingRole"</FONT>, <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A>()); <FONT ID="MultiLineComment">/* Note that the role is different then "myRole" */</FONT>
+<A NAME="39"></A>              getLogger().info(<FONT ID="StringLiteral">"\n\tThe ReturnCode is: \""</FONT> + sendFeedback.toString() + <FONT ID="StringLiteral">"\" .\n\tIt means that I can not send a message to an agent whose role does not exist. \t\n"</FONT>);
+<A NAME="40"></A>                     
+<A NAME="41"></A>              <FONT ID="MultiLineComment">/* Then you do what you want with this agent */</FONT>
+<A NAME="42"></A>       }
+<A NAME="43"></A>       
+<A NAME="44"></A>       <FONT ID="FormalComment">/**
+<A NAME="45"></A>        * Launch a _5_NotRole agent.
+<A NAME="46"></A>        * @param argss
+<A NAME="47"></A>        */</FONT>
+<A NAME="48"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="49"></A>              executeThisAgent();
+<A NAME="50"></A>       }
+<A NAME="51"></A>}</pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_5_NotRole.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

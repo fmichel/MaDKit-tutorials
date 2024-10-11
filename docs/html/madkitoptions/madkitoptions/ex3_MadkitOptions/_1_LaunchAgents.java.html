@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>madkitoptions.ex3_MadkitOptions._1_LaunchAgents (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_LaunchAgents.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="FormalComment">/**
+<A NAME="2"></A> * Now we will interest to other Options.
+<A NAME="3"></A> * These features are no longer valued by boolean nor 
+<A NAME="4"></A> * level but with a string. 
+<A NAME="5"></A> */</FONT>
+<A NAME="6"></A><FONT ID="Package">package</FONT> madkitoptions.ex3_MadkitOptions;
+<A NAME="7"></A>
+<A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="9"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="10"></A><FONT ID="Import">import</FONT> <A HREF="../../madkitoptions/util/TutorialAgent.java.html">madkitoptions.util.TutorialAgent</A>;
+<A NAME="11"></A>
+<A NAME="12"></A>
+<A NAME="13"></A><FONT ID="FormalComment">/**
+<A NAME="14"></A> * 
+<A NAME="15"></A> * In this example we will discover how to
+<A NAME="16"></A> * launch agents as soon as a new MaDKit is
+<A NAME="17"></A> * launched. 
+<A NAME="18"></A> * 
+<A NAME="19"></A> * You may see that there is different ways of doing it,
+<A NAME="20"></A> * that you can launch several agents, or even different 
+<A NAME="21"></A> * types of agent.
+<A NAME="22"></A> *
+<A NAME="23"></A> * Feel free to (un)comment the lines to test and 
+<A NAME="24"></A> * understand the differences.
+<A NAME="25"></A> * 
+<A NAME="26"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/madkitoptions.ex3_MadkitOptions._1_LaunchAgents', '1.8.0');</script>
+<A NAME="27"></A> * 
+<A NAME="28"></A> * 
+<A NAME="29"></A> */</FONT>
+<A NAME="30"></A>
+<A NAME="31"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _1_LaunchAgents {
+<A NAME="32"></A>       
+<A NAME="33"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> pause() <FONT ID="Throws">throws</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/InterruptedException.html">InterruptedException</A> {
+<A NAME="34"></A>              Thread.sleep(<FONT ID="IntegerLiteral">7000</FONT>);
+<A NAME="35"></A>       }
+<A NAME="36"></A>
+<A NAME="37"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) <FONT ID="Throws">throws</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/InterruptedException.html">InterruptedException</A> {
+<A NAME="38"></A>                            
+<A NAME="39"></A>              <FONT ID="FormalComment">/** 
+<A NAME="40"></A>               * If nothing else than the class name of the agent to launch is specified,
+<A NAME="41"></A>               * MaDKit launch one agent of the precised class without graphical user interface (GUI)
+<A NAME="42"></A>               */</FONT>
+<A NAME="43"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(Madkit.Option.launchAgents.toString(),<A HREF="../../madkitoptions/util/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName());
+<A NAME="44"></A>              pause();
+<A NAME="45"></A>              
+<A NAME="46"></A>              <FONT ID="MultiLineComment">/* The previous line was equivalent to the next one. */</FONT>
+<A NAME="47"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(Madkit.Option.launchAgents.toString(),<A HREF="../../madkitoptions/util/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",false,1"</FONT>);
+<A NAME="48"></A>              pause();
+<A NAME="49"></A>              
+<A NAME="50"></A>              <FONT ID="MultiLineComment">/* You can decide whether or not the agent has a GUI. */</FONT>
+<A NAME="51"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(Madkit.Option.launchAgents.toString(),<A HREF="../../madkitoptions/util/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true"</FONT>);
+<A NAME="52"></A>              pause();
+<A NAME="53"></A>              
+<A NAME="54"></A>              <FONT ID="FormalComment">/**
+<A NAME="55"></A>               * You can also launch several agents by adding the number
+<A NAME="56"></A>               * of wanted agents right after the class name.
+<A NAME="57"></A>               */</FONT>
+<A NAME="58"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(Madkit.Option.launchAgents.toString(),<A HREF="../../madkitoptions/util/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",3"</FONT>);
+<A NAME="59"></A>              pause();
+<A NAME="60"></A>              
+<A NAME="61"></A>              <FONT ID="MultiLineComment">/* Let's launch several agents with a GUI. */</FONT>
+<A NAME="62"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(Madkit.Option.launchAgents.toString(),<A HREF="../../madkitoptions/util/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true,2"</FONT>);
+<A NAME="63"></A>              pause();
+<A NAME="64"></A>              
+<A NAME="65"></A>              <FONT ID="MultiLineComment">/* Now, let's launch different kind of agents. */</FONT>
+<A NAME="66"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(Madkit.Option.launchAgents.toString(),<A HREF="../../madkitoptions/util/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">";"</FONT> + <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A>.<FONT ID="Class">class</FONT>.getName());
+<A NAME="67"></A>              pause();
+<A NAME="68"></A>              
+<A NAME="69"></A>              <FONT ID="FormalComment">/**
+<A NAME="70"></A>               * Finally, you can note that while launching several (and possibly different)
+<A NAME="71"></A>               * agents you don't have to precise everything each time. In that case,
+<A NAME="72"></A>               * default values will be used.
+<A NAME="73"></A>               */</FONT>
+<A NAME="74"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(Madkit.Option.launchAgents.toString(),<A HREF="../../madkitoptions/util/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",2;"</FONT> + <A HREF="../../madkitoptions/util/TutorialAgent.java.html">TutorialAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true,1;"</FONT>);
+<A NAME="75"></A>              pause();
+<A NAME="76"></A>       }
+<A NAME="77"></A>}
+<A NAME="78"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_LaunchAgents.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

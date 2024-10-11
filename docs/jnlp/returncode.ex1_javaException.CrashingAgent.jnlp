@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE jnlp PUBLIC "-//Sun Microsystems, Inc.//DTD JNLP 1.7//EN" "http://www.netbeans.org/jnlp/DTD/jnlp.dtd">
+<jnlp spec="7.0+" codebase="http://www.madkit.net/madkit/tutorials/jnlp" href="returncode.ex1_javaException.CrashingAgent.jnlp">
+  <information>
+    <title>The MaDKit Tutorials</title>
+    <vendor>Fabien Michel</vendor>
+    <homepage href="www.madkit.org"/>
+    <description>The MaDKit Tutorials: Illustrating MaDKit with simple source code examples </description>
+    <description kind="short">The MaDKit Tutorials</description>
+    <shortcut online="false"/>
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.8+" java-vm-args="-Xnoclassgc"/>
+    <jar href="MaDKit-tutorials.jnlp.jar"/>
+    <property name="jnlp.packEnabled" value="true"/> 
+  </resources>
+  <application-desc >
+    <name>The MaDKit tutorials</name>
+	<argument>--launchAgents returncode.ex1_javaException.CrashingAgent, true</argument>
+  </application-desc>
+</jnlp>

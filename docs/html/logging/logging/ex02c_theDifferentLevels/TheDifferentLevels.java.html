@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>logging.ex02c_theDifferentLevels.TheDifferentLevels (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">TheDifferentLevels.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> logging.ex02c_theDifferentLevels;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/Arrays.html">java.util.Arrays</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/List.html">java.util.List</A>;
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="6"></A>
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AgentLogger.html">madkit.kernel.AgentLogger</A>;
+<A NAME="9"></A>
+<A NAME="10"></A><FONT ID="FormalComment">/**
+<A NAME="11"></A> * The java.util.logging.Level class of the Java SE defines a set of standard logging levels that can be used to control
+<A NAME="12"></A> * logging outputs: Here they are in descending order : - severe - warning - info - config - fine - finer - finest In
+<A NAME="13"></A> * addition there is a level OFF that can be used to turn off logging, and a level ALL that can be used to enable the
+<A NAME="14"></A> * logging of all messages. In MaDKit, the {@link AgentLogger#talk(String)} method is added to define an additional
+<A NAME="15"></A> * level which is used log a talk message. This is an example which recaps how to set and get the log level and how we
+<A NAME="16"></A> * display or not messages according to their level. All the levels are used here. 
+<A NAME="17"></A> * 
+<A NAME="18"></A> * 
+<A NAME="19"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/logging.ex02c_theDifferentLevels.TheDifferentLevels', '1.8.0');</script>
+<A NAME="20"></A> *      
+<A NAME="21"></A> * 
+<A NAME="22"></A> * 
+<A NAME="23"></A> * @author Pascal Wagner
+<A NAME="24"></A> */</FONT>
+<A NAME="25"></A>
+<A NAME="26"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> TheDifferentLevels <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="27"></A>
+<A NAME="28"></A>    <FONT ID="Private">private</FONT> <FONT ID="Static">static</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/List.html">List</A>&lt;<A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">Level</A>&gt; levels = Arrays.asList(Level.ALL, Level.FINEST, Level.FINER, Level.FINE, Level.CONFIG, Level.INFO, Level.WARNING, Level.SEVERE, Level.OFF);
+<A NAME="29"></A>
+<A NAME="30"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="31"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="32"></A>       pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="33"></A>    }
+<A NAME="34"></A>
+<A NAME="35"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="36"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="37"></A>       getLogger().talk(<FONT ID="StringLiteral">"\n\t************************************\n"</FONT> + <FONT ID="StringLiteral">"\t   The different levels of display\n"</FONT> + <FONT ID="StringLiteral">"\t************************************\n\n"</FONT>);
+<A NAME="38"></A>       pause(<FONT ID="IntegerLiteral">1000</FONT>);
+<A NAME="39"></A>
+<A NAME="40"></A>       getLogger().talk(<FONT ID="StringLiteral">"\n\nLog level = "</FONT> + getLogger().getLevel() + <FONT ID="StringLiteral">" (default Level)\n"</FONT>);
+<A NAME="41"></A>       getLogger().severe(<FONT ID="StringLiteral">"Default log level = "</FONT> + getLogger().getLevel());
+<A NAME="42"></A>       getLogger().warning(<FONT ID="StringLiteral">"Default log level = "</FONT> + getLogger().getLevel());
+<A NAME="43"></A>       getLogger().info(<FONT ID="StringLiteral">"Default log level = "</FONT> + getLogger().getLevel());
+<A NAME="44"></A>       getLogger().config(<FONT ID="StringLiteral">"Default log level = "</FONT> + getLogger().getLevel());
+<A NAME="45"></A>       getLogger().fine(<FONT ID="StringLiteral">"Default log level = "</FONT> + getLogger().getLevel());
+<A NAME="46"></A>       getLogger().finer(<FONT ID="StringLiteral">"Default log level = "</FONT> + getLogger().getLevel());
+<A NAME="47"></A>       getLogger().finest(<FONT ID="StringLiteral">"Default log level = "</FONT> + getLogger().getLevel());
+<A NAME="48"></A>       pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="49"></A>       <FONT ID="Int">int</FONT> i = <FONT ID="IntegerLiteral">10</FONT>;
+<A NAME="50"></A>       <FONT ID="For">for</FONT> (<A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">Level</A> l : levels) {
+<A NAME="51"></A>           getLogger().talk(<FONT ID="StringLiteral">"\n\nLog level --&gt; "</FONT> + l + <FONT ID="StringLiteral">"\n"</FONT>);
+<A NAME="52"></A>           getLogger().setLevel(l);
+<A NAME="53"></A>
+<A NAME="54"></A>           getLogger().severe(<FONT ID="StringLiteral">"severe message"</FONT>);
+<A NAME="55"></A>           getLogger().warning(<FONT ID="StringLiteral">"warning message"</FONT>);
+<A NAME="56"></A>           getLogger().info(<FONT ID="StringLiteral">"info message"</FONT>);
+<A NAME="57"></A>           getLogger().config(<FONT ID="StringLiteral">"config message"</FONT>);
+<A NAME="58"></A>           getLogger().fine(<FONT ID="StringLiteral">"fine message"</FONT>);
+<A NAME="59"></A>           getLogger().finer(<FONT ID="StringLiteral">"finer message"</FONT>);
+<A NAME="60"></A>           getLogger().finest(<FONT ID="StringLiteral">"finest message"</FONT>);
+<A NAME="61"></A>           pause(<FONT ID="IntegerLiteral">1000</FONT> * (i--));
+<A NAME="62"></A>       }
+<A NAME="63"></A>       <FONT ID="If">if</FONT> (getLogger().getLevel() == Level.OFF) {
+<A NAME="64"></A>           System.out.println(<FONT ID="StringLiteral">"This message is displayed thanks to System.out.println()\n"</FONT> + <FONT ID="StringLiteral">"In fact with the log level OFF neither is displayed.\n"</FONT>);
+<A NAME="65"></A>           pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="66"></A>       }
+<A NAME="67"></A>       getLogger().setLevel(Level.INFO);
+<A NAME="68"></A>
+<A NAME="69"></A>       getLogger().talk(<FONT ID="StringLiteral">"\nThe loggger is set back to "</FONT> + getLogger().getLevel() + <FONT ID="StringLiteral">"\n\n\n"</FONT>);
+<A NAME="70"></A>       pause(<FONT ID="IntegerLiteral">1000</FONT>);
+<A NAME="71"></A>    }
+<A NAME="72"></A>
+<A NAME="73"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="74"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> end() {
+<A NAME="75"></A>       getLogger().info(<FONT ID="StringLiteral">"Bye bye !"</FONT>);
+<A NAME="76"></A>       pause(<FONT ID="IntegerLiteral">5000</FONT>);
+<A NAME="77"></A>    }
+<A NAME="78"></A>
+<A NAME="79"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="80"></A>       executeThisAgent();
+<A NAME="81"></A>    }
+<A NAME="82"></A>}</pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">TheDifferentLevels.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

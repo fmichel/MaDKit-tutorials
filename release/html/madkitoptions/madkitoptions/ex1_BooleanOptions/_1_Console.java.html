@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>madkitoptions.ex1_BooleanOptions._1_Console (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_Console.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="FormalComment">/**
+<A NAME="2"></A> * READ ME
+<A NAME="3"></A> * 
+<A NAME="4"></A> * This tutorial is about MaDKit options. An option is a feature that may be specified or activated.
+<A NAME="5"></A> * You can find more details here : http://www.madkit.net/madkit/repository/MaDKit-5.2/docs/api/.
+<A NAME="6"></A> * MaDKit options are divided in three categories :
+<A NAME="7"></A> *    - Boolean Options
+<A NAME="8"></A> *    - Level Options  
+<A NAME="9"></A> *    - MaDKit Options
+<A NAME="10"></A> *    
+<A NAME="11"></A> * In this first set of examples, we will present you Boolean Options.
+<A NAME="12"></A> * Among the others options, boolean options are either activated or not. 
+<A NAME="13"></A> */</FONT>
+<A NAME="14"></A>
+<A NAME="15"></A><FONT ID="Package">package</FONT> madkitoptions.ex1_BooleanOptions;
+<A NAME="16"></A>
+<A NAME="17"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="18"></A>
+<A NAME="19"></A><FONT ID="FormalComment">/**
+<A NAME="20"></A> * This class exemplifies the use of the console option.
+<A NAME="21"></A> * If this boolean option is set to true, the MaDKit console agent is launched.
+<A NAME="22"></A> * The default value is false.
+<A NAME="23"></A> * 
+<A NAME="24"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/madkitoptions.ex1_BooleanOptions._1_Console', '1.8.0');</script>
+<A NAME="25"></A> * 
+<A NAME="26"></A> *
+<A NAME="27"></A> */</FONT>
+<A NAME="28"></A>
+<A NAME="29"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _1_Console {
+<A NAME="30"></A>
+<A NAME="31"></A>        <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="32"></A>               
+<A NAME="33"></A>               <FONT ID="MultiLineComment">/* If no boolean is specified, MaDKit considers it as true */</FONT>
+<A NAME="34"></A>               <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(Madkit.BooleanOption.console.toString()); <FONT ID="MultiLineComment">/* Equivalent to : new Madkit(Madkit.BooleanOption.console.toString(), Boolean.TRUE.toString()); */</FONT>
+<A NAME="35"></A>               
+<A NAME="36"></A>               <FONT ID="MultiLineComment">/* Check the difference by commenting the previous line and uncommenting the next one. */</FONT>
+<A NAME="37"></A>               <FONT ID="SingleLineComment">// new Madkit(Madkit.BooleanOption.console.toString(), Boolean.FALSE.toString());
+<A NAME="38"></A></FONT>        }
+<A NAME="39"></A>}
+<A NAME="40"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_Console.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

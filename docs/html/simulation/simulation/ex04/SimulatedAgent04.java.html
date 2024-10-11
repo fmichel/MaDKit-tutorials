@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulation.ex04.SimulatedAgent04 (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">SimulatedAgent04.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> simulation.ex04;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">madkit.kernel.AbstractAgent</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="../../simulation/ex02/SimulationModel.java.html">simulation.ex02.SimulationModel</A>;
+<A NAME="5"></A>
+<A NAME="6"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> SimulatedAgent04 <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A> {
+<A NAME="7"></A>
+<A NAME="8"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="9"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="10"></A>       requestRole(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ROLE);
+<A NAME="11"></A>       <FONT ID="SingleLineComment">// I use this role to identify me as an agent that know how to do another behavior
+<A NAME="12"></A></FONT>       requestRole(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ANOTHER_ROLE);
+<A NAME="13"></A>    }
+<A NAME="14"></A>
+<A NAME="15"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/SuppressWarnings.html">SuppressWarnings</A>(<FONT ID="StringLiteral">"unused"</FONT>)
+<A NAME="16"></A>    <FONT ID="Private">private</FONT> <FONT ID="Void">void</FONT> doIt() {
+<A NAME="17"></A>       getLogger().info(<FONT ID="StringLiteral">"I am doing it, but my way"</FONT>);
+<A NAME="18"></A>    }
+<A NAME="19"></A>
+<A NAME="20"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/SuppressWarnings.html">SuppressWarnings</A>(<FONT ID="StringLiteral">"unused"</FONT>)
+<A NAME="21"></A>    <FONT ID="Private">private</FONT> <FONT ID="Void">void</FONT> anotherBehavior() {
+<A NAME="22"></A>       getLogger().info(<FONT ID="StringLiteral">"I am doing something else"</FONT>);
+<A NAME="23"></A>    }
+<A NAME="24"></A>
+<A NAME="25"></A>}
+<A NAME="26"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">SimulatedAgent04.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

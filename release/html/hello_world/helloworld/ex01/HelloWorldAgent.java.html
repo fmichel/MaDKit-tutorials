@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>helloworld.ex01.HelloWorldAgent (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">HelloWorldAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> helloworld.ex01;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A>
+<A NAME="7"></A> As of MaDKit-5, one source file can be enough to launch a MAS.
+<A NAME="8"></A>
+<A NAME="9"></A> Here we just :
+<A NAME="10"></A>
+<A NAME="11"></A> 1. extend the madkit.kernel.Agent class (the MaDKit's threaded agent class).
+<A NAME="12"></A> 2. override its live method.
+<A NAME="13"></A> 3. launch the agent using executeThisAgent() within the main method.
+<A NAME="14"></A>
+<A NAME="15"></A> <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/helloworld.ex01.HelloWorldAgent', '1.8.0');</script>
+<A NAME="16"></A> *            
+<A NAME="17"></A> */</FONT>
+<A NAME="18"></A>
+<A NAME="19"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> HelloWorldAgent <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="20"></A>    
+<A NAME="21"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="22"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="23"></A>       getLogger().info(<FONT ID="StringLiteral">"\t Hello World! \n"</FONT>); <FONT ID="SingleLineComment">// This has several advantages over using System.out.println().
+<A NAME="24"></A></FONT>                                                                                           <FONT ID="SingleLineComment">// There is a tutorial about the logging mechanism of MaDKit-5.
+<A NAME="25"></A></FONT>       <FONT ID="For">for</FONT> (<FONT ID="Int">int</FONT> i = <FONT ID="IntegerLiteral">10</FONT>; i &gt; <FONT ID="IntegerLiteral">0</FONT>; i--) {
+<A NAME="26"></A>           getLogger().info(<FONT ID="StringLiteral">"Living... I will quit in "</FONT> + i + <FONT ID="StringLiteral">" seconds"</FONT>);
+<A NAME="27"></A>           pause(<FONT ID="IntegerLiteral">1000</FONT>); <FONT ID="SingleLineComment">// pauses the agent's thread for 1000 ms
+<A NAME="28"></A></FONT>       }
+<A NAME="29"></A>    }
+<A NAME="30"></A>
+<A NAME="31"></A>       <FONT ID="FormalComment">/** live() here is a method which is called automatically. It will be explained later in the next tutorial
+<A NAME="32"></A>        * ex03(agentlifecycle) **/</FONT>
+<A NAME="33"></A>
+<A NAME="34"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="35"></A>       executeThisAgent(); <FONT ID="SingleLineComment">// a convenient static method for easily launching agents using an IDE
+<A NAME="36"></A></FONT>    }
+<A NAME="37"></A>
+<A NAME="38"></A>       <FONT ID="FormalComment">/**
+<A NAME="39"></A>
+<A NAME="40"></A>        Implementing a main method within an agent's class is not required at all but it could be
+<A NAME="41"></A>        used to simulate a command line call to MaDKit with the desired options.
+<A NAME="42"></A>
+<A NAME="43"></A>        For this example, the corresponding command line is as follows (assuming a correct classpath)
+<A NAME="44"></A>
+<A NAME="45"></A>        &gt; java madkit.kernel.MaDKit --launchAgents helloworld.ex01.HelloWorldAgent,true
+<A NAME="46"></A>
+<A NAME="47"></A>        Here we just use the executeThisAgent() method inside the main method
+<A NAME="48"></A>        so that the launching is greatly simplified using an IDE.
+<A NAME="49"></A>
+<A NAME="50"></A>        Here we could also have used:
+<A NAME="51"></A>
+<A NAME="52"></A>        public static void main(String[] args) {
+<A NAME="53"></A>        new Madkit("--launchAgents", "helloworld.ex01.HelloWorldAgent,true");
+<A NAME="54"></A>        }
+<A NAME="55"></A>
+<A NAME="56"></A>        Or
+<A NAME="57"></A>
+<A NAME="58"></A>        public static void main(String[] args) {
+<A NAME="59"></A>        String[] args2 = { "--launchAgents", "helloworld.ex01.HelloWorldAgent,true" };
+<A NAME="60"></A>        Madkit.main(args2);
+<A NAME="61"></A>        }
+<A NAME="62"></A>
+<A NAME="63"></A>        All of these calls are equivalent.
+<A NAME="64"></A>
+<A NAME="65"></A>        */</FONT>
+<A NAME="66"></A>}</pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">HelloWorldAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

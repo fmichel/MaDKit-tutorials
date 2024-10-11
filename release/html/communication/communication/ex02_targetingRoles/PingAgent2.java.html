@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>communication.ex02_targetingRoles.PingAgent2 (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">PingAgent2.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> communication.ex02_targetingRoles;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <FONT ID="Static">static</FONT> <A HREF="../../communication/ex01/Society.java.html">communication.ex01.Society.COMMUNITY</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <FONT ID="Static">static</FONT> <A HREF="../../communication/ex01/Society.java.html">communication.ex01.Society.GROUP</A>;
+<A NAME="5"></A><FONT ID="Import">import</FONT> <FONT ID="Static">static</FONT> <A HREF="../../communication/ex01/Society.java.html">communication.ex01.Society.ROLE</A>;
+<A NAME="6"></A>
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="8"></A>
+<A NAME="9"></A><FONT ID="Import">import</FONT> <A HREF="../../communication/ex01/PingAgent.java.html">communication.ex01.PingAgent</A>;
+<A NAME="10"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="11"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">madkit.kernel.Message</A>;
+<A NAME="12"></A>
+<A NAME="13"></A><FONT ID="FormalComment">/**
+<A NAME="14"></A> * Shows how agents exchange messages by targeting roles.
+<A NAME="15"></A> * 
+<A NAME="16"></A> * 
+<A NAME="17"></A> * 
+<A NAME="18"></A> *            <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/communication.ex02_targetingRoles.PingAgent2', '1.8.0');</script>
+<A NAME="19"></A> *     
+<A NAME="20"></A> * 
+<A NAME="21"></A> * 
+<A NAME="22"></A> * 
+<A NAME="23"></A> * Looking for someone, agents do not necessarily need to know who they talk to in terms of real ID. Indeed, what
+<A NAME="24"></A> * matters in the artificial society is the roles an agent take. organization tell a lot about what the agent is capable of and
+<A NAME="25"></A> * supposed to do. So, agents can send messages to roles rather than to IDs. Here, the idea is: I need to contact a
+<A NAME="26"></A> * "ping agent", no matter who will receive the message. And it is possible to do so using what follows:
+<A NAME="27"></A> */</FONT>
+<A NAME="28"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> PingAgent2 <FONT ID="Extends">extends</FONT> <A HREF="../../communication/ex01/PingAgent.java.html">PingAgent</A> {<FONT ID="SingleLineComment">// So I do the same activate
+<A NAME="29"></A></FONT>
+<A NAME="30"></A>    <FONT ID="FormalComment">/**
+<A NAME="31"></A>     * Now ping another agent, just by targeting the role
+<A NAME="32"></A>     */</FONT>
+<A NAME="33"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="34"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="35"></A>
+<A NAME="36"></A>       getLogger().setLevel(Level.ALL);
+<A NAME="37"></A>
+<A NAME="38"></A>       ReturnCode code = <FONT ID="Null">null</FONT>;
+<A NAME="39"></A>
+<A NAME="40"></A>       <FONT ID="SingleLineComment">// until I find someone having role
+<A NAME="41"></A></FONT>       <FONT ID="While">while</FONT> (code != ReturnCode.SUCCESS) {
+<A NAME="42"></A>           <FONT ID="SingleLineComment">// This will randomly choose a receiver having this role
+<A NAME="43"></A></FONT>           code = sendMessage(COMMUNITY, GROUP, ROLE, <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A>());
+<A NAME="44"></A>           pause((<FONT ID="Int">int</FONT>) (Math.random() * <FONT ID="IntegerLiteral">1000</FONT> + <FONT ID="IntegerLiteral">100</FONT>));
+<A NAME="45"></A>       }
+<A NAME="46"></A>
+<A NAME="47"></A>       nextMessage();
+<A NAME="48"></A>       pause(<FONT ID="IntegerLiteral">10000</FONT>);
+<A NAME="49"></A>    }
+<A NAME="50"></A>
+<A NAME="51"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/SuppressWarnings.html">SuppressWarnings</A>(<FONT ID="StringLiteral">"unused"</FONT>)
+<A NAME="52"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="53"></A>       <FONT ID="SingleLineComment">//This will launch a new kernel. It will automatically ends when all the agents living on this kernel are done.
+<A NAME="54"></A></FONT>       <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(<FONT ID="StringLiteral">"--launchAgents"</FONT>, <A HREF="../../communication/ex02_targetingRoles/PingAgent2.java.html">PingAgent2</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true,3;"</FONT>, <A HREF="../../communication/ex01/PingAgent.java.html">PingAgent</A>.<FONT ID="Class">class</FONT>.getName()<FONT ID="SingleLineComment">// This one so that PingAgent2 agents always find someone (breaking the
+<A NAME="55"></A></FONT>                                                                                           <FONT ID="SingleLineComment">// first while)
+<A NAME="56"></A></FONT>       );
+<A NAME="57"></A>    }
+<A NAME="58"></A>
+<A NAME="59"></A>}
+<A NAME="60"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">PingAgent2.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

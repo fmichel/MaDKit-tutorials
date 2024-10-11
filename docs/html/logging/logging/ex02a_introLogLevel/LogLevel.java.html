@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>logging.ex02a_introLogLevel.LogLevel (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LogLevel.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="MultiLineComment">/*
+<A NAME="2"></A> * Copyright 2011-2017 Fabien Michel
+<A NAME="3"></A> * 
+<A NAME="4"></A> * This file is part of MaDKit-tutorials.
+<A NAME="5"></A> * 
+<A NAME="6"></A> * MaDKit-tutorials is free software: you can redistribute it and/or modify
+<A NAME="7"></A> * it under the terms of the GNU General Public License as published by
+<A NAME="8"></A> * the Free Software Foundation, either version 3 of the License, or
+<A NAME="9"></A> * (at your option) any later version.
+<A NAME="10"></A> * 
+<A NAME="11"></A> * MaDKit-tutorials is distributed in the hope that it will be useful,
+<A NAME="12"></A> * but WITHOUT ANY WARRANTY; without even the implied warranty of
+<A NAME="13"></A> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+<A NAME="14"></A> * GNU General Public License for more details.
+<A NAME="15"></A> * 
+<A NAME="16"></A> * You should have received a copy of the GNU General Public License
+<A NAME="17"></A> * along with MaDKit-tutorials. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+<A NAME="18"></A> */</FONT>
+<A NAME="19"></A><FONT ID="Package">package</FONT> logging.ex02a_introLogLevel;
+<A NAME="20"></A>
+<A NAME="21"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="22"></A>
+<A NAME="23"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="24"></A>
+<A NAME="25"></A><FONT ID="FormalComment">/**
+<A NAME="26"></A> * In the last example, two messages have not been displayed, not because of a mistake in the code but because of their
+<A NAME="27"></A> * level. Indeed, messages are displayed according to the current level of the getLogger(). So the logger acts as a
+<A NAME="28"></A> * filter on the message which are logged: For being logged the message's level has to be higher than the logger's
+<A NAME="29"></A> * level. The idea is that you can have different setting for the logger so that you can have different output modes for
+<A NAME="30"></A> * your agent: From quiet (OFF) to verbose (ALL). The logger's level can be modified with the method
+<A NAME="31"></A> * getLogger().setLevel(). Here, we log a config message and an info message but the first one will not be displayed.
+<A NAME="32"></A> * Then the logger's level is changed so that 'config' messages will appear.
+<A NAME="33"></A> * 
+<A NAME="34"></A> * 
+<A NAME="35"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/logging.ex02a_introLogLevel.LogLevel', '1.8.0');</script>
+<A NAME="36"></A> *   
+<A NAME="37"></A> * 
+<A NAME="38"></A> * 
+<A NAME="39"></A> * @author Pascal Wager
+<A NAME="40"></A> */</FONT>
+<A NAME="41"></A>
+<A NAME="42"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> LogLevel <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="43"></A>
+<A NAME="44"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="45"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="46"></A>       pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="47"></A>       getLogger().info(<FONT ID="StringLiteral">"There are two log records but the second will not be displayed.\n"</FONT>);
+<A NAME="48"></A>       getLogger().config(<FONT ID="StringLiteral">"The logger's level is too low to display this message."</FONT>);
+<A NAME="49"></A>       pause(<FONT ID="IntegerLiteral">4000</FONT>);
+<A NAME="50"></A>
+<A NAME="51"></A>       getLogger().setLevel(Level.CONFIG);
+<A NAME="52"></A>
+<A NAME="53"></A>       getLogger().info(<FONT ID="StringLiteral">"The logger's level has been set to "</FONT> + Level.CONFIG);
+<A NAME="54"></A>       pause(<FONT ID="IntegerLiteral">3000</FONT>);
+<A NAME="55"></A>       getLogger().config(<FONT ID="StringLiteral">"So now the config messages can appear\non the screen!"</FONT>);
+<A NAME="56"></A>       pause(<FONT ID="IntegerLiteral">8000</FONT>);
+<A NAME="57"></A>    }
+<A NAME="58"></A>
+<A NAME="59"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="60"></A>       executeThisAgent();
+<A NAME="61"></A>    }
+<A NAME="62"></A>}</pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LogLevel.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

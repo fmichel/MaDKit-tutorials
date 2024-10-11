@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulation.ex07.MySimulationModel (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">MySimulationModel.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> simulation.ex07;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">madkit.kernel.AbstractAgent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A> * 
+<A NAME="7"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/simulation.ex07.MySimulationModel <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/
+<A NAME="8"></A> * 
+<A NAME="9"></A> * It is time to display something !! The only purpose of this class is to show an example of what could be a launching
+<A NAME="10"></A> * sequence. The display work is done in {@link Viewer}
+<A NAME="11"></A> */</FONT>
+<A NAME="12"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> MySimulationModel <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A> {
+<A NAME="13"></A>
+<A NAME="14"></A>    <FONT ID="SingleLineComment">// Organizational constants
+<A NAME="15"></A></FONT>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Final">final</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> MY_COMMUNITY = <FONT ID="StringLiteral">"simu"</FONT>;
+<A NAME="16"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Final">final</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> SIMU_GROUP = <FONT ID="StringLiteral">"simu"</FONT>;
+<A NAME="17"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Final">final</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> AGENT_ROLE = <FONT ID="StringLiteral">"agent"</FONT>;
+<A NAME="18"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Final">final</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> ENV_ROLE = <FONT ID="StringLiteral">"environment"</FONT>;
+<A NAME="19"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Final">final</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> SCH_ROLE = <FONT ID="StringLiteral">"scheduler"</FONT>;
+<A NAME="20"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Final">final</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> VIEWER_ROLE = <FONT ID="StringLiteral">"viewer"</FONT>;
+<A NAME="21"></A>
+<A NAME="22"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="23"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="24"></A>       <FONT ID="SingleLineComment">// 1 : create the simulation group
+<A NAME="25"></A></FONT>       createGroup(MY_COMMUNITY, SIMU_GROUP);
+<A NAME="26"></A>
+<A NAME="27"></A>       <FONT ID="SingleLineComment">// 2 : create the environment
+<A NAME="28"></A></FONT>       <A HREF="../../simulation/ex07/EnvironmentAgent.java.html">EnvironmentAgent</A> environment = <FONT ID="New">new</FONT> <A HREF="../../simulation/ex07/EnvironmentAgent.java.html">EnvironmentAgent</A>();
+<A NAME="29"></A>       launchAgent(environment);
+<A NAME="30"></A>
+<A NAME="31"></A>       <FONT ID="SingleLineComment">// 4 : launch some simulated agents
+<A NAME="32"></A></FONT>       <FONT ID="For">for</FONT> (<FONT ID="Int">int</FONT> i = <FONT ID="IntegerLiteral">0</FONT>; i &lt; <FONT ID="IntegerLiteral">10</FONT>; i++) {
+<A NAME="33"></A>           launchAgent(<FONT ID="New">new</FONT> <A HREF="../../simulation/ex07/SituatedAgent.java.html">SituatedAgent</A>());
+<A NAME="34"></A>       }
+<A NAME="35"></A>
+<A NAME="36"></A>       <FONT ID="SingleLineComment">// 5 : create the scheduler
+<A NAME="37"></A></FONT>       MyScheduler07 scheduler = <FONT ID="New">new</FONT> MyScheduler07();
+<A NAME="38"></A>       launchAgent(scheduler, <FONT ID="True">true</FONT>);
+<A NAME="39"></A>
+<A NAME="40"></A>       <FONT ID="SingleLineComment">// 3 : create the viewer
+<A NAME="41"></A></FONT>       <A HREF="../../simulation/ex07/Viewer.java.html">Viewer</A> viewer = <FONT ID="New">new</FONT> <A HREF="../../simulation/ex07/Viewer.java.html">Viewer</A>();
+<A NAME="42"></A>       launchAgent(viewer, <FONT ID="True">true</FONT>);
+<A NAME="43"></A>
+<A NAME="44"></A>    }
+<A NAME="45"></A>
+<A NAME="46"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="47"></A>       executeThisAgent(<FONT ID="IntegerLiteral">1</FONT>, <FONT ID="False">false</FONT>); <FONT ID="SingleLineComment">// no gui for me
+<A NAME="48"></A></FONT>    }
+<A NAME="49"></A>}
+<A NAME="50"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">MySimulationModel.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

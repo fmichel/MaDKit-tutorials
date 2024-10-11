@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulation.ex07.Viewer (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">Viewer.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> simulation.ex07;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Color.html">java.awt.Color</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">java.awt.Dimension</A>;
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Graphics.html">java.awt.Graphics</A>;
+<A NAME="6"></A>
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Watcher.html">madkit.kernel.Watcher</A>;
+<A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/probe/PropertyProbe.html">madkit.simulation.probe.PropertyProbe</A>;
+<A NAME="9"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/probe/SingleAgentProbe.html">madkit.simulation.probe.SingleAgentProbe</A>;
+<A NAME="10"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/viewer/SwingViewer.html">madkit.simulation.viewer.SwingViewer</A>;
+<A NAME="11"></A>
+<A NAME="12"></A><FONT ID="FormalComment">/**
+<A NAME="13"></A> * This class will be used to display the simulation. We could have extended the {@link Watcher} class, but there are a
+<A NAME="14"></A> * lot of things already defined in {@link SwingViewer}. So why not use it.
+<A NAME="15"></A> */</FONT>
+<A NAME="16"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> Viewer <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/viewer/SwingViewer.html">SwingViewer</A> {
+<A NAME="17"></A>
+<A NAME="18"></A>    <FONT ID="FormalComment">/**
+<A NAME="19"></A>     * environment's size, probed using a {@link SingleAgentProbe}.
+<A NAME="20"></A>     */</FONT>
+<A NAME="21"></A>    <FONT ID="Private">private</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A> envSize;
+<A NAME="22"></A>
+<A NAME="23"></A>    <FONT ID="FormalComment">/**
+<A NAME="24"></A>     * The probe by which we will get the agents' location
+<A NAME="25"></A>     */</FONT>
+<A NAME="26"></A>    <FONT ID="Protected">protected</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/probe/PropertyProbe.html">PropertyProbe</A>&lt;<A HREF="../../simulation/ex07/SituatedAgent.java.html">SituatedAgent</A>, <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A>&gt; agentsLocationProbe;
+<A NAME="27"></A>
+<A NAME="28"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="29"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="30"></A>       <FONT ID="SingleLineComment">// 1 : request my role so that the scheduler can take me into account
+<A NAME="31"></A></FONT>       requestRole(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.VIEWER_ROLE);
+<A NAME="32"></A>
+<A NAME="33"></A>       <FONT ID="SingleLineComment">// 2 : adding the probes
+<A NAME="34"></A></FONT>
+<A NAME="35"></A>       <FONT ID="SingleLineComment">// probing the environment using an anonymous inner class
+<A NAME="36"></A></FONT>       <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/probe/SingleAgentProbe.html">SingleAgentProbe</A>&lt;<A HREF="../../simulation/ex07/EnvironmentAgent.java.html">EnvironmentAgent</A>, <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A>&gt; envProbe = <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/probe/SingleAgentProbe.html">SingleAgentProbe</A>&lt;<A HREF="../../simulation/ex07/EnvironmentAgent.java.html">EnvironmentAgent</A>, <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A>&gt;(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP,
+<A NAME="37"></A>              MySimulationModel.ENV_ROLE, <FONT ID="StringLiteral">"dimension"</FONT>) {
+<A NAME="38"></A>
+<A NAME="39"></A>           @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="40"></A>           <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> adding(<A HREF="../../simulation/ex07/EnvironmentAgent.java.html">EnvironmentAgent</A> agent) {
+<A NAME="41"></A>              <FONT ID="Super">super</FONT>.adding(agent);
+<A NAME="42"></A>              envSize = getPropertyValue();
+<A NAME="43"></A>           }
+<A NAME="44"></A>       };
+<A NAME="45"></A>       addProbe(envProbe);
+<A NAME="46"></A>       
+<A NAME="47"></A>       <FONT ID="SingleLineComment">// probing agents' location
+<A NAME="48"></A></FONT>       agentsLocationProbe = <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/probe/PropertyProbe.html">PropertyProbe</A>&lt;<A HREF="../../simulation/ex07/SituatedAgent.java.html">SituatedAgent</A>, <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A>&gt;(MySimulationModel.MY_COMMUNITY, MySimulationModel.SIMU_GROUP, MySimulationModel.AGENT_ROLE, <FONT ID="StringLiteral">"location"</FONT>);
+<A NAME="49"></A>       addProbe(agentsLocationProbe);
+<A NAME="50"></A>
+<A NAME="51"></A>       <FONT ID="SingleLineComment">// 3 : Now that the probes are added,
+<A NAME="52"></A></FONT>       <FONT ID="SingleLineComment">// we can setup the frame for the display according to the environment's properties
+<A NAME="53"></A></FONT>       getDisplayPane().setPreferredSize(envSize);
+<A NAME="54"></A>       getFrame().pack();
+<A NAME="55"></A>
+<A NAME="56"></A>       <FONT ID="SingleLineComment">// 4 (optional) set the synchronous painting mode: The display will be updated
+<A NAME="57"></A></FONT>       <FONT ID="SingleLineComment">// for each step of the simulation.
+<A NAME="58"></A></FONT>       <FONT ID="SingleLineComment">// Here it is useful because the simulation goes so fast that the agents
+<A NAME="59"></A></FONT>       <FONT ID="SingleLineComment">// are almost invisible
+<A NAME="60"></A></FONT>       setSynchronousPainting(<FONT ID="True">true</FONT>);
+<A NAME="61"></A>    }
+<A NAME="62"></A>
+<A NAME="63"></A>    <FONT ID="FormalComment">/**
+<A NAME="64"></A>     * render is the method where the custom painting has to be done. Here, we just draw red points at the agents' location
+<A NAME="65"></A>     */</FONT>
+<A NAME="66"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="67"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> render(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Graphics.html">Graphics</A> g) {
+<A NAME="68"></A>       g.setColor(Color.RED);
+<A NAME="69"></A>       <FONT ID="For">for</FONT> (<A HREF="../../simulation/ex07/SituatedAgent.java.html">SituatedAgent</A> a : agentsLocationProbe.getCurrentAgentsList()) {
+<A NAME="70"></A>           <A HREF="http://docs.oracle.com/javase/8/docs/api//java/awt/Dimension.html">Dimension</A> location = agentsLocationProbe.getPropertyValue(a);
+<A NAME="71"></A>           g.drawRect(location.width, location.height, <FONT ID="IntegerLiteral">1</FONT>, <FONT ID="IntegerLiteral">1</FONT>);
+<A NAME="72"></A>       }
+<A NAME="73"></A>    }
+<A NAME="74"></A>
+<A NAME="75"></A>}
+<A NAME="76"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">Viewer.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

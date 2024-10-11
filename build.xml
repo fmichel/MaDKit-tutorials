@@ -23,7 +23,7 @@
 	<property name="project.label" value="The MaDKit-5 tutorials" />
 	<property name="project.website" value="www.madkit.org" />
 	<property name="project.zip.file" value="${ant.project.name}-project.zip" />
-	<property name="release.dir" value="release" />
+	<property name="release.dir" value="docs" />
 	<property name="src.dir" value="src" />
 	<property name="tuto.dir" value="html" />
 	<property name="version" value="1.5" />

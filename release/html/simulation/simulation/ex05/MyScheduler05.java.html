@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulation.ex05.MyScheduler05 (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">MyScheduler05.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> simulation.ex05;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/ConsoleAgent.html">madkit.gui.ConsoleAgent</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Scheduler.html">madkit.kernel.Scheduler</A>;
+<A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="../../simulation/ex04/MyScheduler04.java.html">simulation.ex04.MyScheduler04</A>;
+<A NAME="7"></A>
+<A NAME="8"></A><FONT ID="FormalComment">/**
+<A NAME="9"></A> * 
+<A NAME="10"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/simulation.ex05.MyScheduler02', '1.8.0');</script>
+<A NAME="11"></A> *     
+<A NAME="12"></A> * 
+<A NAME="13"></A> * 
+<A NAME="14"></A> * Let us define explicitly how a simulation step takes place in order to define our own scheduling policy at will. This
+<A NAME="15"></A> * is done by overriding {@link Scheduler#doSimulationStep()}.
+<A NAME="16"></A> */</FONT>
+<A NAME="17"></A>
+<A NAME="18"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> MyScheduler05 <FONT ID="Extends">extends</FONT> <A HREF="../../simulation/ex04/MyScheduler04.java.html">MyScheduler04</A> {
+<A NAME="19"></A>
+<A NAME="20"></A>    <FONT ID="FormalComment">/**
+<A NAME="21"></A>     * Our step consists in activating the first activator one time and the second two times. It could have been anything
+<A NAME="22"></A>     * else. In fact, we could do anything we want here, especially we also define another granularity for the step: 0.5
+<A NAME="23"></A>     */</FONT>
+<A NAME="24"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="25"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> doSimulationStep() {
+<A NAME="26"></A>       activator1.execute();
+<A NAME="27"></A>       activator2.execute();
+<A NAME="28"></A>       activator2.execute();
+<A NAME="29"></A>       setGVT(getGVT() + <FONT ID="FloatPointLiteral">0.5</FONT>);
+<A NAME="30"></A>    }
+<A NAME="31"></A>
+<A NAME="32"></A>    <FONT ID="FormalComment">/**
+<A NAME="33"></A>     * A simple way of launching this scheduler. It is inherited but this is to make the IDE launch this one properly.
+<A NAME="34"></A>     */</FONT>
+<A NAME="35"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="36"></A>       <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(<FONT ID="StringLiteral">"--launchAgents"</FONT>, <A HREF="../../simulation/ex05/MyScheduler05.java.html">MyScheduler05</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true;"</FONT> + <A HREF="http://www.madkit.net/madkit/api/madkit/gui/ConsoleAgent.html">ConsoleAgent</A>.<FONT ID="Class">class</FONT>.getName());
+<A NAME="37"></A>    }
+<A NAME="38"></A>
+<A NAME="39"></A>}
+<A NAME="40"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">MyScheduler05.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

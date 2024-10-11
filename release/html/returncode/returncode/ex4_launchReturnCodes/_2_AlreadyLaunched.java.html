@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>returncode.ex4_launchReturnCodes._2_AlreadyLaunched (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_2_AlreadyLaunched.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> returncode.ex4_launchReturnCodes;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">returncode.utils.TutorialAgent</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="FormalComment">/**
+<A NAME="6"></A> * This class exemplifies ALREADY_LAUNCHED.
+<A NAME="7"></A> * This ReturnCode is returned when we try to launch an agent which is already launched.
+<A NAME="8"></A> * 
+<A NAME="9"></A> * 
+<A NAME="10"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/returncode.ex4_launchReturnCodes._2_AlreadyLaunched', '1.8.0');</script>
+<A NAME="11"></A> * 
+<A NAME="12"></A> * 
+<A NAME="13"></A> */</FONT>
+<A NAME="14"></A>
+<A NAME="15"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _2_AlreadyLaunched <FONT ID="Extends">extends</FONT> <A HREF="../../returncode/utils/TutorialAgent.java.html">TutorialAgent</A>{
+<A NAME="16"></A>
+<A NAME="17"></A>       <FONT ID="FormalComment">/**
+<A NAME="18"></A>        * On activation, the agent will try to launched himself whereas... He is already launched...
+<A NAME="19"></A>        * Thus a message saying that launchAgent() has failed will be displayed.
+<A NAME="20"></A>        */</FONT>
+<A NAME="21"></A>       @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="22"></A>       <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="23"></A>              ReturnCode launchFeedback;
+<A NAME="24"></A>              launchFeedback = launchAgent(<FONT ID="This">this</FONT>);
+<A NAME="25"></A>              getLogger().info(<FONT ID="StringLiteral">"\n\tThe ReturnCode is: \""</FONT> + launchFeedback.toString() + <FONT ID="StringLiteral">"\" .\n\tIt means that I have already been launched : I can not be launched twice \n\t"</FONT>);
+<A NAME="26"></A>              
+<A NAME="27"></A>              <FONT ID="MultiLineComment">/* Then you do what you want with this agent */</FONT>
+<A NAME="28"></A>       }
+<A NAME="29"></A>       
+<A NAME="30"></A>       <FONT ID="FormalComment">/**
+<A NAME="31"></A>        * We launch a _2_AlreadyLaunched agent.
+<A NAME="32"></A>        * 
+<A NAME="33"></A>        * @param argss
+<A NAME="34"></A>        */</FONT>
+<A NAME="35"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="36"></A>              executeThisAgent();
+<A NAME="37"></A>       }
+<A NAME="38"></A>}
+<A NAME="39"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_2_AlreadyLaunched.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

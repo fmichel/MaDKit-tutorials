@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>gui.ex02_overridingDefaultsettings.OverridingDefaultSettings (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">OverridingDefaultSettings.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> gui.ex02_overridingDefaultsettings;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/AgentFrame.html">madkit.gui.AgentFrame</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="6"></A>
+<A NAME="7"></A><FONT ID="FormalComment">/**
+<A NAME="8"></A> * Shows how to override the default frame settings of the default GUI.
+<A NAME="9"></A> * 
+<A NAME="10"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/gui.ex02_overridingDefaultsettings.OverridingDefaultSettings', '1.8.0');</script>
+<A NAME="11"></A> *     
+<A NAME="12"></A> * 
+<A NAME="13"></A> * When an agent is launched with a GUI, the setupFrame method is automatically called before activate. This method is
+<A NAME="14"></A> * the opportunity for the agent to modify the default settings of the frame.
+<A NAME="15"></A> */</FONT>
+<A NAME="16"></A>
+<A NAME="17"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> OverridingDefaultSettings <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="18"></A>
+<A NAME="19"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="20"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> setupFrame(<A HREF="http://www.madkit.net/madkit/api/madkit/gui/AgentFrame.html">AgentFrame</A> frame) {
+<A NAME="21"></A>       <FONT ID="SingleLineComment">// adds the default output panel
+<A NAME="22"></A></FONT>       <FONT ID="Super">super</FONT>.setupFrame(frame);
+<A NAME="23"></A>
+<A NAME="24"></A>       <FONT ID="SingleLineComment">// Overriding default settings
+<A NAME="25"></A></FONT>       frame.setTitle(<FONT ID="StringLiteral">"Overriding Default Frame Behavior"</FONT>);
+<A NAME="26"></A>       frame.setLocation(<FONT ID="IntegerLiteral">200</FONT>, <FONT ID="IntegerLiteral">200</FONT>);
+<A NAME="27"></A>       frame.setSize(<FONT ID="IntegerLiteral">500</FONT>, <FONT ID="IntegerLiteral">500</FONT>);
+<A NAME="28"></A>    }
+<A NAME="29"></A>
+<A NAME="30"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="31"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="32"></A>       getLogger().info(<FONT ID="StringLiteral">"\n\tDo you see I changed my frame settings ?"</FONT>);
+<A NAME="33"></A>       pause(<FONT ID="IntegerLiteral">5000</FONT>);
+<A NAME="34"></A>    }
+<A NAME="35"></A>
+<A NAME="36"></A>    <FONT ID="FormalComment">/**
+<A NAME="37"></A>     * @param args
+<A NAME="38"></A>     */</FONT>
+<A NAME="39"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] argss) {
+<A NAME="40"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args = { <FONT ID="StringLiteral">"--launchAgents"</FONT>, <A HREF="../../gui/ex02_overridingDefaultsettings/OverridingDefaultSettings.java.html">OverridingDefaultSettings</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true"</FONT> };
+<A NAME="41"></A>       Madkit.main(args);
+<A NAME="42"></A>    }
+<A NAME="43"></A>
+<A NAME="44"></A>}
+<A NAME="45"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">OverridingDefaultSettings.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

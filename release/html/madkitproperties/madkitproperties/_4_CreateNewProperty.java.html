@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>madkitproperties._4_CreateNewProperty (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_4_CreateNewProperty.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> madkitproperties;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="4"></A>
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.LevelOption.html">madkit.kernel.Madkit.LevelOption</A>;
+<A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.Option.html">madkit.kernel.Madkit.Option</A>;
+<A NAME="9"></A>
+<A NAME="10"></A><FONT ID="FormalComment">/**
+<A NAME="11"></A> * You can also create the property you want and give it any value, which will be converted into a string.
+<A NAME="12"></A> * 
+<A NAME="13"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/madkitproperties._4_CreateNewProperty', '1.8.0');</script>
+<A NAME="14"></A> * 
+<A NAME="15"></A> */</FONT>
+<A NAME="16"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _4_CreateNewProperty  <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="17"></A>
+<A NAME="18"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="19"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="20"></A>       getLogger().info(<FONT ID="StringLiteral">"getting a property passed as a MaDKit argument:"</FONT>);
+<A NAME="21"></A>       getLogger().info(<FONT ID="StringLiteral">"myNewProperty has been set to "</FONT>+getMadkitProperty(<FONT ID="StringLiteral">"myNewProperty"</FONT>));
+<A NAME="22"></A>       pause(<FONT ID="IntegerLiteral">5000</FONT>);
+<A NAME="23"></A>    }
+<A NAME="24"></A>
+<A NAME="25"></A>       <FONT ID="FormalComment">/**
+<A NAME="26"></A>        * Notice the new property among the "Additional non MaDKit options" 
+<A NAME="27"></A>        * logged at startup.
+<A NAME="28"></A>        */</FONT>
+<A NAME="29"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="30"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(
+<A NAME="31"></A>                     <FONT ID="StringLiteral">"--myNewProperty"</FONT>, <FONT ID="StringLiteral">"aNewValue"</FONT>,
+<A NAME="32"></A>                     LevelOption.madkitLogLevel.toString(),Level.FINER.toString(),
+<A NAME="33"></A>                     Option.launchAgents.toString(),<A HREF="../madkitproperties/_4_CreateNewProperty.java.html">_4_CreateNewProperty</A>.<FONT ID="Class">class</FONT>.getName()+<FONT ID="StringLiteral">",true"</FONT>
+<A NAME="34"></A>                     );
+<A NAME="35"></A>       }
+<A NAME="36"></A>}
+<A NAME="37"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_4_CreateNewProperty.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

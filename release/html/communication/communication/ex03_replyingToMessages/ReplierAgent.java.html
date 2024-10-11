@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>communication.ex03_replyingToMessages.ReplierAgent (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">ReplierAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> communication.ex03_replyingToMessages;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <FONT ID="Static">static</FONT> <A HREF="../../communication/ex01/Society.java.html">communication.ex01.Society.COMMUNITY</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <FONT ID="Static">static</FONT> <A HREF="../../communication/ex01/Society.java.html">communication.ex01.Society.GROUP</A>;
+<A NAME="5"></A><FONT ID="Import">import</FONT> <FONT ID="Static">static</FONT> <A HREF="../../communication/ex01/Society.java.html">communication.ex01.Society.ROLE</A>;
+<A NAME="6"></A>
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="../../communication/ex01/PingAgent.java.html">communication.ex01.PingAgent</A>;
+<A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="9"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">madkit.kernel.Message</A>;
+<A NAME="10"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/message/StringMessage.html">madkit.message.StringMessage</A>;
+<A NAME="11"></A>
+<A NAME="12"></A><FONT ID="FormalComment">/**
+<A NAME="13"></A> * Shows how agents exchange messages by targeting roles.
+<A NAME="14"></A> * 
+<A NAME="15"></A> * 
+<A NAME="16"></A> * 
+<A NAME="17"></A> *            <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/communication.ex03_replyingToMessages.ReplierAgent', '1.8.0');</script>
+<A NAME="18"></A> *     
+<A NAME="19"></A> * 
+<A NAME="20"></A> * 
+<A NAME="21"></A> * 
+<A NAME="22"></A> * Receiving a message, you can learn information about the sender. This is illustrated firstly in this example.
+<A NAME="23"></A> * Sometimes, agents need to communicate by replying to messages. There are primitives for that and they have two
+<A NAME="24"></A> * advantages. (1) This will identify the message as being a concrete reply to the received message thus easing the
+<A NAME="25"></A> * programming of protocols for instance. (2) This greatly improves code legibility
+<A NAME="26"></A> */</FONT>
+<A NAME="27"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> ReplierAgent <FONT ID="Extends">extends</FONT> <A HREF="../../communication/ex01/PingAgent.java.html">PingAgent</A> {<FONT ID="SingleLineComment">// So I do the same activate
+<A NAME="28"></A></FONT>
+<A NAME="29"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="30"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="31"></A>
+<A NAME="32"></A>       <FONT ID="SingleLineComment">// until I found someone having that role
+<A NAME="33"></A></FONT>       <FONT ID="While">while</FONT> (sendMessage(COMMUNITY, GROUP, ROLE, <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A>()) != ReturnCode.SUCCESS) {
+<A NAME="34"></A>           pause((<FONT ID="Int">int</FONT>) (Math.random() * <FONT ID="IntegerLiteral">1000</FONT> + <FONT ID="IntegerLiteral">100</FONT>));
+<A NAME="35"></A>       }
+<A NAME="36"></A>
+<A NAME="37"></A>       <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Message.html">Message</A> m = nextMessage();
+<A NAME="38"></A>       <FONT ID="If">if</FONT> (m != <FONT ID="Null">null</FONT>) {
+<A NAME="39"></A>           getLogger().info(<FONT ID="StringLiteral">"I have to thank "</FONT> + m.getSender());
+<A NAME="40"></A>           sendReply(m, <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/message/StringMessage.html">StringMessage</A>(<FONT ID="StringLiteral">"thanks"</FONT>));
+<A NAME="41"></A>       }
+<A NAME="42"></A>       pause(<FONT ID="IntegerLiteral">10000</FONT>);
+<A NAME="43"></A>    }
+<A NAME="44"></A>
+<A NAME="45"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/SuppressWarnings.html">SuppressWarnings</A>(<FONT ID="StringLiteral">"unused"</FONT>)
+<A NAME="46"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="47"></A>       <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(<FONT ID="StringLiteral">"--launchAgents"</FONT>, <A HREF="../../communication/ex03_replyingToMessages/ReplierAgent.java.html">ReplierAgent</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true,10;"</FONT>, <A HREF="../../communication/ex01/PingAgent.java.html">PingAgent</A>.<FONT ID="Class">class</FONT>.getName()<FONT ID="SingleLineComment">// This one so that agents always find someone (breaking the first while)
+<A NAME="48"></A></FONT>       );
+<A NAME="49"></A>    }
+<A NAME="50"></A>
+<A NAME="51"></A>}
+<A NAME="52"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">ReplierAgent.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

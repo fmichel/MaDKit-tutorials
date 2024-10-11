@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>simulation.ex04.MyScheduler04 (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">MyScheduler04.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> simulation.ex04;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/ConsoleAgent.html">madkit.gui.ConsoleAgent</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">madkit.kernel.AbstractAgent</A>;
+<A NAME="5"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="6"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Scheduler.html">madkit.kernel.Scheduler</A>;
+<A NAME="7"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/activator/GenericBehaviorActivator.html">madkit.simulation.activator.GenericBehaviorActivator</A>;
+<A NAME="8"></A><FONT ID="Import">import</FONT> <A HREF="../../simulation/ex02/SimulatedAgent02.java.html">simulation.ex02.SimulatedAgent02</A>;
+<A NAME="9"></A><FONT ID="Import">import</FONT> <A HREF="../../simulation/ex02/SimulationModel.java.html">simulation.ex02.SimulationModel</A>;
+<A NAME="10"></A><FONT ID="Import">import</FONT> <A HREF="../../simulation/ex03/SimulatedAgent03.java.html">simulation.ex03.SimulatedAgent03</A>;
+<A NAME="11"></A>
+<A NAME="12"></A><FONT ID="FormalComment">/**
+<A NAME="13"></A> * 
+<A NAME="14"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/simulation.ex04.MyScheduler04', '1.8.0');</script>
+<A NAME="15"></A> *     
+<A NAME="16"></A> * 
+<A NAME="17"></A> * Let us have more fun by adding another activator on another role to execute the other behavior of
+<A NAME="18"></A> * {@link SimulatedAgent04}
+<A NAME="19"></A> */</FONT>
+<A NAME="20"></A>
+<A NAME="21"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> MyScheduler04 <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Scheduler.html">Scheduler</A> {
+<A NAME="22"></A>
+<A NAME="23"></A>    <FONT ID="Protected">protected</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/activator/GenericBehaviorActivator.html">GenericBehaviorActivator</A>&lt;<A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A>&gt; activator1;
+<A NAME="24"></A>    <FONT ID="Protected">protected</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/activator/GenericBehaviorActivator.html">GenericBehaviorActivator</A>&lt;<A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A>&gt; activator2;
+<A NAME="25"></A>
+<A NAME="26"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="27"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="28"></A>
+<A NAME="29"></A>       <FONT ID="SingleLineComment">// 1 : create the simulation group
+<A NAME="30"></A></FONT>       createGroup(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP);
+<A NAME="31"></A>
+<A NAME="32"></A>       <FONT ID="SingleLineComment">// 2 : launch some simulated agents
+<A NAME="33"></A></FONT>       <FONT ID="For">for</FONT> (<FONT ID="Int">int</FONT> i = <FONT ID="IntegerLiteral">0</FONT>; i &lt; <FONT ID="IntegerLiteral">10</FONT>; i++) {
+<A NAME="34"></A>           launchAgent(<FONT ID="New">new</FONT> <A HREF="../../simulation/ex02/SimulatedAgent02.java.html">SimulatedAgent02</A>());
+<A NAME="35"></A>           launchAgent(<FONT ID="New">new</FONT> <A HREF="../../simulation/ex03/SimulatedAgent03.java.html">SimulatedAgent03</A>());
+<A NAME="36"></A>           launchAgent(<FONT ID="New">new</FONT> <A HREF="../../simulation/ex04/SimulatedAgent04.java.html">SimulatedAgent04</A>());
+<A NAME="37"></A>       }
+<A NAME="38"></A>
+<A NAME="39"></A>       <FONT ID="SingleLineComment">// 3 : initialize the activators
+<A NAME="40"></A></FONT>       <FONT ID="SingleLineComment">// by default, they are activated once each in the order they have been added
+<A NAME="41"></A></FONT>       activator1 = <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/activator/GenericBehaviorActivator.html">GenericBehaviorActivator</A>&lt;<A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A>&gt;(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ROLE, <FONT ID="StringLiteral">"doIt"</FONT>);
+<A NAME="42"></A>       addActivator(activator1);
+<A NAME="43"></A>       activator2 = <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/simulation/activator/GenericBehaviorActivator.html">GenericBehaviorActivator</A>&lt;<A HREF="http://www.madkit.net/madkit/api/madkit/kernel/AbstractAgent.html">AbstractAgent</A>&gt;(SimulationModel.MY_COMMUNITY, SimulationModel.SIMU_GROUP, SimulationModel.ANOTHER_ROLE, <FONT ID="StringLiteral">"anotherBehavior"</FONT>);
+<A NAME="44"></A>       addActivator(activator2);
+<A NAME="45"></A>
+<A NAME="46"></A>       setDelay(<FONT ID="IntegerLiteral">300</FONT>);
+<A NAME="47"></A>
+<A NAME="48"></A>       <FONT ID="SingleLineComment">// 4 : let us start the simulation automatically
+<A NAME="49"></A></FONT>       setSimulationState(SimulationState.RUNNING);
+<A NAME="50"></A>    }
+<A NAME="51"></A>
+<A NAME="52"></A>    <FONT ID="FormalComment">/**
+<A NAME="53"></A>     * A simple way of launching this scheduler
+<A NAME="54"></A>     * 
+<A NAME="55"></A>     * @param
+<A NAME="56"></A>     */</FONT>
+<A NAME="57"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="58"></A>       <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(<FONT ID="StringLiteral">"--launchAgents"</FONT>, <A HREF="../../simulation/ex04/MyScheduler04.java.html">MyScheduler04</A>.<FONT ID="Class">class</FONT>.getName() + <FONT ID="StringLiteral">",true;"</FONT> + <A HREF="http://www.madkit.net/madkit/api/madkit/gui/ConsoleAgent.html">ConsoleAgent</A>.<FONT ID="Class">class</FONT>.getName());
+<A NAME="59"></A>    }
+<A NAME="60"></A>
+<A NAME="61"></A>}
+<A NAME="62"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">MyScheduler04.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

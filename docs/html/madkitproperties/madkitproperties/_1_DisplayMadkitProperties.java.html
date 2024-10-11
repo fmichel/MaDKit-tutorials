@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>madkitproperties._1_DisplayMadkitProperties (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_DisplayMadkitProperties.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="FormalComment">/**
+<A NAME="2"></A> * READ ME
+<A NAME="3"></A> * 
+<A NAME="4"></A> * This tutorial enlighten MaDKit properties : what is a property and how to use it.
+<A NAME="5"></A> * As MaDKit is a Java API, you may already be familiar with Java Property.
+<A NAME="6"></A> * If you are not and you want to get used to it before starting this tutorial, you may
+<A NAME="7"></A> * have a look here in the official documentation or with the following tutorial.
+<A NAME="8"></A> * 
+<A NAME="9"></A> * Documentation : https://docs.oracle.com/javase/7/docs/api/java/util/Properties.html
+<A NAME="10"></A> * Tutorial : https://docs.oracle.com/javase/tutorial/essential/environment/properties.html
+<A NAME="11"></A> * 
+<A NAME="12"></A> * The following exercises introduce how to have a look at the different properties owned by
+<A NAME="13"></A> * MaDKit how to add or modify them and finally, how to store them. 
+<A NAME="14"></A> * 
+<A NAME="15"></A> * This tutorial is strongly linked with the MaDKit Options tutorial. Indeed, if this
+<A NAME="16"></A> * tutorial presents globally the use of properties, in the Options one, we have a focus on
+<A NAME="17"></A> * each of the default properties that are part of MaDKit configuration.
+<A NAME="18"></A> */</FONT>
+<A NAME="19"></A>
+<A NAME="20"></A><FONT ID="Package">package</FONT> madkitproperties;
+<A NAME="21"></A>
+<A NAME="22"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">madkit.kernel.Madkit</A>;
+<A NAME="23"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.LevelOption.html">madkit.kernel.Madkit.LevelOption</A>;
+<A NAME="24"></A>
+<A NAME="25"></A><FONT ID="FormalComment">/**
+<A NAME="26"></A> * A Property is a distinctive feature that may be used for every MaDKit project.
+<A NAME="27"></A> * MaDKit has a configuration which is stored in its internal properties file.
+<A NAME="28"></A> *  
+<A NAME="29"></A> * We here present how to display the properties of a MaDKit run at startup.
+<A NAME="30"></A> * 
+<A NAME="31"></A> * <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/madkitproperties._1_DisplayMadkitProperties', '1.8.0');</script>
+<A NAME="32"></A> * 
+<A NAME="33"></A> */</FONT>
+<A NAME="34"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> _1_DisplayMadkitProperties {
+<A NAME="35"></A>
+<A NAME="36"></A>       <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="37"></A>
+<A NAME="38"></A>              <FONT ID="FormalComment">/**
+<A NAME="39"></A>               * Here we launch a new MaDKit with the option madkitLogLevel activated. 
+<A NAME="40"></A>               * This property allows all the logs concerning MaDKit to be displayed, these
+<A NAME="41"></A>               * logs include MaDKit options. Logs can be seen in the console.
+<A NAME="42"></A>               */</FONT>
+<A NAME="43"></A>              <FONT ID="New">new</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Madkit.html">Madkit</A>(
+<A NAME="44"></A>                     LevelOption.madkitLogLevel.toString(),<FONT ID="StringLiteral">"FINER"</FONT>);
+<A NAME="45"></A>       }
+<A NAME="46"></A>}
+<A NAME="47"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">_1_DisplayMadkitProperties.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

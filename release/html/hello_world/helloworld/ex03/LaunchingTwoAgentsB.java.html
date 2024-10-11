@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>helloworld.ex03.LaunchingTwoAgentsB (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LaunchingTwoAgentsB.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="Package">package</FONT> helloworld.ex03;
+<A NAME="2"></A>
+<A NAME="3"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/gui/AgentFrame.html">madkit.gui.AgentFrame</A>;
+<A NAME="4"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="5"></A>
+<A NAME="6"></A><FONT ID="FormalComment">/**
+<A NAME="7"></A>
+<A NAME="8"></A> By default, the GUI of an agent is placed in the center of the screen.
+<A NAME="9"></A> So probably that the agents of the previous example were not visible at first sight...
+<A NAME="10"></A>
+<A NAME="11"></A> Let us change this default location by overriding the {@link #setupFrame} method, which
+<A NAME="12"></A> allows to modify the default GUI's characteristics.
+<A NAME="13"></A>
+<A NAME="14"></A> First we import the AgentFrame class to Override one of its method : setupFrame(AgentFrame frame)
+<A NAME="15"></A>
+<A NAME="16"></A> Here, the trick is to use the hashCode() method to distinguish the agents.
+<A NAME="17"></A> Indeed, each agent has a unique hashcode corresponding to their instantiation number.
+<A NAME="18"></A> So one can use this hashcode to place similar agents at different locations.
+<A NAME="19"></A>
+<A NAME="20"></A> <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/helloworld.ex04.ModifyingGUILocation', '1.8.0');</script>
+<A NAME="21"></A> 
+<A NAME="22"></A>
+<A NAME="23"></A> */</FONT>
+<A NAME="24"></A>
+<A NAME="25"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> LaunchingTwoAgentsB <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="26"></A>
+<A NAME="27"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="28"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> activate() {
+<A NAME="29"></A>           getLogger().info(<FONT ID="StringLiteral">"Hello, my name is "</FONT>+getName());
+<A NAME="30"></A>    }
+<A NAME="31"></A>
+<A NAME="32"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="33"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="34"></A>        getLogger().info(<FONT ID="StringLiteral">"Our GUI is managed !"</FONT>);
+<A NAME="35"></A>           <FONT ID="For">for</FONT> (<FONT ID="Int">int</FONT> i = <FONT ID="IntegerLiteral">10</FONT>; i &gt; <FONT ID="IntegerLiteral">0</FONT>; i--) {
+<A NAME="36"></A>               getLogger().info(<FONT ID="StringLiteral">"Living... I will quit in "</FONT> + i + <FONT ID="StringLiteral">" seconds"</FONT>);
+<A NAME="37"></A>               pause(<FONT ID="IntegerLiteral">1000</FONT>);
+<A NAME="38"></A>           }
+<A NAME="39"></A>    }
+<A NAME="40"></A>
+<A NAME="41"></A>    <FONT ID="SingleLineComment">//We override the setupFrame method in the agent class to change the GUI position
+<A NAME="42"></A></FONT>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="43"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> setupFrame(<A HREF="http://www.madkit.net/madkit/api/madkit/gui/AgentFrame.html">AgentFrame</A> frame) {
+<A NAME="44"></A>        <FONT ID="Super">super</FONT>.setupFrame(frame);
+<A NAME="45"></A>        frame.setLocation(hashCode()*<FONT ID="IntegerLiteral">150</FONT>, hashCode()*<FONT ID="IntegerLiteral">150</FONT>);
+<A NAME="46"></A>    }
+<A NAME="47"></A>
+<A NAME="48"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="49"></A>       executeThisAgent(<FONT ID="IntegerLiteral">2</FONT>, <FONT ID="True">true</FONT>);
+<A NAME="50"></A>    }
+<A NAME="51"></A>}
+<A NAME="52"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">LaunchingTwoAgentsB.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>

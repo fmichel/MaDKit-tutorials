@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../../stylesheet.css" TITLE="Style">
+<META NAME="GENERATOR" CONTENT="Java2HTML Version 1.5">
+<TITLE>logging.ex01c_levels.MessageWithLevel (Java2HTML)</TITLE>
+<script src='http://www.madkit.net/js/deployJava.js'></script></HEAD>
+<BODY><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">MessageWithLevel.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+<pre ID="Classes">
+<A NAME="1"></A><FONT ID="MultiLineComment">/*
+<A NAME="2"></A> * Copyright 2011-2017 Fabien Michel
+<A NAME="3"></A> * 
+<A NAME="4"></A> * This file is part of MaDKit-tutorials.
+<A NAME="5"></A> * 
+<A NAME="6"></A> * MaDKit-tutorials is free software: you can redistribute it and/or modify
+<A NAME="7"></A> * it under the terms of the GNU General Public License as published by
+<A NAME="8"></A> * the Free Software Foundation, either version 3 of the License, or
+<A NAME="9"></A> * (at your option) any later version.
+<A NAME="10"></A> * 
+<A NAME="11"></A> * MaDKit-tutorials is distributed in the hope that it will be useful,
+<A NAME="12"></A> * but WITHOUT ANY WARRANTY; without even the implied warranty of
+<A NAME="13"></A> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+<A NAME="14"></A> * GNU General Public License for more details.
+<A NAME="15"></A> * 
+<A NAME="16"></A> * You should have received a copy of the GNU General Public License
+<A NAME="17"></A> * along with MaDKit-tutorials. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+<A NAME="18"></A> */</FONT>
+<A NAME="19"></A><FONT ID="Package">package</FONT> logging.ex01c_levels;
+<A NAME="20"></A>
+<A NAME="21"></A><FONT ID="Import">import</FONT> <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">java.util.logging.Level</A>;
+<A NAME="22"></A>
+<A NAME="23"></A><FONT ID="Import">import</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">madkit.kernel.Agent</A>;
+<A NAME="24"></A>
+<A NAME="25"></A><FONT ID="FormalComment">/**
+<A NAME="26"></A> * We have seen how to log a message but it exists several ways to do it. So we will see another way to associate
+<A NAME="27"></A> * different levels to messages and one of messages will not display at the screen. Here we show another method for
+<A NAME="28"></A> * logging a message: Logger#log(Level, String). During the life of this agent, four messages are logged : two 'info'
+<A NAME="29"></A> * messages and two 'config' messages. The last two will not be displayed. The next example of this tutorial explains
+<A NAME="30"></A> * why...
+<A NAME="31"></A> * 
+<A NAME="32"></A> * 
+<A NAME="33"></A> *  <script>deployJava.createWebStartLaunchButton('http://www.madkit.net/madkit/tutorials/jnlp/logging.ex01c_levels.MessageWithLevel', '1.8.0');</script>
+<A NAME="34"></A> *      
+<A NAME="35"></A> * 
+<A NAME="36"></A> * 
+<A NAME="37"></A> * 
+<A NAME="38"></A> * @author Pascal Wagner
+<A NAME="39"></A> */</FONT>
+<A NAME="40"></A>
+<A NAME="41"></A><FONT ID="Public">public</FONT> <FONT ID="Class">class</FONT> MessageWithLevel <FONT ID="Extends">extends</FONT> <A HREF="http://www.madkit.net/madkit/api/madkit/kernel/Agent.html">Agent</A> {
+<A NAME="42"></A>
+<A NAME="43"></A>    @<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/Override.html">Override</A>
+<A NAME="44"></A>    <FONT ID="Protected">protected</FONT> <FONT ID="Void">void</FONT> live() {
+<A NAME="45"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">Level</A> infoLevel = Level.INFO;
+<A NAME="46"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//java/util/logging/Level.html">Level</A> configLevel = Level.CONFIG;
+<A NAME="47"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> infoMessage = <FONT ID="StringLiteral">"This is an info message."</FONT>;
+<A NAME="48"></A>       <A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A> configMessage = <FONT ID="StringLiteral">"This is a config message."</FONT>;
+<A NAME="49"></A>       pause(<FONT ID="IntegerLiteral">2000</FONT>);
+<A NAME="50"></A>       getLogger().info(infoMessage);
+<A NAME="51"></A>       pause(<FONT ID="IntegerLiteral">3000</FONT>);
+<A NAME="52"></A>       getLogger().log(infoLevel, infoMessage + <FONT ID="StringLiteral">"\n\nThe two next config messages will not display at the screen."</FONT>);
+<A NAME="53"></A>       pause(<FONT ID="IntegerLiteral">3000</FONT>);
+<A NAME="54"></A>       getLogger().config(infoMessage);
+<A NAME="55"></A>       getLogger().log(configLevel, configMessage);
+<A NAME="56"></A>       pause(<FONT ID="IntegerLiteral">3000</FONT>);
+<A NAME="57"></A>    }
+<A NAME="58"></A>
+<A NAME="59"></A>    <FONT ID="Public">public</FONT> <FONT ID="Static">static</FONT> <FONT ID="Void">void</FONT> main(<A HREF="http://docs.oracle.com/javase/8/docs/api//java/lang/String.html">String</A>[] args) {
+<A NAME="60"></A>       executeThisAgent();
+<A NAME="61"></A>    }
+<A NAME="62"></A>}
+<A NAME="63"></A></pre><TABLE id="Header" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2" width="33%">&nbsp;</td>
+<td align="center" colspan="2" width="33%">
+<font size="4">MessageWithLevel.java</font\>  &nbsp;&nbsp;&nbsp;&nbsp; <a href='http://www.madkit.net/ccount212/click.php?id=MaDKit-tutorials'><img alt='download project' style='border: 0px ; width: 17px; height: 17px;' src='http://www.madkit.net/madkit/tutorials/html/download.png'></a>
+</td>
+<td align="right" colspan="2" width="33%">&nbsp;</td>
+</tr>
+</TABLE>
+
+</BODY>
+</HTML>
